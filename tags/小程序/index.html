@@ -6,50 +6,20 @@
   <meta name="keywords" content="">
   <meta name="description" content="蜡笔小新Blogs">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="1、navigationBar在哪配置？配置了个啥？ app.json中配置；顶部栏（背景色、名字、名字）    2、tabBar是什么？&#x2F;  list字段中每一项都是什么？ tab栏；（导航栏，项：设置每一个功能） ist字段：配置每一项； text：选项文字 iconPath：图标路径，相对路径 selectedIconPath: 当前选择项的图标路径 pagePath：选项卡点击后的页面地址">
+<meta name="description" content="Vue移动项目总结项目初始化使用Vue-cli创建项目 1、安装脚手架    npm install @vue&#x2F;cli 2、创建项目      vue create 项目名称 3、配置项目      对项目初始化进行一些配置Vue CLI v4.1.2 ? Please pick a preset: default (babel, eslint) &gt; Manually select feat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于小程序开发的总结">
-<meta property="og:url" content="http://yoursite.com/2018/02/27/%E5%85%B3%E4%BA%8E%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E7%9A%84%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:title" content="Vue移动端项目总结">
+<meta property="og:url" content="http://yoursite.com/2018/03/01/Vue%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="蜡笔小新Blogs">
-<meta property="og:description" content="1、navigationBar在哪配置？配置了个啥？ app.json中配置；顶部栏（背景色、名字、名字）    2、tabBar是什么？&#x2F;  list字段中每一项都是什么？ tab栏；（导航栏，项：设置每一个功能） ist字段：配置每一项； text：选项文字 iconPath：图标路径，相对路径 selectedIconPath: 当前选择项的图标路径 pagePath：选项卡点击后的页面地址">
+<meta property="og:description" content="Vue移动项目总结项目初始化使用Vue-cli创建项目 1、安装脚手架    npm install @vue&#x2F;cli 2、创建项目      vue create 项目名称 3、配置项目      对项目初始化进行一些配置Vue CLI v4.1.2 ? Please pick a preset: default (babel, eslint) &gt; Manually select feat">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582766481284.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1581078423738.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580476153224.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580476204285.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580542989630.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582770103590.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582770636547.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580718071548.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580718169881.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580717065354.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580717147899.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580717283875.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580733828085.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582774635403.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582774593628.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582774604003.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582775047238.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580804605204.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580804994859.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582784107740.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582785590870.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582785979764.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582786318936.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582786576338.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582786656808.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582786780828.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582788559017.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582788641819.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582789158440.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582770103590.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582789999257.png">
-<meta property="article:published_time" content="2018-02-27T12:56:38.000Z">
-<meta property="article:modified_time" content="2020-02-29T02:16:12.618Z">
+<meta property="article:published_time" content="2018-03-01T03:43:25.000Z">
+<meta property="article:modified_time" content="2020-02-29T04:15:28.998Z">
 <meta property="article:author" content="蜡笔小新">
-<meta property="article:tag" content="小程序">
+<meta property="article:tag" content="移动项目">
+<meta property="article:tag" content="总结">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://yhx0507.github.io/wxapp_static/app/1582766481284.png">
 
 
 <link rel="icon" href="/img/avatar3.jpg">
