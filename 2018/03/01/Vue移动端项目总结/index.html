@@ -6,20 +6,50 @@
   <meta name="keywords" content=" 移动项目 , 总结 , Vue ">
   <meta name="description" content="Vue移动端项目总结 | 蜡笔小新Blogs">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Vue移动项目总结">
+<meta name="description" content="1、navigationBar在哪配置？配置了个啥？ app.json中配置；顶部栏（背景色、名字、名字）    2、tabBar是什么？&#x2F;  list字段中每一项都是什么？ tab栏；（导航栏，项：设置每一个功能） ist字段：配置每一项； text：选项文字 iconPath：图标路径，相对路径 selectedIconPath: 当前选择项的图标路径 pagePath：选项卡点击后的页面地址">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue移动端项目总结">
-<meta property="og:url" content="http://yoursite.com/2018/03/01/Vue%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:title" content="关于小程序开发的总结">
+<meta property="og:url" content="http://yoursite.com/2018/02/27/%E5%85%B3%E4%BA%8E%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E7%9A%84%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="蜡笔小新Blogs">
-<meta property="og:description" content="Vue移动项目总结">
+<meta property="og:description" content="1、navigationBar在哪配置？配置了个啥？ app.json中配置；顶部栏（背景色、名字、名字）    2、tabBar是什么？&#x2F;  list字段中每一项都是什么？ tab栏；（导航栏，项：设置每一个功能） ist字段：配置每一项； text：选项文字 iconPath：图标路径，相对路径 selectedIconPath: 当前选择项的图标路径 pagePath：选项卡点击后的页面地址">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2018-03-01T03:43:25.000Z">
-<meta property="article:modified_time" content="2020-02-29T03:50:37.059Z">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582766481284.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1581078423738.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580476153224.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580476204285.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580542989630.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582770103590.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582770636547.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580718071548.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580718169881.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580717065354.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580717147899.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580717283875.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580733828085.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582774635403.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582774593628.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582774604003.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582775047238.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580804605204.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1580804994859.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582784107740.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582785590870.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582785979764.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582786318936.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582786576338.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582786656808.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582786780828.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582788559017.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582788641819.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582789158440.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582770103590.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1582789999257.png">
+<meta property="article:published_time" content="2018-02-27T12:56:38.000Z">
+<meta property="article:modified_time" content="2020-02-29T02:16:12.618Z">
 <meta property="article:author" content="蜡笔小新">
-<meta property="article:tag" content="移动项目">
-<meta property="article:tag" content="总结">
-<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="小程序">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yhx0507.github.io/wxapp_static/app/1582766481284.png">
 
 
 <link rel="icon" href="/img/avatar3.jpg">
@@ -252,7 +282,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-02-29 11:50:37'>2018-03-01 11:43</time>
+        创建时间:<time class="date" title='更新时间: 2020-02-29 12:15:28'>2018-03-01 11:43</time>
         
     </div>
     <div class="article-meta">
@@ -274,7 +304,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue移动项目总结"><span class="toc-text">Vue移动项目总结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue移动项目总结"><span class="toc-text">Vue移动项目总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#项目初始化"><span class="toc-text">项目初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Vue-cli创建项目"><span class="toc-text">使用Vue-cli创建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始目录结构说明"><span class="toc-text">初始目录结构说明</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -290,7 +320,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Vue移动项目总结"><a href="#Vue移动项目总结" class="headerlink" title="Vue移动项目总结"></a>Vue移动项目总结</h1>
+        <h1 id="Vue移动项目总结"><a href="#Vue移动项目总结" class="headerlink" title="Vue移动项目总结"></a>Vue移动项目总结</h1><h2 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h2><h3 id="使用Vue-cli创建项目"><a href="#使用Vue-cli创建项目" class="headerlink" title="使用Vue-cli创建项目"></a>使用Vue-cli创建项目</h3><ul>
+<li>1、安装脚手架    npm install @vue/cli</li>
+<li>2、创建项目      vue create 项目名称</li>
+<li>3、配置项目      对项目初始化进行一些配置<pre><code>Vue CLI v4.1.2
+? Please pick a preset:
+default (babel, eslint)
+&gt; Manually select features      
+选择第 2 种：手动选择特性，支持更多自定义选项</code></pre> 分别选择：<br> Babel：es6 转 es5<br> Router：路由<br> Vuex：数据容器，存储共享数据<br> CSS Pre-processors：CSS 预处理器，后面会提示你选择 less、sass、stylus 等<br> Linter / Formatter：代码格式校验</li>
+<li>4、进入项目目录   cd 项目名称</li>
+<li>5、启动服务       npm run serve(dev还是server看配置)<h3 id="初始目录结构说明"><a href="#初始目录结构说明" class="headerlink" title="初始目录结构说明"></a>初始目录结构说明</h3></li>
+<li>├── .browserslistrc</li>
+<li>├── .editorconfig</li>
+<li>├── .eslintrc.js</li>
+<li>├── .gitignore</li>
+<li>├── README.md</li>
+<li>├── babel.config.js</li>
+<li>├── package-lock.json</li>
+<li>├── package.json</li>
+<li>├── public</li>
+<li>│   ├── favicon.ico</li>
+<li>│   └── index.html</li>
+<li>└── src</li>
+<li>├── App.vue       根组件</li>
+<li>├── assets        资源目录</li>
+<li>├── components    公共组件</li>
+<li>├── main.js       入口模块</li>
+<li>├── router        路由</li>
+<li>├── store         Vuex容器</li>
+<li>└── views         路由组件</li>
+</ul>
+
       
        
     </div>
