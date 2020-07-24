@@ -130,7 +130,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(5)</small></div></li>
+    <li><div class="all active">全部文章<small>(6)</small></div></li>
     
 </ul>
 <div class="left-bottom">
@@ -142,7 +142,7 @@
     </div>
     <div></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="5">
+<input type="hidden" id="yelog_site_posts_number" value="6">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -212,6 +212,14 @@
         <a class="color5">Webpack入门</a>
     </li>
     
+    <li class="article-tag-list-item">
+        <a class="color2">不是内部命令或外部命令</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">不是可运行的程序</a>
+    </li>
+    
     <div class="clearfix"></div>
 </div>
 
@@ -258,6 +266,14 @@
             <span class="post-date" title="2019-07-20 20:04:42">2019/07/20</span>
         </a>
         
+        <a  class=""
+           href="/2020/04/04/npm%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E5%8C%85%E5%90%8E%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"
+           data-tag="不是内部命令或外部命令,不是可运行的程序"
+           data-author="" >
+            <span class="post-title" title="npm全局安装包后无法使用问题解决">npm全局安装包后无法使用问题解决</span>
+            <span class="post-date" title="2020-04-04 20:19:36">2020/04/04</span>
+        </a>
+        
     </nav>
 </div>
     </div>
@@ -290,7 +306,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-07-20 21:46:39'>2019-07-20 20:04</time>
+        创建时间:<time class="date" title='更新时间: 2020-07-24 21:00:12'>2019-07-20 20:04</time>
         
     </div>
     <div class="article-meta">
@@ -576,7 +592,7 @@
 <ol>
 <li>创建css文件    src/styles/index.css，  和简单的样式    </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li &#123;</span><br><span class="line">   	color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span> &#123;</span><br><span class="line">   	<span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>在main.js中引入css文件  ， </li>
@@ -598,7 +614,7 @@
 <ol>
 <li>安装, </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i css-loader style-loader -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i css-loader style-loader -D</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li><p>在webpack.config.js中做如下配置</p>
@@ -630,13 +646,13 @@
 <li><p>给#app设置背景图片</p>
 </li>
 <li><p>在index.css样式文件中给div设置背景图片</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#app &#123;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#app</span> &#123;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image: url(&#39;..&#x2F;assets&#x2F;image&#x2F;back.jpg&#39;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image: url('../assets/image/back.jpg');</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-size: cover;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">background-size</span>: <span class="selector-tag">cover</span>;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>现在实时打包报错了</p>
 <img src="https://yhx0507.github.io/wxapp_static/app/1564653212048.png" class="">
@@ -649,7 +665,7 @@
 <p>安装配置loader步骤：</p>
 <ol>
 <li><p>安装 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i url-loader file-loader -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i url-loader file-loader -D</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>webpack.config.js中做具体配置，如下</p>
 <img src="https://yhx0507.github.io/wxapp_static/app/1564653666747.png" class="">
@@ -659,7 +675,7 @@
 
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &#x2F;&#x2F; 2) 图片处理loader配置</span><br><span class="line">  test: &#x2F;\.(png|jpg|gif|jpeg)$&#x2F;i,  &#x2F;&#x2F; 正则匹配图片文件</span><br><span class="line">  &#x2F;&#x2F; 遇到图片文件就交给如下loader处理</span><br><span class="line">  use: [</span><br><span class="line">    &#123;</span><br><span class="line">      loader: &#39;url-loader&#39;,</span><br><span class="line">      options: &#123;</span><br><span class="line">        &#x2F;&#x2F; limit:设定大小阀值</span><br><span class="line">        &#x2F;&#x2F; a. 被处理图片大小 大于该阀值，就通过物理文件重新生成该图片</span><br><span class="line">        &#x2F;&#x2F; b. 被处理图片大小 小于等于该阀值，就把图片变为字符串(嵌入到应用文档中，好处是节省一个http资源)</span><br><span class="line">        limit: 8192</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">// 2) 图片处理loader配置</span></span><br><span class="line">  test: <span class="regexp">/\.(png|jpg|gif|jpeg)$/i</span>,  <span class="comment">// 正则匹配图片文件</span></span><br><span class="line">  <span class="comment">// 遇到图片文件就交给如下loader处理</span></span><br><span class="line">  use: [</span><br><span class="line">    &#123;</span><br><span class="line">      loader: <span class="string">'url-loader'</span>,</span><br><span class="line">      options: &#123;</span><br><span class="line">        <span class="comment">// limit:设定大小阀值</span></span><br><span class="line">        <span class="comment">// a. 被处理图片大小 大于该阀值，就通过物理文件重新生成该图片</span></span><br><span class="line">        <span class="comment">// b. 被处理图片大小 小于等于该阀值，就把图片变为字符串(嵌入到应用文档中，好处是节省一个http资源)</span></span><br><span class="line">        limit: <span class="number">8192</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
 <p>loader说明：</p>
 <ol>
@@ -695,12 +711,10 @@
 <ol>
 <li>创建 src/styles/second.less文件，并设置简单样式 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ul&#123; </span><br><span class="line">  		li&#123;</span><br><span class="line">       	border:2px solid orange;</span><br><span class="line">   	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span>&#123; </span><br><span class="line">  		<span class="selector-tag">li</span>&#123;</span><br><span class="line">       	<span class="attribute">border</span>:<span class="number">2px</span> solid orange;</span><br><span class="line">   	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>在main.js中引入less文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#39;.&#x2F;styles&#x2F;second.less&#39;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'./styles/second.less'</span></span><br></pre></td></tr></table></figure>
 
 <p>此时实时打包报错，告诉less缺少对应loader来处理</p>
 <img src="https://yhx0507.github.io/wxapp_static/app/image-20191226225841497.png" class="">
@@ -732,33 +746,33 @@
 <p>步骤：</p>
 <ol>
 <li><p>在main.js中应用es6内容(let、箭头函数、对象解构赋值、…展开运算符、反勾号字符串等等)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import $ from &#39;jquery&#39;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> $ <span class="keyword">from</span> <span class="string">'jquery'</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#39;.&#x2F;styles&#x2F;index.css&#39;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'./styles/index.css'</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#39;.&#x2F;styles&#x2F;second.less&#39;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'./styles/second.less'</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let liHtml &#x3D; []</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> liHtml = []</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for (var i &#x3D; 0; i &lt; 100; i++) &#123;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">liHtml.push(&#96;&lt;li &gt;我是第$&#123;i + 1&#125;个里标签,你看我的颜色!!!!&lt;&#x2F;li&gt;&#96;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">liHtml.push(<span class="string">`&lt;li &gt;我是第<span class="subst">$&#123;i + <span class="number">1</span>&#125;</span>个里标签,你看我的颜色!!!!&lt;/li&gt;`</span>)</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let bossName &#x3D; &#39;陈浩南&#39;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> bossName = <span class="string">'陈浩南'</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let strTemplate &#x3D; &#96;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> strTemplate = <span class="string">`</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;li&gt;我是老大$&#123;bossName&#125;,都听我的!!!&lt;&#x2F;li&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;li&gt;我是老大$&#123;bossName&#125;,都听我的!!!&lt;<span class="regexp">/li&gt;</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#96;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let newList &#x3D; [strTemplate,...liHtml]  &#x2F;&#x2F; ES6解构赋值</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> newList = [strTemplate,...liHtml]  <span class="comment">// ES6解构赋值</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;#app&#39;).append(&#96;&lt;ul&gt;$&#123;newList.join(&quot;&quot;)&#125;&lt;&#x2F;ul&gt;&#96;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#app'</span>).append(<span class="string">`&lt;ul&gt;<span class="subst">$&#123;newList.join(<span class="string">""</span>)&#125;</span>&lt;/ul&gt;`</span>)</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;li:even&quot;).css(&#123; background: &#39;pink&#39;, color: &#39;#fff&#39;, fontSize: &#39;30px&#39; &#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"li:even"</span>).css(&#123; <span class="attr">background</span>: <span class="string">'pink'</span>, <span class="attr">color</span>: <span class="string">'#fff'</span>, <span class="attr">fontSize</span>: <span class="string">'30px'</span> &#125;)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>给项目做物理打包 npm run build</p>
 </li>
@@ -781,7 +795,7 @@
 <p>步骤：</p>
 <ol>
 <li><p>安装依赖包</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i babel-loader @babel&#x2F;core @babel&#x2F;preset-env -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i babel-loader @babel/core @babel/preset-env -D</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在webpack.config.js中做如下配置：</p>
 <img src="https://yhx0507.github.io/wxapp_static/app/1564657371623.png" class="">
@@ -799,46 +813,36 @@
 <li><p><strong>目标</strong> 配置针对.vue相关的loader,完成一个基本的小项目</p>
 </li>
 <li><p>安装vuejs</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i vue -S</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i vue -S</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>在src下新建一个App.vue文件 ,写入如下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'app'</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&#39;app&#39;&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;Hello world&lt;&#x2F;span&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在main.js引入,main.js代码改为如下代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &#39;vue&#39;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import App from &#39;.&#x2F;App.vue&#39;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.vue'</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">render: h &#x3D;&gt; h(App)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#125;).$mount(&quot;#app&quot;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#125;).$mount(<span class="string">"#app"</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>执行npm run serve,发现报错!!!!</p>
 <img src="https://yhx0507.github.io/wxapp_static/app/image-20191226232016306.png" class="">
@@ -846,7 +850,7 @@
 </ul>
 </li>
 <li><p>我们需要安装loader依赖</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i  vue-loader  vue-template-compiler vue-style-loader -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i  vue-loader  vue-template-compiler vue-style-loader -D</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>. Vue-loader在15.*之后的版本都是 vue-loader的使用都是需要伴生 VueLoaderPlugin的, 所以我们还需要一个操作,安装完毕依赖之后,在配置文件 中 </p>
 <img src="https://yhx0507.github.io/wxapp_static/app/image-20191226233040559.png" class="">
@@ -858,7 +862,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line"><span class="keyword">const</span> MiniCssExtractPlugin = <span class="built_in">require</span>(<span class="string">'mini-css-extract-plugin'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    mode: <span class="string">'development'</span>,    <span class="comment">// development 开发模式  prodution 生产模式</span></span><br><span class="line">    entry: path.resolve(<span class="string">'./src/main.js'</span>),     <span class="comment">// 入口</span></span><br><span class="line">    output: &#123;   <span class="comment">// 出口</span></span><br><span class="line">        path: path.resolve(<span class="string">'./dist'</span>),   <span class="comment">// 输出文件目录</span></span><br><span class="line">        filename: <span class="string">'chunk.js'</span>,    <span class="comment">// 输出文件名称</span></span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">        <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">            template: path.resolve(<span class="string">'./index.html'</span>)  <span class="comment">// 打包时自动引入html模板</span></span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="keyword">new</span> MiniCssExtractPlugin(&#123;</span><br><span class="line">            filename: <span class="string">'[name].css'</span>,  <span class="comment">// 打包时生成link标签引入css文件名称及目录    </span></span><br><span class="line">        &#125;)</span><br><span class="line">    ],</span><br><span class="line">    devServer: &#123;    <span class="comment">// 开启热更新模式</span></span><br><span class="line">        port: <span class="number">3003</span>,     <span class="comment">// 开启端口号</span></span><br><span class="line">        open: <span class="literal">true</span>,     <span class="comment">// 自动打开浏览器</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [    <span class="comment">// 针对不同的资源进行处理</span></span><br><span class="line">            <span class="comment">// &#123;   // 处理css样式</span></span><br><span class="line">            <span class="comment">//     test: /\.css$/,     // 正则表达式，校验文件类型</span></span><br><span class="line">            <span class="comment">//     use: ['style-loader', 'css-loader']   // 三种方式：字符串、</span></span><br><span class="line">            <span class="comment">//                                           // 数组=&gt;数组字符串、数组对象</span></span><br><span class="line">            <span class="comment">// &#125;,</span></span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                use: [</span><br><span class="line">                    MiniCssExtractPlugin.loader,    <span class="comment">// 把样式抽离成link标签引入</span></span><br><span class="line">                    <span class="string">'css-loader'</span>,</span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;   <span class="comment">// 处理less样式</span></span><br><span class="line">                test: <span class="regexp">/\.less$/</span>,</span><br><span class="line">                use: [<span class="string">'style-loader'</span>, <span class="string">'css-loader'</span>, <span class="string">'less-loader'</span>]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;   <span class="comment">// 处理js文件es6语法</span></span><br><span class="line">                test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">                exclude: <span class="regexp">/node_moudles/</span>,    <span class="comment">// 排除node_modules文件夹下的js文件</span></span><br><span class="line">                use: <span class="string">'babel-loader'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;   <span class="comment">// 处理图片</span></span><br><span class="line">                test:<span class="regexp">/\.(png|gif|jpg|jpeg|bmp)$/i</span>,</span><br><span class="line">                use: [</span><br><span class="line">                    &#123; </span><br><span class="line">                        loader: <span class="string">'url-loader'</span>,</span><br><span class="line">                        options: &#123;</span><br><span class="line">                            limit: <span class="number">8192</span>,     <span class="comment">// 图片的阈值，小于这个阈值转成base64</span></span><br><span class="line">                                            <span class="comment">// 字符转,大于的话使用file-loader生成</span></span><br><span class="line">                                            <span class="comment">// 物理文件,不需要配置file-loader</span></span><br><span class="line">                            outputPath: <span class="string">'img'</span>, <span class="comment">// 输出到指定目录下</span></span><br><span class="line">                            esModule: <span class="literal">false</span>,    <span class="comment">// 该配置项为图片打包后的默认路径,带default</span></span><br><span class="line">                                                <span class="comment">// 对象,默认为ture，在配置项里将此项改</span></span><br><span class="line">                                                <span class="comment">// 为false即可去掉多余的defalut对象</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;   <span class="comment">// 处理html文件中的img标签</span></span><br><span class="line">                test: <span class="regexp">/\.html$/</span>,</span><br><span class="line">                use: <span class="string">'html-withimg-loader'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>配置babel.config.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    presets: [&#39;@babel&#x2F;preset-env&#39;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    presets: [<span class="string">'@babel/preset-env'</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -928,7 +932,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#数组方法','#小程序','#移动项目','#总结','#Vue','#Proxy','#defineProperty','#Webpack','#Webpack入门',],
+            'data': ['#数组方法','#小程序','#移动项目','#总结','#Vue','#Proxy','#defineProperty','#Webpack','#Webpack入门','#不是内部命令或外部命令','#不是可运行的程序',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

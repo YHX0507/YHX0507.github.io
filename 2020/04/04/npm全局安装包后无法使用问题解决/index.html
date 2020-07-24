@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>蜡笔小新Blogs</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="蜡笔小新Blogs">
+  <title>npm全局安装包后无法使用问题解决 | 蜡笔小新Blogs</title>
+  <meta name="keywords" content=" 不是内部命令或外部命令 , 不是可运行的程序 ">
+  <meta name="description" content="npm全局安装包后无法使用问题解决 | 蜡笔小新Blogs">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Proxy与Object.defineProperty一、Proxylet proxy &#x3D; new Proxy(target, handler); tgarget：要代理的目标对象。（可以是任何类型的对象，包括原生数组，函数，甚至另一个代理）。 handler：定义拦截行为的配置对象（也是一个对象，其内部的属性均为执行操作的函数）。 1、set(target, key, value, receiv">
 <meta property="og:type" content="article">
@@ -63,7 +63,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -284,12 +284,51 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-npm全局安装包后无法使用问题解决" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Front-end-Engineer"><span class="toc-text">Why Front end Engineer</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对前端的理解"><span class="toc-text">对前端的理解</span></a></li></ol></li></ol>
+        <h1 class="article-title">npm全局安装包后无法使用问题解决</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+        <span class="tag">
+            
+            <a class="color2">不是内部命令或外部命令</a>
+            
+            <a class="color4">不是可运行的程序</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-07-24 20:48:42'>2020-04-04 20:19</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#解决方案："><span class="toc-text">解决方案：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#配置环境变量"><span class="toc-text">配置环境变量</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -302,24 +341,57 @@
     }
 </style>
 </div>
-            <h1 id="Why-Front-end-Engineer"><a href="#Why-Front-end-Engineer" class="headerlink" title="Why Front end Engineer"></a>Why Front end Engineer</h1><h2 id="对前端的理解"><a href="#对前端的理解" class="headerlink" title="对前端的理解"></a>对前端的理解</h2><p>喜欢前端的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，看山是山、看水是水。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，看山不是山、看水不是水。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，看山还是山、看水还是水。</p>
-</blockquote>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>问题：<code>使用npm安装typescript明明安装成功，但在使用时一直报错，报错语句为  tsc不是内部或外部命令，也不是可运行的程序或批处理文件</code></p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image_2020-07-24_20-25-53.png" class="">
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<p><strong>具体原因：node未正确安装，或相关环境变量未正确配置</strong></p>
+<h1 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h1><h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a><strong>配置环境变量</strong></h2><p>“我的电脑”右键“属性”-“高级系统设置”-“高级”-“环境变量”。</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image_2020-07-24_20-25-53.png" class="">
+
+<img src="https://yhx0507.github.io/wxapp_static/app/image_2020-07-24_20-31-49.png" class="">
+
+<img src="https://yhx0507.github.io/wxapp_static/app/image_2020-07-24_20-32-45.png" class="">
+
+<p> 新建系统变量 NODE_PATH</p>
+<p>进入环境变量对话框，在系统变量下新建”NODE_PATH”，输入”<code>D:\Program Files\Nodejs\node_global</code>“。</p>
+<p>（说明：在安装nodejs时配置了全局文件夹和缓存文件夹，所以node_path 值是”D:\Program Files\Nodejs\node_global“。如果在装node时候，没有配置全局文件和缓存两个文件夹，此处NODE_PATH的值为“<code>用下面的没命令查看</code>”）</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image_2020-07-24_20-38-42.png" class="">
+
+<p><code>npm目录可以使用npm命令去查找：npm config get prefix</code></p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-07-24_20-41-28.png" class="">
+
+<p>用户变量和系统变量Path，添加值：%NODE_PATH%</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-07-24_20-42-50.png" class="">
+
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-07-24_20-45-58.png" class="">
+
+<p>在配置完变量后，关闭dos命令窗口重启dos命令，输入命令，查看是否成功。</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-07-24_20-46-39.png" class="">
+
+
+      
+       
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2017 蜡笔小新</p>
