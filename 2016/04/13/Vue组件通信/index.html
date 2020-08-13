@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>npm全局安装包后无法使用问题解决 | 蜡笔小新Blogs</title>
-  <meta name="keywords" content=" 不是内部命令或外部命令 , 不是可运行的程序 ">
-  <meta name="description" content="npm全局安装包后无法使用问题解决 | 蜡笔小新Blogs">
+  <title>Vue组件通信 | 蜡笔小新Blogs</title>
+  <meta name="keywords" content=" Vue , Vue组件通信 ">
+  <meta name="description" content="Vue组件通信 | 蜡笔小新Blogs">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="问题：通过iframe的方式下载图片的时候，不能够修改图片的名字解决思路： 因为图片地址是跨域的，所以先要转成 base64 数据流  然后把 base64 转换成 blob对象  然后判断浏览器的类型，选择不同的方式把 blob 文件流下载到本地   转换成base64的方法123456789101112131415161718192021222324convertUrlToBase64(url">
 <meta property="og:type" content="article">
@@ -329,9 +329,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-npm全局安装包后无法使用问题解决" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Vue组件通信" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">npm全局安装包后无法使用问题解决</h1>
+        <h1 class="article-title">Vue组件通信</h1>
     
     <div class="article-meta">
         
@@ -340,16 +340,16 @@
         
         <span class="tag">
             
-            <a class="color2">不是内部命令或外部命令</a>
+            <a class="color4">Vue</a>
             
-            <a class="color4">不是可运行的程序</a>
+            <a class="color3">Vue组件通信</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-07-24 20:48:42'>2020-04-04 20:19</time>
+        创建时间:<time class="date" title='更新时间: 2020-08-13 21:15:27'>2016-04-13 11:08</time>
         
     </div>
     <div class="article-meta">
@@ -371,7 +371,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#解决方案："><span class="toc-text">解决方案：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#配置环境变量"><span class="toc-text">配置环境变量</span></a></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -387,34 +387,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>问题：<code>使用npm安装typescript明明安装成功，但在使用时一直报错，报错语句为  tsc不是内部或外部命令，也不是可运行的程序或批处理文件</code></p>
-<img src="https://yhx0507.github.io/wxapp_static/app/image_2020-07-24_20-25-53.png" class="">
+        <img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-04-01.png" class="">
 
-<p><strong>具体原因：node未正确安装，或相关环境变量未正确配置</strong></p>
-<h1 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h1><h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a><strong>配置环境变量</strong></h2><p>“我的电脑”右键“属性”-“高级系统设置”-“高级”-“环境变量”。</p>
-<img src="https://yhx0507.github.io/wxapp_static/app/image_2020-07-24_20-25-53.png" class="">
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-02-42.png" class="">
 
-<img src="https://yhx0507.github.io/wxapp_static/app/image_2020-07-24_20-31-49.png" class="">
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-04-31.png" class="">
 
-<img src="https://yhx0507.github.io/wxapp_static/app/image_2020-07-24_20-32-45.png" class="">
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-04-46.png" class="">
 
-<p> 新建系统变量 NODE_PATH</p>
-<p>进入环境变量对话框，在系统变量下新建”NODE_PATH”，输入”<code>D:\Program Files\Nodejs\node_global</code>“。</p>
-<p>（说明：在安装nodejs时配置了全局文件夹和缓存文件夹，所以node_path 值是”D:\Program Files\Nodejs\node_global“。如果在装node时候，没有配置全局文件和缓存两个文件夹，此处NODE_PATH的值为“<code>用下面的没命令查看</code>”）</p>
-<img src="https://yhx0507.github.io/wxapp_static/app/image_2020-07-24_20-38-42.png" class="">
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-05-00.png" class="">
 
-<p><code>npm目录可以使用npm命令去查找：npm config get prefix</code></p>
-<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-07-24_20-41-28.png" class="">
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-05-18.png" class="">
 
-<p>用户变量和系统变量Path，添加值：%NODE_PATH%</p>
-<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-07-24_20-42-50.png" class="">
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-05-31.png" class="">
 
-<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-07-24_20-45-58.png" class="">
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-05-50.png" class="">
 
-<p>在配置完变量后，关闭dos命令窗口重启dos命令，输入命令，查看是否成功。</p>
-<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-07-24_20-46-39.png" class="">
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-06-10.png" class="">
 
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-06-25.png" class="">
 
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-06-43.png" class="">
+
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-07-09.png" class="">
       
        
     </div>

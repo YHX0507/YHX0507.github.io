@@ -170,6 +170,27 @@
     
     
     <entry>
+      <title>Vue组件通信</title>
+      <link href="/2016/04/13/Vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/"/>
+      <url>/2016/04/13/Vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</url>
+      
+        <content type="html"><![CDATA[<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-04-01.png" class=""><img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-02-42.png" class=""><img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-04-31.png" class=""><img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-04-46.png" class=""><img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-05-00.png" class=""><img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-05-18.png" class=""><img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-05-31.png" class=""><img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-05-50.png" class=""><img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-06-10.png" class=""><img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-06-25.png" class=""><img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-06-43.png" class=""><img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-07-09.png" class="">]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+            <tag> Vue组件通信 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端通过Blob实现文件下载</title>
       <link href="/2010/08/06/%E5%89%8D%E7%AB%AF%E9%80%9A%E8%BF%87Blob%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/"/>
       <url>/2010/08/06/%E5%89%8D%E7%AB%AF%E9%80%9A%E8%BF%87Blob%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/</url>
