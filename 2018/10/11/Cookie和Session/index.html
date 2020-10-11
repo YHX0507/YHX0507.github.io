@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>蜡笔小新Blogs</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="蜡笔小新Blogs">
+  <title>Cookie | 蜡笔小新Blogs</title>
+  <meta name="keywords" content=" cookie , session ">
+  <meta name="description" content="Cookie | 蜡笔小新Blogs">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="问题：通过iframe的方式下载图片的时候，不能够修改图片的名字解决思路： 因为图片地址是跨域的，所以先要转成 base64 数据流  然后把 base64 转换成 blob对象  然后判断浏览器的类型，选择不同的方式把 blob 文件流下载到本地   转换成base64的方法123456789101112131415161718192021222324convertUrlToBase64(url">
 <meta property="og:type" content="article">
@@ -54,7 +54,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -359,12 +359,51 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-Cookie和Session" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Front-end-Engineer"><span class="toc-text">Why Front end Engineer</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对前端的理解"><span class="toc-text">对前端的理解</span></a></li></ol></li></ol>
+        <h1 class="article-title">Cookie</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+        <span class="tag">
+            
+            <a class="color2">cookie</a>
+            
+            <a class="color3">session</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-10-11 18:23:10'>2018-10-11 17:23</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Cookie"><span class="toc-text">Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是-Cookie？"><span class="toc-text">什么是 Cookie？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie-的作用就是用于解决-“如何记录客户端的用户信息”"><span class="toc-text">Cookie 的作用就是用于解决 “如何记录客户端的用户信息”:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置Cookie"><span class="toc-text">设置Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原生方法"><span class="toc-text">原生方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Express方法"><span class="toc-text">Express方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器获取Cookie"><span class="toc-text">服务器获取Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原生方法解析"><span class="toc-text">原生方法解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除Cookie"><span class="toc-text">删除Cookie</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Session"><span class="toc-text">Session</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Express框架处理session"><span class="toc-text">Express框架处理session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置Session"><span class="toc-text">设置Session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取Session"><span class="toc-text">获取Session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除Session"><span class="toc-text">删除Session</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -377,24 +416,72 @@
     }
 </style>
 </div>
-            <h1 id="Why-Front-end-Engineer"><a href="#Why-Front-end-Engineer" class="headerlink" title="Why Front end Engineer"></a>Why Front end Engineer</h1><h2 id="对前端的理解"><a href="#对前端的理解" class="headerlink" title="对前端的理解"></a>对前端的理解</h2><p>喜欢前端的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，看山是山、看水是水。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，看山不是山、看水不是水。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，看山还是山、看水还是水。</p>
-</blockquote>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><h2 id="什么是-Cookie？"><a href="#什么是-Cookie？" class="headerlink" title="什么是 Cookie？"></a>什么是 Cookie？</h2><ul>
+<li><p>Cookie 是一些数据, 存储于你电脑上的文本文件中。</p>
+</li>
+<li><p>当 web 服务器向浏览器发送 web 页面时，在连接关闭后，服务端不会记录用户的信息。</p>
+</li>
+</ul>
+<h2 id="Cookie-的作用就是用于解决-“如何记录客户端的用户信息”"><a href="#Cookie-的作用就是用于解决-“如何记录客户端的用户信息”" class="headerlink" title="Cookie 的作用就是用于解决 “如何记录客户端的用户信息”:"></a>Cookie 的作用就是用于解决 “如何记录客户端的用户信息”:</h2><ul>
+<li><p>当用户访问 web 页面时，他的名字可以记录在 cookie 中。</p>
+</li>
+<li><p>在用户下一次访问该页面时，可以在 cookie 中读取用户访问记录。</p>
+</li>
+</ul>
+<h2 id="设置Cookie"><a href="#设置Cookie" class="headerlink" title="设置Cookie"></a>设置Cookie</h2><h3 id="原生方法"><a href="#原生方法" class="headerlink" title="原生方法"></a>原生方法</h3><ul>
+<li>设置单个cookie</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.setHeader(<span class="string">'set-cookie'</span>,<span class="string">'属性名=属性值'</span>);</span><br></pre></td></tr></table></figure>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<ul>
+<li>设置多个cookie</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.setHeader(<span class="string">'set-cookie'</span>,[<span class="string">'属性名=属性值'</span>,<span class="string">'属性名=属性值'</span>]);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Express方法"><a href="#Express方法" class="headerlink" title="Express方法"></a>Express方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">res.cookie(<span class="string">'属性名'</span>,<span class="string">'属性值'</span>,&#123;属性&#125;);</span><br><span class="line"><span class="comment">//	这里属性可以设置cookie有限期</span></span><br><span class="line">&#123;</span><br><span class="line">    expires: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>() + <span class="number">1000</span>*<span class="number">5</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="服务器获取Cookie"><a href="#服务器获取Cookie" class="headerlink" title="服务器获取Cookie"></a>服务器获取Cookie</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res.headers.cookie</span><br><span class="line"><span class="comment">// 注意这里查询到的为'a=1;b=2'字符串</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="原生方法解析"><a href="#原生方法解析" class="headerlink" title="原生方法解析"></a>原生方法解析</h3><ul>
+<li><p>通过replace方法替换<code>；</code>为<code>&amp;</code>后利用<code>queryString</code>包解析为对象</p>
+</li>
+<li><p>通过<code>cookie-parser</code>包解析</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cookieParser = <span class="built_in">require</span>(<span class="string">'cookie-parser'</span>);</span><br><span class="line">app.use(cookieParser())</span><br><span class="line"><span class="comment">// cookie会保存在req对象中，req.cookies会解析为cookie对象</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="删除Cookie"><a href="#删除Cookie" class="headerlink" title="删除Cookie"></a>删除Cookie</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.clearcookie(<span class="string">'属性名'</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><h2 id="Express框架处理session"><a href="#Express框架处理session" class="headerlink" title="Express框架处理session"></a>Express框架处理session</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//	安装</span></span><br><span class="line">npm install express-session</span><br><span class="line"><span class="comment">//  引入包</span></span><br><span class="line"><span class="keyword">const</span> session = <span class="built_in">require</span>(<span class="string">'express-session'</span>)</span><br><span class="line"><span class="comment">//	使用包</span></span><br><span class="line">app.use(session(conf))</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置Session"><a href="#设置Session" class="headerlink" title="设置Session"></a>设置Session</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">req.session.属性名 = 属性值</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取Session"><a href="#获取Session" class="headerlink" title="获取Session"></a>获取Session</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">req.session.属性名</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除Session"><a href="#删除Session" class="headerlink" title="删除Session"></a>删除Session</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">req.session.destroy()</span><br></pre></td></tr></table></figure>
+      
+       
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2017 蜡笔小新</p>
