@@ -6,19 +6,28 @@
   <meta name="keywords" content=" Proxy , defineProperty ">
   <meta name="description" content="Proxy和Object.defineProperty | 蜡笔小新Blogs">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="问题：通过iframe的方式下载图片的时候，不能够修改图片的名字解决思路： 因为图片地址是跨域的，所以先要转成 base64 数据流  然后把 base64 转换成 blob对象  然后判断浏览器的类型，选择不同的方式把 blob 文件流下载到本地   转换成base64的方法123456789101112131415161718192021222324convertUrlToBase64(url">
+<meta name="description" content="Proxy与Object.defineProperty一、Proxylet proxy &#x3D; new Proxy(target, handler); tgarget：要代理的目标对象。（可以是任何类型的对象，包括原生数组，函数，甚至另一个代理）。 handler：定义拦截行为的配置对象（也是一个对象，其内部的属性均为执行操作的函数）。 1、set(target, key, value, receiv">
 <meta property="og:type" content="article">
-<meta property="og:title" content="通过Blob实现图片下载">
-<meta property="og:url" content="http://yoursite.com/2020/08/06/%E9%80%9A%E8%BF%87Blob%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD/index.html">
+<meta property="og:title" content="Proxy和Object.defineProperty">
+<meta property="og:url" content="http://yoursite.com/2020/07/10/Proxy/index.html">
 <meta property="og:site_name" content="蜡笔小新Blogs">
-<meta property="og:description" content="问题：通过iframe的方式下载图片的时候，不能够修改图片的名字解决思路： 因为图片地址是跨域的，所以先要转成 base64 数据流  然后把 base64 转换成 blob对象  然后判断浏览器的类型，选择不同的方式把 blob 文件流下载到本地   转换成base64的方法123456789101112131415161718192021222324convertUrlToBase64(url">
+<meta property="og:description" content="Proxy与Object.defineProperty一、Proxylet proxy &#x3D; new Proxy(target, handler); tgarget：要代理的目标对象。（可以是任何类型的对象，包括原生数组，函数，甚至另一个代理）。 handler：定义拦截行为的配置对象（也是一个对象，其内部的属性均为执行操作的函数）。 1、set(target, key, value, receiv">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-06T12:50:25.000Z">
-<meta property="article:modified_time" content="2020-08-06T13:03:16.854Z">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200710114517347.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200710114540710.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200710114558303.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200710114612270.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200710114625044.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200710114641008.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200710175143926.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200710174313755.png">
+<meta property="article:published_time" content="2020-07-10T14:01:28.000Z">
+<meta property="article:modified_time" content="2020-07-17T15:24:28.805Z">
 <meta property="article:author" content="蜡笔小新">
-<meta property="article:tag" content="文件下载">
-<meta property="article:tag" content="图片下载">
+<meta property="article:tag" content="Proxy">
+<meta property="article:tag" content="defineProperty">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200710114517347.png">
 
 
 <link rel="icon" href="/img/avatar3.jpg">
