@@ -1,1603 +1,621 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><meta name="keywords" content="null"><meta name="description" content="javaScript,技术分享,前端开发"><meta name="author" content="removeif"><title>Tag: Blob - 蜡笔小新Blogs</title><meta description="javaScript,技术分享,前端开发"><meta property="og:type" content="website"><meta property="og:title" content="辣椒の酱"><meta property="og:url" content="https://github.com/YHX0507"><meta property="og:site_name" content="辣椒の酱"><meta property="og:description" content="javaScript,技术分享,前端开发"><meta property="og:locale" content="en_US"><meta property="article:author" content="removeif"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://github.com/img/avatar.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://github.com/YHX0507"},"headline":"辣椒の酱","image":["https://github.com/img/avatar.jpg"],"author":{"@type":"Person","name":"removeif"},"description":"javaScript,技术分享,前端开发"}</script><link rel="alternative" href="/atom.xml" title="蜡笔小新Blogs" type="application/atom+xml"><link rel="icon" href="/img/avatar3.jpg"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css?family=Ubuntu:400,600|Source+Code+Pro|Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext|Inconsolata|Itim|Lobster.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/pace/1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/e-style.css"><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="/js/globalUtils.js"></script><link rel="stylesheet" href="/live2d/waifu.css"><script type="text/javascript" async src="/live2d/autoload.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/avatar.jpg" alt="蜡笔小新Blogs" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">Blob</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2010-08-06  <a class="commentCountImg" href="/2010/08/06/%E5%89%8D%E7%AB%AF%E9%80%9A%E8%BF%87Blob%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/#comment-container"><span class="display-none-class">20cacd628f7b4a42158cffb609102b84</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="20cacd628f7b4a42158cffb609102b84">99+</span>  </a><span class="level-item"><i class="far fa-clock"> </i>19 m  <i class="fas fa-pencil-alt"> </i>2.8 k</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2010/08/06/%E5%89%8D%E7%AB%AF%E9%80%9A%E8%BF%87Blob%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/">前端通过Blob实现文件下载</a></h1><div class="content"><p>最近遇到一个需求，需要将页面中的配置信息下载下来供用户方便使用，以前这个场景的需求有时候会放到后端处理，然后给返回一个下载链接。其实并不需要这么麻烦，这样既增大了服务器的负载，也让用户产生了没有必要的网络请求，现在前端也是可以直接通过Blob对象进行前端文件下载了，下面简单记录下相关实现</p>
-<h2 id="Blob对象简要介绍"><a href="#Blob对象简要介绍" class="headerlink" title="Blob对象简要介绍"></a>Blob对象简要介绍</h2><p> <code>Blob</code> 对象表示一个不可变、原始数据的类文件对象。<code>Blob</code> 表示的不一定是<code>JavaScript</code>原生格式的数据。<code>File</code> 接口基于<code>Blob</code>，继承了 <code>Blob</code> 的功能并将其扩展使其支持用户系统上的文件 </p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> aBlob = <span class="keyword">new</span> Blob( array, options );</span><br></pre></td></tr></table></figure>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>蜡笔小新Blogs</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="蜡笔小新Blogs">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="问题：通过iframe的方式下载图片的时候，不能够修改图片的名字解决思路： 因为图片地址是跨域的，所以先要转成 base64 数据流  然后把 base64 转换成 blob对象  然后判断浏览器的类型，选择不同的方式把 blob 文件流下载到本地   转换成base64的方法123456789101112131415161718192021222324convertUrlToBase64(url">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通过Blob实现图片下载">
+<meta property="og:url" content="http://yoursite.com/2020/08/06/%E9%80%9A%E8%BF%87Blob%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD/index.html">
+<meta property="og:site_name" content="蜡笔小新Blogs">
+<meta property="og:description" content="问题：通过iframe的方式下载图片的时候，不能够修改图片的名字解决思路： 因为图片地址是跨域的，所以先要转成 base64 数据流  然后把 base64 转换成 blob对象  然后判断浏览器的类型，选择不同的方式把 blob 文件流下载到本地   转换成base64的方法123456789101112131415161718192021222324convertUrlToBase64(url">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-06T12:50:25.000Z">
+<meta property="article:modified_time" content="2020-08-06T13:03:16.854Z">
+<meta property="article:author" content="蜡笔小新">
+<meta property="article:tag" content="文件下载">
+<meta property="article:tag" content="图片下载">
+<meta name="twitter:card" content="summary">
 
-<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a><strong>参数说明</strong></h3><ul>
-<li>array 是一个由ArrayBuffer, ArrayBufferView, Blob, DOMString 等对象构成的 Array ，或者其他类似对象的混合体，它将会被放进 Blob。DOMStrings会被编码为UTF-8。</li>
-<li>options 是一个可选的BlobPropertyBag字典，它可能会指定如下两个属性：<ul>
-<li>type，默认值为 “”，它代表了将会被放入到blob中的数组内容的MIME类型。</li>
-<li>endings，默认值为”transparent”，用于指定包含行结束符\n的字符串如何被写入。 它是以下两个值中的一个： “native”，代表行结束符会被更改为适合宿主操作系统文件系统的换行符，或者 “transparent”，代表会保持blob中保存的结束符不变</li>
-</ul>
-</li>
-</ul>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> debug = &#123;<span class="attr">hello</span>: <span class="string">"world"</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> blob = <span class="keyword">new</span> Blob([<span class="built_in">JSON</span>.stringify(debug, <span class="literal">null</span>, <span class="number">2</span>)],&#123;<span class="attr">type</span> : <span class="string">'application/json'</span>&#125;);</span><br></pre></td></tr></table></figure>
 
-<h2 id="URL-createObjectURL-与-URL-revokeObjectURL-介绍"><a href="#URL-createObjectURL-与-URL-revokeObjectURL-介绍" class="headerlink" title="URL.createObjectURL() 与 URL.revokeObjectURL()介绍"></a>URL.createObjectURL() 与 URL.revokeObjectURL()介绍</h2><p>URL.createObjectURL() 静态方法会创建一个 DOMString，其中包含一个表示参数中给出的对象的URL。这个 URL 的生命周期和创建它的窗口中的 document 绑定。这个新的URL 对象表示指定的 File 对象或 Blob 对象。相当于这个方法创建了一个传入对象的内存引用地址</p>
-<h3 id="createObjectURL语法"><a href="#createObjectURL语法" class="headerlink" title="createObjectURL语法"></a>createObjectURL语法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">objectURL = URL.createObjectURL(object);</span><br></pre></td></tr></table></figure>
+<link rel="icon" href="/img/avatar3.jpg">
 
-<h4 id="参数说明-1"><a href="#参数说明-1" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
-<li>object 是用于创建 URL 的 File 对象、Blob 对象或者 MediaSource 对象。</li>
-</ul>
-<h4 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h4><ul>
-<li>一个可以引用到指定对象的<code>DOMString</code> </li>
-</ul>
-<p><code>URL.revokeObjectURL()</code> 静态方法用来释放一个之前已经存在的、通过调用 <code>URL.createObjectURL()</code> 创建的 <code>URL</code> 对象。当你结束使用某个 <code>URL</code> 对象之后，应该通过调用这个方法来让浏览器知道不用在内存中继续保留对这个文件的引用了。</p>
-<p>你可以在 <code>sourceopen</code> 被处理之后的任何时候调用 <code>revokeObjectURL()</code>。这是因为 <code>createObjectURL()</code> 仅仅意味着将一个媒体元素的 <code>src</code> 属性关联到一个 <code>MediaSource</code> 对象上去。调用<code>revokeObjectURL()</code> 使这个潜在的对象回到原来的地方，允许平台在合适的时机进行<strong>垃圾收集</strong>。</p>
-<h3 id="revokeObjectURL语法"><a href="#revokeObjectURL语法" class="headerlink" title="revokeObjectURL语法"></a>revokeObjectURL语法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.URL.revokeObjectURL(objectURL);</span><br></pre></td></tr></table></figure>
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
 
-<h4 id="参数说明-2"><a href="#参数说明-2" class="headerlink" title="参数说明"></a><strong>参数说明</strong></h4><ul>
-<li>objectURL 是一个 DOMString，表示通过调用 <code>URL.createObjectURL()</code> 方法产生的 URL 对象 </li>
-</ul>
-<h4 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a><strong>内存管理</strong></h4><ul>
-<li>在每次调用<code>createObjectURL()</code> 方法时，都会创建一个新的 URL 对象，即使你已经用相同的对象作为参数创建过。当不再需要这些 URL 对象时，每个对象必须通过调用 <code>URL.revokeObjectURL()</code> 方法来释放。浏览器会在文档退出的时候自动释放它们，但是为了获得最佳性能和内存使用状况，你应该在安全的时机主动释放掉它们。 </li>
-</ul>
-<h2 id="实际运用"><a href="#实际运用" class="headerlink" title="实际运用"></a>实际运用</h2><p> 比如在某后台管理中希望将用户的几个配置信息导入到一个<code>json</code>文件当中供用户下载下来 </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  name: <span class="string">'lsqy'</span>,</span><br><span class="line">  password: <span class="string">'yourpassword'</span>,</span><br><span class="line">  ak: <span class="string">'XXXXXXXXXX'</span>,</span><br><span class="line">  sk: <span class="string">'XXXXXXXXXX'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> blobContent = <span class="keyword">new</span> Blob(</span><br><span class="line">  [<span class="built_in">JSON</span>.stringify(config, <span class="literal">null</span>, <span class="number">2</span>)],</span><br><span class="line">  &#123;<span class="attr">type</span> : <span class="string">'application/json'</span>&#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> blobUrl = <span class="built_in">window</span>.URL.createObjectURL(blobContent)</span><br><span class="line"></span><br><span class="line">downloadFileByBlob(blobUrl, <span class="string">'config.json'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">downloadFileByBlob</span>(<span class="params">blobUrl, filename</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> eleLink = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>)</span><br><span class="line">  eleLink.download = filename</span><br><span class="line">  eleLink.style.display = <span class="string">'none'</span></span><br><span class="line">  eleLink.href = blobUrl</span><br><span class="line">  <span class="comment">// 触发点击</span></span><br><span class="line">  <span class="built_in">document</span>.body.appendChild(eleLink)</span><br><span class="line">  eleLink.click()</span><br><span class="line">  <span class="comment">// 然后移除</span></span><br><span class="line">  <span class="built_in">document</span>.body.removeChild(eleLink)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<link href="/css/hl_theme/darcula.css?v=1.0.1" rel="stylesheet">
 
-<p>执行上面的代码，我们可以得到一个<code>config.json</code>的文件，可以看到，其实很简单就实现了这个场景需求，当然这里是下载的<code>json</code>文件,下载其他的文件也是一样的道理，只是需要得到相应文件的<code>blob</code>数据，再结合相应的<a href="https://www.w3school.com.cn/media/media_mimeref.asp" target="_blank" rel="noopener">MIME</a>类型即可;</p>
-<p>兼容性方面目前主流浏览器都已支持，ie10以及以上也支持。</p>
-<p>另外<code>Blob</code>结合<code>URL. createObjectURL()</code>与<code>URL.revokeObjectURL()</code>还可以用在预览图片、预览PDF、视频链接防盗等多种场景中，大家可以发挥自己的想象力来进行实现</p>
-<h2 id="Mime类型"><a href="#Mime类型" class="headerlink" title="Mime类型"></a>Mime类型</h2><h3 id="按照内容类型排列的-Mime-类型列表"><a href="#按照内容类型排列的-Mime-类型列表" class="headerlink" title="按照内容类型排列的 Mime 类型列表"></a>按照内容类型排列的 Mime 类型列表</h3><table>
-<thead>
-<tr>
-<th align="left">类型/子类型</th>
-<th align="left">扩展名</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">application/envoy</td>
-<td align="left">evy</td>
-</tr>
-<tr>
-<td align="left">application/fractals</td>
-<td align="left">fif</td>
-</tr>
-<tr>
-<td align="left">application/futuresplash</td>
-<td align="left">spl</td>
-</tr>
-<tr>
-<td align="left">application/hta</td>
-<td align="left">hta</td>
-</tr>
-<tr>
-<td align="left">application/internet-property-stream</td>
-<td align="left">acx</td>
-</tr>
-<tr>
-<td align="left">application/mac-binhex40</td>
-<td align="left">hqx</td>
-</tr>
-<tr>
-<td align="left">application/msword</td>
-<td align="left">doc</td>
-</tr>
-<tr>
-<td align="left">application/msword</td>
-<td align="left">dot</td>
-</tr>
-<tr>
-<td align="left">application/octet-stream</td>
-<td align="left">*</td>
-</tr>
-<tr>
-<td align="left">application/octet-stream</td>
-<td align="left">bin</td>
-</tr>
-<tr>
-<td align="left">application/octet-stream</td>
-<td align="left">class</td>
-</tr>
-<tr>
-<td align="left">application/octet-stream</td>
-<td align="left">dms</td>
-</tr>
-<tr>
-<td align="left">application/octet-stream</td>
-<td align="left">exe</td>
-</tr>
-<tr>
-<td align="left">application/octet-stream</td>
-<td align="left">lha</td>
-</tr>
-<tr>
-<td align="left">application/octet-stream</td>
-<td align="left">lzh</td>
-</tr>
-<tr>
-<td align="left">application/oda</td>
-<td align="left">oda</td>
-</tr>
-<tr>
-<td align="left">application/olescript</td>
-<td align="left">axs</td>
-</tr>
-<tr>
-<td align="left">application/pdf</td>
-<td align="left">pdf</td>
-</tr>
-<tr>
-<td align="left">application/pics-rules</td>
-<td align="left">prf</td>
-</tr>
-<tr>
-<td align="left">application/pkcs10</td>
-<td align="left">p10</td>
-</tr>
-<tr>
-<td align="left">application/pkix-crl</td>
-<td align="left">crl</td>
-</tr>
-<tr>
-<td align="left">application/postscript</td>
-<td align="left">ai</td>
-</tr>
-<tr>
-<td align="left">application/postscript</td>
-<td align="left">eps</td>
-</tr>
-<tr>
-<td align="left">application/postscript</td>
-<td align="left">ps</td>
-</tr>
-<tr>
-<td align="left">application/rtf</td>
-<td align="left">rtf</td>
-</tr>
-<tr>
-<td align="left">application/set-payment-initiation</td>
-<td align="left">setpay</td>
-</tr>
-<tr>
-<td align="left">application/set-registration-initiation</td>
-<td align="left">setreg</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-excel</td>
-<td align="left">xla</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-excel</td>
-<td align="left">xlc</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-excel</td>
-<td align="left">xlm</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-excel</td>
-<td align="left">xls</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-excel</td>
-<td align="left">xlt</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-excel</td>
-<td align="left">xlw</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-outlook</td>
-<td align="left">msg</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-pkicertstore</td>
-<td align="left">sst</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-pkiseccat</td>
-<td align="left">cat</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-pkistl</td>
-<td align="left">stl</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-powerpoint</td>
-<td align="left">pot</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-powerpoint</td>
-<td align="left">pps</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-powerpoint</td>
-<td align="left">ppt</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-project</td>
-<td align="left">mpp</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-works</td>
-<td align="left">wcm</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-works</td>
-<td align="left">wdb</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-works</td>
-<td align="left">wks</td>
-</tr>
-<tr>
-<td align="left">application/vnd.ms-works</td>
-<td align="left">wps</td>
-</tr>
-<tr>
-<td align="left">application/winhlp</td>
-<td align="left">hlp</td>
-</tr>
-<tr>
-<td align="left">application/x-bcpio</td>
-<td align="left">bcpio</td>
-</tr>
-<tr>
-<td align="left">application/x-cdf</td>
-<td align="left">cdf</td>
-</tr>
-<tr>
-<td align="left">application/x-compress</td>
-<td align="left">z</td>
-</tr>
-<tr>
-<td align="left">application/x-compressed</td>
-<td align="left">tgz</td>
-</tr>
-<tr>
-<td align="left">application/x-cpio</td>
-<td align="left">cpio</td>
-</tr>
-<tr>
-<td align="left">application/x-csh</td>
-<td align="left">csh</td>
-</tr>
-<tr>
-<td align="left">application/x-director</td>
-<td align="left">dcr</td>
-</tr>
-<tr>
-<td align="left">application/x-director</td>
-<td align="left">dir</td>
-</tr>
-<tr>
-<td align="left">application/x-director</td>
-<td align="left">dxr</td>
-</tr>
-<tr>
-<td align="left">application/x-dvi</td>
-<td align="left">dvi</td>
-</tr>
-<tr>
-<td align="left">application/x-gtar</td>
-<td align="left">gtar</td>
-</tr>
-<tr>
-<td align="left">application/x-gzip</td>
-<td align="left">gz</td>
-</tr>
-<tr>
-<td align="left">application/x-hdf</td>
-<td align="left">hdf</td>
-</tr>
-<tr>
-<td align="left">application/x-internet-signup</td>
-<td align="left">ins</td>
-</tr>
-<tr>
-<td align="left">application/x-internet-signup</td>
-<td align="left">isp</td>
-</tr>
-<tr>
-<td align="left">application/x-iphone</td>
-<td align="left">iii</td>
-</tr>
-<tr>
-<td align="left">application/x-javascript</td>
-<td align="left">js</td>
-</tr>
-<tr>
-<td align="left">application/x-latex</td>
-<td align="left">latex</td>
-</tr>
-<tr>
-<td align="left">application/x-msaccess</td>
-<td align="left">mdb</td>
-</tr>
-<tr>
-<td align="left">application/x-mscardfile</td>
-<td align="left">crd</td>
-</tr>
-<tr>
-<td align="left">application/x-msclip</td>
-<td align="left">clp</td>
-</tr>
-<tr>
-<td align="left">application/x-msdownload</td>
-<td align="left">dll</td>
-</tr>
-<tr>
-<td align="left">application/x-msmediaview</td>
-<td align="left">m13</td>
-</tr>
-<tr>
-<td align="left">application/x-msmediaview</td>
-<td align="left">m14</td>
-</tr>
-<tr>
-<td align="left">application/x-msmediaview</td>
-<td align="left">mvb</td>
-</tr>
-<tr>
-<td align="left">application/x-msmetafile</td>
-<td align="left">wmf</td>
-</tr>
-<tr>
-<td align="left">application/x-msmoney</td>
-<td align="left">mny</td>
-</tr>
-<tr>
-<td align="left">application/x-mspublisher</td>
-<td align="left">pub</td>
-</tr>
-<tr>
-<td align="left">application/x-msschedule</td>
-<td align="left">scd</td>
-</tr>
-<tr>
-<td align="left">application/x-msterminal</td>
-<td align="left">trm</td>
-</tr>
-<tr>
-<td align="left">application/x-mswrite</td>
-<td align="left">wri</td>
-</tr>
-<tr>
-<td align="left">application/x-netcdf</td>
-<td align="left">cdf</td>
-</tr>
-<tr>
-<td align="left">application/x-netcdf</td>
-<td align="left">nc</td>
-</tr>
-<tr>
-<td align="left">application/x-perfmon</td>
-<td align="left">pma</td>
-</tr>
-<tr>
-<td align="left">application/x-perfmon</td>
-<td align="left">pmc</td>
-</tr>
-<tr>
-<td align="left">application/x-perfmon</td>
-<td align="left">pml</td>
-</tr>
-<tr>
-<td align="left">application/x-perfmon</td>
-<td align="left">pmr</td>
-</tr>
-<tr>
-<td align="left">application/x-perfmon</td>
-<td align="left">pmw</td>
-</tr>
-<tr>
-<td align="left">application/x-pkcs12</td>
-<td align="left">p12</td>
-</tr>
-<tr>
-<td align="left">application/x-pkcs12</td>
-<td align="left">pfx</td>
-</tr>
-<tr>
-<td align="left">application/x-pkcs7-certificates</td>
-<td align="left">p7b</td>
-</tr>
-<tr>
-<td align="left">application/x-pkcs7-certificates</td>
-<td align="left">spc</td>
-</tr>
-<tr>
-<td align="left">application/x-pkcs7-certreqresp</td>
-<td align="left">p7r</td>
-</tr>
-<tr>
-<td align="left">application/x-pkcs7-mime</td>
-<td align="left">p7c</td>
-</tr>
-<tr>
-<td align="left">application/x-pkcs7-mime</td>
-<td align="left">p7m</td>
-</tr>
-<tr>
-<td align="left">application/x-pkcs7-signature</td>
-<td align="left">p7s</td>
-</tr>
-<tr>
-<td align="left">application/x-sh</td>
-<td align="left">sh</td>
-</tr>
-<tr>
-<td align="left">application/x-shar</td>
-<td align="left">shar</td>
-</tr>
-<tr>
-<td align="left">application/x-shockwave-flash</td>
-<td align="left">swf</td>
-</tr>
-<tr>
-<td align="left">application/x-stuffit</td>
-<td align="left">sit</td>
-</tr>
-<tr>
-<td align="left">application/x-sv4cpio</td>
-<td align="left">sv4cpio</td>
-</tr>
-<tr>
-<td align="left">application/x-sv4crc</td>
-<td align="left">sv4crc</td>
-</tr>
-<tr>
-<td align="left">application/x-tar</td>
-<td align="left">tar</td>
-</tr>
-<tr>
-<td align="left">application/x-tcl</td>
-<td align="left">tcl</td>
-</tr>
-<tr>
-<td align="left">application/x-tex</td>
-<td align="left">tex</td>
-</tr>
-<tr>
-<td align="left">application/x-texinfo</td>
-<td align="left">texi</td>
-</tr>
-<tr>
-<td align="left">application/x-texinfo</td>
-<td align="left">texinfo</td>
-</tr>
-<tr>
-<td align="left">application/x-troff</td>
-<td align="left">roff</td>
-</tr>
-<tr>
-<td align="left">application/x-troff</td>
-<td align="left">t</td>
-</tr>
-<tr>
-<td align="left">application/x-troff</td>
-<td align="left">tr</td>
-</tr>
-<tr>
-<td align="left">application/x-troff-man</td>
-<td align="left">man</td>
-</tr>
-<tr>
-<td align="left">application/x-troff-me</td>
-<td align="left">me</td>
-</tr>
-<tr>
-<td align="left">application/x-troff-ms</td>
-<td align="left">ms</td>
-</tr>
-<tr>
-<td align="left">application/x-ustar</td>
-<td align="left">ustar</td>
-</tr>
-<tr>
-<td align="left">application/x-wais-source</td>
-<td align="left">src</td>
-</tr>
-<tr>
-<td align="left">application/x-x509-ca-cert</td>
-<td align="left">cer</td>
-</tr>
-<tr>
-<td align="left">application/x-x509-ca-cert</td>
-<td align="left">crt</td>
-</tr>
-<tr>
-<td align="left">application/x-x509-ca-cert</td>
-<td align="left">der</td>
-</tr>
-<tr>
-<td align="left">application/ynd.ms-pkipko</td>
-<td align="left">pko</td>
-</tr>
-<tr>
-<td align="left">application/zip</td>
-<td align="left">zip</td>
-</tr>
-<tr>
-<td align="left">audio/basic</td>
-<td align="left">au</td>
-</tr>
-<tr>
-<td align="left">audio/basic</td>
-<td align="left">snd</td>
-</tr>
-<tr>
-<td align="left">audio/mid</td>
-<td align="left">mid</td>
-</tr>
-<tr>
-<td align="left">audio/mid</td>
-<td align="left">rmi</td>
-</tr>
-<tr>
-<td align="left">audio/mpeg</td>
-<td align="left">mp3</td>
-</tr>
-<tr>
-<td align="left">audio/x-aiff</td>
-<td align="left">aif</td>
-</tr>
-<tr>
-<td align="left">audio/x-aiff</td>
-<td align="left">aifc</td>
-</tr>
-<tr>
-<td align="left">audio/x-aiff</td>
-<td align="left">aiff</td>
-</tr>
-<tr>
-<td align="left">audio/x-mpegurl</td>
-<td align="left">m3u</td>
-</tr>
-<tr>
-<td align="left">audio/x-pn-realaudio</td>
-<td align="left">ra</td>
-</tr>
-<tr>
-<td align="left">audio/x-pn-realaudio</td>
-<td align="left">ram</td>
-</tr>
-<tr>
-<td align="left">audio/x-wav</td>
-<td align="left">wav</td>
-</tr>
-<tr>
-<td align="left">image/bmp</td>
-<td align="left">bmp</td>
-</tr>
-<tr>
-<td align="left">image/cis-cod</td>
-<td align="left">cod</td>
-</tr>
-<tr>
-<td align="left">image/gif</td>
-<td align="left">gif</td>
-</tr>
-<tr>
-<td align="left">image/ief</td>
-<td align="left">ief</td>
-</tr>
-<tr>
-<td align="left">image/jpeg</td>
-<td align="left">jpe</td>
-</tr>
-<tr>
-<td align="left">image/jpeg</td>
-<td align="left">jpeg</td>
-</tr>
-<tr>
-<td align="left">image/jpeg</td>
-<td align="left">jpg</td>
-</tr>
-<tr>
-<td align="left">image/pipeg</td>
-<td align="left">jfif</td>
-</tr>
-<tr>
-<td align="left">image/svg+xml</td>
-<td align="left">svg</td>
-</tr>
-<tr>
-<td align="left">image/tiff</td>
-<td align="left">tif</td>
-</tr>
-<tr>
-<td align="left">image/tiff</td>
-<td align="left">tiff</td>
-</tr>
-<tr>
-<td align="left">image/x-cmu-raster</td>
-<td align="left">ras</td>
-</tr>
-<tr>
-<td align="left">image/x-cmx</td>
-<td align="left">cmx</td>
-</tr>
-<tr>
-<td align="left">image/x-icon</td>
-<td align="left">ico</td>
-</tr>
-<tr>
-<td align="left">image/x-portable-anymap</td>
-<td align="left">pnm</td>
-</tr>
-<tr>
-<td align="left">image/x-portable-bitmap</td>
-<td align="left">pbm</td>
-</tr>
-<tr>
-<td align="left">image/x-portable-graymap</td>
-<td align="left">pgm</td>
-</tr>
-<tr>
-<td align="left">image/x-portable-pixmap</td>
-<td align="left">ppm</td>
-</tr>
-<tr>
-<td align="left">image/x-rgb</td>
-<td align="left">rgb</td>
-</tr>
-<tr>
-<td align="left">image/x-xbitmap</td>
-<td align="left">xbm</td>
-</tr>
-<tr>
-<td align="left">image/x-xpixmap</td>
-<td align="left">xpm</td>
-</tr>
-<tr>
-<td align="left">image/x-xwindowdump</td>
-<td align="left">xwd</td>
-</tr>
-<tr>
-<td align="left">message/rfc822</td>
-<td align="left">mht</td>
-</tr>
-<tr>
-<td align="left">message/rfc822</td>
-<td align="left">mhtml</td>
-</tr>
-<tr>
-<td align="left">message/rfc822</td>
-<td align="left">nws</td>
-</tr>
-<tr>
-<td align="left">text/css</td>
-<td align="left">css</td>
-</tr>
-<tr>
-<td align="left">text/h323</td>
-<td align="left">323</td>
-</tr>
-<tr>
-<td align="left">text/html</td>
-<td align="left">htm</td>
-</tr>
-<tr>
-<td align="left">text/html</td>
-<td align="left">html</td>
-</tr>
-<tr>
-<td align="left">text/html</td>
-<td align="left">stm</td>
-</tr>
-<tr>
-<td align="left">text/iuls</td>
-<td align="left">uls</td>
-</tr>
-<tr>
-<td align="left">text/plain</td>
-<td align="left">bas</td>
-</tr>
-<tr>
-<td align="left">text/plain</td>
-<td align="left">c</td>
-</tr>
-<tr>
-<td align="left">text/plain</td>
-<td align="left">h</td>
-</tr>
-<tr>
-<td align="left">text/plain</td>
-<td align="left">txt</td>
-</tr>
-<tr>
-<td align="left">text/richtext</td>
-<td align="left">rtx</td>
-</tr>
-<tr>
-<td align="left">text/scriptlet</td>
-<td align="left">sct</td>
-</tr>
-<tr>
-<td align="left">text/tab-separated-values</td>
-<td align="left">tsv</td>
-</tr>
-<tr>
-<td align="left">text/webviewhtml</td>
-<td align="left">htt</td>
-</tr>
-<tr>
-<td align="left">text/x-component</td>
-<td align="left">htc</td>
-</tr>
-<tr>
-<td align="left">text/x-setext</td>
-<td align="left">etx</td>
-</tr>
-<tr>
-<td align="left">text/x-vcard</td>
-<td align="left">vcf</td>
-</tr>
-<tr>
-<td align="left">video/mpeg</td>
-<td align="left">mp2</td>
-</tr>
-<tr>
-<td align="left">video/mpeg</td>
-<td align="left">mpa</td>
-</tr>
-<tr>
-<td align="left">video/mpeg</td>
-<td align="left">mpe</td>
-</tr>
-<tr>
-<td align="left">video/mpeg</td>
-<td align="left">mpeg</td>
-</tr>
-<tr>
-<td align="left">video/mpeg</td>
-<td align="left">mpg</td>
-</tr>
-<tr>
-<td align="left">video/mpeg</td>
-<td align="left">mpv2</td>
-</tr>
-<tr>
-<td align="left">video/quicktime</td>
-<td align="left">mov</td>
-</tr>
-<tr>
-<td align="left">video/quicktime</td>
-<td align="left">qt</td>
-</tr>
-<tr>
-<td align="left">video/x-la-asf</td>
-<td align="left">lsf</td>
-</tr>
-<tr>
-<td align="left">video/x-la-asf</td>
-<td align="left">lsx</td>
-</tr>
-<tr>
-<td align="left">video/x-ms-asf</td>
-<td align="left">asf</td>
-</tr>
-<tr>
-<td align="left">video/x-ms-asf</td>
-<td align="left">asr</td>
-</tr>
-<tr>
-<td align="left">video/x-ms-asf</td>
-<td align="left">asx</td>
-</tr>
-<tr>
-<td align="left">video/x-msvideo</td>
-<td align="left">avi</td>
-</tr>
-<tr>
-<td align="left">video/x-sgi-movie</td>
-<td align="left">movie</td>
-</tr>
-<tr>
-<td align="left">x-world/x-vrml</td>
-<td align="left">flr</td>
-</tr>
-<tr>
-<td align="left">x-world/x-vrml</td>
-<td align="left">vrml</td>
-</tr>
-<tr>
-<td align="left">x-world/x-vrml</td>
-<td align="left">wrl</td>
-</tr>
-<tr>
-<td align="left">x-world/x-vrml</td>
-<td align="left">wrz</td>
-</tr>
-<tr>
-<td align="left">x-world/x-vrml</td>
-<td align="left">xaf</td>
-</tr>
-<tr>
-<td align="left">x-world/x-vrml</td>
-<td align="left">xof</td>
-</tr>
-</tbody></table>
-<h3 id="按照文件扩展名排列的-Mime-类型列表"><a href="#按照文件扩展名排列的-Mime-类型列表" class="headerlink" title="按照文件扩展名排列的 Mime 类型列表"></a>按照文件扩展名排列的 Mime 类型列表</h3><table>
-<thead>
-<tr>
-<th align="left">扩展名</th>
-<th align="left">类型/子类型</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"></td>
-<td align="left">application/octet-stream</td>
-</tr>
-<tr>
-<td align="left">323</td>
-<td align="left">text/h323</td>
-</tr>
-<tr>
-<td align="left">acx</td>
-<td align="left">application/internet-property-stream</td>
-</tr>
-<tr>
-<td align="left">ai</td>
-<td align="left">application/postscript</td>
-</tr>
-<tr>
-<td align="left">aif</td>
-<td align="left">audio/x-aiff</td>
-</tr>
-<tr>
-<td align="left">aifc</td>
-<td align="left">audio/x-aiff</td>
-</tr>
-<tr>
-<td align="left">aiff</td>
-<td align="left">audio/x-aiff</td>
-</tr>
-<tr>
-<td align="left">asf</td>
-<td align="left">video/x-ms-asf</td>
-</tr>
-<tr>
-<td align="left">asr</td>
-<td align="left">video/x-ms-asf</td>
-</tr>
-<tr>
-<td align="left">asx</td>
-<td align="left">video/x-ms-asf</td>
-</tr>
-<tr>
-<td align="left">au</td>
-<td align="left">audio/basic</td>
-</tr>
-<tr>
-<td align="left">avi</td>
-<td align="left">video/x-msvideo</td>
-</tr>
-<tr>
-<td align="left">axs</td>
-<td align="left">application/olescript</td>
-</tr>
-<tr>
-<td align="left">bas</td>
-<td align="left">text/plain</td>
-</tr>
-<tr>
-<td align="left">bcpio</td>
-<td align="left">application/x-bcpio</td>
-</tr>
-<tr>
-<td align="left">bin</td>
-<td align="left">application/octet-stream</td>
-</tr>
-<tr>
-<td align="left">bmp</td>
-<td align="left">image/bmp</td>
-</tr>
-<tr>
-<td align="left">c</td>
-<td align="left">text/plain</td>
-</tr>
-<tr>
-<td align="left">cat</td>
-<td align="left">application/vnd.ms-pkiseccat</td>
-</tr>
-<tr>
-<td align="left">cdf</td>
-<td align="left">application/x-cdf</td>
-</tr>
-<tr>
-<td align="left">cer</td>
-<td align="left">application/x-x509-ca-cert</td>
-</tr>
-<tr>
-<td align="left">class</td>
-<td align="left">application/octet-stream</td>
-</tr>
-<tr>
-<td align="left">clp</td>
-<td align="left">application/x-msclip</td>
-</tr>
-<tr>
-<td align="left">cmx</td>
-<td align="left">image/x-cmx</td>
-</tr>
-<tr>
-<td align="left">cod</td>
-<td align="left">image/cis-cod</td>
-</tr>
-<tr>
-<td align="left">cpio</td>
-<td align="left">application/x-cpio</td>
-</tr>
-<tr>
-<td align="left">crd</td>
-<td align="left">application/x-mscardfile</td>
-</tr>
-<tr>
-<td align="left">crl</td>
-<td align="left">application/pkix-crl</td>
-</tr>
-<tr>
-<td align="left">crt</td>
-<td align="left">application/x-x509-ca-cert</td>
-</tr>
-<tr>
-<td align="left">csh</td>
-<td align="left">application/x-csh</td>
-</tr>
-<tr>
-<td align="left">css</td>
-<td align="left">text/css</td>
-</tr>
-<tr>
-<td align="left">dcr</td>
-<td align="left">application/x-director</td>
-</tr>
-<tr>
-<td align="left">der</td>
-<td align="left">application/x-x509-ca-cert</td>
-</tr>
-<tr>
-<td align="left">dir</td>
-<td align="left">application/x-director</td>
-</tr>
-<tr>
-<td align="left">dll</td>
-<td align="left">application/x-msdownload</td>
-</tr>
-<tr>
-<td align="left">dms</td>
-<td align="left">application/octet-stream</td>
-</tr>
-<tr>
-<td align="left">doc</td>
-<td align="left">application/msword</td>
-</tr>
-<tr>
-<td align="left">dot</td>
-<td align="left">application/msword</td>
-</tr>
-<tr>
-<td align="left">dvi</td>
-<td align="left">application/x-dvi</td>
-</tr>
-<tr>
-<td align="left">dxr</td>
-<td align="left">application/x-director</td>
-</tr>
-<tr>
-<td align="left">eps</td>
-<td align="left">application/postscript</td>
-</tr>
-<tr>
-<td align="left">etx</td>
-<td align="left">text/x-setext</td>
-</tr>
-<tr>
-<td align="left">evy</td>
-<td align="left">application/envoy</td>
-</tr>
-<tr>
-<td align="left">exe</td>
-<td align="left">application/octet-stream</td>
-</tr>
-<tr>
-<td align="left">fif</td>
-<td align="left">application/fractals</td>
-</tr>
-<tr>
-<td align="left">flr</td>
-<td align="left">x-world/x-vrml</td>
-</tr>
-<tr>
-<td align="left">gif</td>
-<td align="left">image/gif</td>
-</tr>
-<tr>
-<td align="left">gtar</td>
-<td align="left">application/x-gtar</td>
-</tr>
-<tr>
-<td align="left">gz</td>
-<td align="left">application/x-gzip</td>
-</tr>
-<tr>
-<td align="left">h</td>
-<td align="left">text/plain</td>
-</tr>
-<tr>
-<td align="left">hdf</td>
-<td align="left">application/x-hdf</td>
-</tr>
-<tr>
-<td align="left">hlp</td>
-<td align="left">application/winhlp</td>
-</tr>
-<tr>
-<td align="left">hqx</td>
-<td align="left">application/mac-binhex40</td>
-</tr>
-<tr>
-<td align="left">hta</td>
-<td align="left">application/hta</td>
-</tr>
-<tr>
-<td align="left">htc</td>
-<td align="left">text/x-component</td>
-</tr>
-<tr>
-<td align="left">htm</td>
-<td align="left">text/html</td>
-</tr>
-<tr>
-<td align="left">html</td>
-<td align="left">text/html</td>
-</tr>
-<tr>
-<td align="left">htt</td>
-<td align="left">text/webviewhtml</td>
-</tr>
-<tr>
-<td align="left">ico</td>
-<td align="left">image/x-icon</td>
-</tr>
-<tr>
-<td align="left">ief</td>
-<td align="left">image/ief</td>
-</tr>
-<tr>
-<td align="left">iii</td>
-<td align="left">application/x-iphone</td>
-</tr>
-<tr>
-<td align="left">ins</td>
-<td align="left">application/x-internet-signup</td>
-</tr>
-<tr>
-<td align="left">isp</td>
-<td align="left">application/x-internet-signup</td>
-</tr>
-<tr>
-<td align="left">jfif</td>
-<td align="left">image/pipeg</td>
-</tr>
-<tr>
-<td align="left">jpe</td>
-<td align="left">image/jpeg</td>
-</tr>
-<tr>
-<td align="left">jpeg</td>
-<td align="left">image/jpeg</td>
-</tr>
-<tr>
-<td align="left">jpg</td>
-<td align="left">image/jpeg</td>
-</tr>
-<tr>
-<td align="left">js</td>
-<td align="left">application/x-javascript</td>
-</tr>
-<tr>
-<td align="left">latex</td>
-<td align="left">application/x-latex</td>
-</tr>
-<tr>
-<td align="left">lha</td>
-<td align="left">application/octet-stream</td>
-</tr>
-<tr>
-<td align="left">lsf</td>
-<td align="left">video/x-la-asf</td>
-</tr>
-<tr>
-<td align="left">lsx</td>
-<td align="left">video/x-la-asf</td>
-</tr>
-<tr>
-<td align="left">lzh</td>
-<td align="left">application/octet-stream</td>
-</tr>
-<tr>
-<td align="left">m13</td>
-<td align="left">application/x-msmediaview</td>
-</tr>
-<tr>
-<td align="left">m14</td>
-<td align="left">application/x-msmediaview</td>
-</tr>
-<tr>
-<td align="left">m3u</td>
-<td align="left">audio/x-mpegurl</td>
-</tr>
-<tr>
-<td align="left">man</td>
-<td align="left">application/x-troff-man</td>
-</tr>
-<tr>
-<td align="left">mdb</td>
-<td align="left">application/x-msaccess</td>
-</tr>
-<tr>
-<td align="left">me</td>
-<td align="left">application/x-troff-me</td>
-</tr>
-<tr>
-<td align="left">mht</td>
-<td align="left">message/rfc822</td>
-</tr>
-<tr>
-<td align="left">mhtml</td>
-<td align="left">message/rfc822</td>
-</tr>
-<tr>
-<td align="left">mid</td>
-<td align="left">audio/mid</td>
-</tr>
-<tr>
-<td align="left">mny</td>
-<td align="left">application/x-msmoney</td>
-</tr>
-<tr>
-<td align="left">mov</td>
-<td align="left">video/quicktime</td>
-</tr>
-<tr>
-<td align="left">movie</td>
-<td align="left">video/x-sgi-movie</td>
-</tr>
-<tr>
-<td align="left">mp2</td>
-<td align="left">video/mpeg</td>
-</tr>
-<tr>
-<td align="left">mp3</td>
-<td align="left">audio/mpeg</td>
-</tr>
-<tr>
-<td align="left">mpa</td>
-<td align="left">video/mpeg</td>
-</tr>
-<tr>
-<td align="left">mpe</td>
-<td align="left">video/mpeg</td>
-</tr>
-<tr>
-<td align="left">mpeg</td>
-<td align="left">video/mpeg</td>
-</tr>
-<tr>
-<td align="left">mpg</td>
-<td align="left">video/mpeg</td>
-</tr>
-<tr>
-<td align="left">mpp</td>
-<td align="left">application/vnd.ms-project</td>
-</tr>
-<tr>
-<td align="left">mpv2</td>
-<td align="left">video/mpeg</td>
-</tr>
-<tr>
-<td align="left">ms</td>
-<td align="left">application/x-troff-ms</td>
-</tr>
-<tr>
-<td align="left">mvb</td>
-<td align="left">application/x-msmediaview</td>
-</tr>
-<tr>
-<td align="left">nws</td>
-<td align="left">message/rfc822</td>
-</tr>
-<tr>
-<td align="left">oda</td>
-<td align="left">application/oda</td>
-</tr>
-<tr>
-<td align="left">p10</td>
-<td align="left">application/pkcs10</td>
-</tr>
-<tr>
-<td align="left">p12</td>
-<td align="left">application/x-pkcs12</td>
-</tr>
-<tr>
-<td align="left">p7b</td>
-<td align="left">application/x-pkcs7-certificates</td>
-</tr>
-<tr>
-<td align="left">p7c</td>
-<td align="left">application/x-pkcs7-mime</td>
-</tr>
-<tr>
-<td align="left">p7m</td>
-<td align="left">application/x-pkcs7-mime</td>
-</tr>
-<tr>
-<td align="left">p7r</td>
-<td align="left">application/x-pkcs7-certreqresp</td>
-</tr>
-<tr>
-<td align="left">p7s</td>
-<td align="left">application/x-pkcs7-signature</td>
-</tr>
-<tr>
-<td align="left">pbm</td>
-<td align="left">image/x-portable-bitmap</td>
-</tr>
-<tr>
-<td align="left">pdf</td>
-<td align="left">application/pdf</td>
-</tr>
-<tr>
-<td align="left">pfx</td>
-<td align="left">application/x-pkcs12</td>
-</tr>
-<tr>
-<td align="left">pgm</td>
-<td align="left">image/x-portable-graymap</td>
-</tr>
-<tr>
-<td align="left">pko</td>
-<td align="left">application/ynd.ms-pkipko</td>
-</tr>
-<tr>
-<td align="left">pma</td>
-<td align="left">application/x-perfmon</td>
-</tr>
-<tr>
-<td align="left">pmc</td>
-<td align="left">application/x-perfmon</td>
-</tr>
-<tr>
-<td align="left">pml</td>
-<td align="left">application/x-perfmon</td>
-</tr>
-<tr>
-<td align="left">pmr</td>
-<td align="left">application/x-perfmon</td>
-</tr>
-<tr>
-<td align="left">pmw</td>
-<td align="left">application/x-perfmon</td>
-</tr>
-<tr>
-<td align="left">pnm</td>
-<td align="left">image/x-portable-anymap</td>
-</tr>
-<tr>
-<td align="left">pot,</td>
-<td align="left">application/vnd.ms-powerpoint</td>
-</tr>
-<tr>
-<td align="left">ppm</td>
-<td align="left">image/x-portable-pixmap</td>
-</tr>
-<tr>
-<td align="left">pps</td>
-<td align="left">application/vnd.ms-powerpoint</td>
-</tr>
-<tr>
-<td align="left">ppt</td>
-<td align="left">application/vnd.ms-powerpoint</td>
-</tr>
-<tr>
-<td align="left">prf</td>
-<td align="left">application/pics-rules</td>
-</tr>
-<tr>
-<td align="left">ps</td>
-<td align="left">application/postscript</td>
-</tr>
-<tr>
-<td align="left">pub</td>
-<td align="left">application/x-mspublisher</td>
-</tr>
-<tr>
-<td align="left">qt</td>
-<td align="left">video/quicktime</td>
-</tr>
-<tr>
-<td align="left">ra</td>
-<td align="left">audio/x-pn-realaudio</td>
-</tr>
-<tr>
-<td align="left">ram</td>
-<td align="left">audio/x-pn-realaudio</td>
-</tr>
-<tr>
-<td align="left">ras</td>
-<td align="left">image/x-cmu-raster</td>
-</tr>
-<tr>
-<td align="left">rgb</td>
-<td align="left">image/x-rgb</td>
-</tr>
-<tr>
-<td align="left">rmi</td>
-<td align="left">audio/mid</td>
-</tr>
-<tr>
-<td align="left">roff</td>
-<td align="left">application/x-troff</td>
-</tr>
-<tr>
-<td align="left">rtf</td>
-<td align="left">application/rtf</td>
-</tr>
-<tr>
-<td align="left">rtx</td>
-<td align="left">text/richtext</td>
-</tr>
-<tr>
-<td align="left">scd</td>
-<td align="left">application/x-msschedule</td>
-</tr>
-<tr>
-<td align="left">sct</td>
-<td align="left">text/scriptlet</td>
-</tr>
-<tr>
-<td align="left">setpay</td>
-<td align="left">application/set-payment-initiation</td>
-</tr>
-<tr>
-<td align="left">setreg</td>
-<td align="left">application/set-registration-initiation</td>
-</tr>
-<tr>
-<td align="left">sh</td>
-<td align="left">application/x-sh</td>
-</tr>
-<tr>
-<td align="left">shar</td>
-<td align="left">application/x-shar</td>
-</tr>
-<tr>
-<td align="left">sit</td>
-<td align="left">application/x-stuffit</td>
-</tr>
-<tr>
-<td align="left">snd</td>
-<td align="left">audio/basic</td>
-</tr>
-<tr>
-<td align="left">spc</td>
-<td align="left">application/x-pkcs7-certificates</td>
-</tr>
-<tr>
-<td align="left">spl</td>
-<td align="left">application/futuresplash</td>
-</tr>
-<tr>
-<td align="left">src</td>
-<td align="left">application/x-wais-source</td>
-</tr>
-<tr>
-<td align="left">sst</td>
-<td align="left">application/vnd.ms-pkicertstore</td>
-</tr>
-<tr>
-<td align="left">stl</td>
-<td align="left">application/vnd.ms-pkistl</td>
-</tr>
-<tr>
-<td align="left">stm</td>
-<td align="left">text/html</td>
-</tr>
-<tr>
-<td align="left">svg</td>
-<td align="left">image/svg+xml</td>
-</tr>
-<tr>
-<td align="left">sv4cpio</td>
-<td align="left">application/x-sv4cpio</td>
-</tr>
-<tr>
-<td align="left">sv4crc</td>
-<td align="left">application/x-sv4crc</td>
-</tr>
-<tr>
-<td align="left">swf</td>
-<td align="left">application/x-shockwave-flash</td>
-</tr>
-<tr>
-<td align="left">t</td>
-<td align="left">application/x-troff</td>
-</tr>
-<tr>
-<td align="left">tar</td>
-<td align="left">application/x-tar</td>
-</tr>
-<tr>
-<td align="left">tcl</td>
-<td align="left">application/x-tcl</td>
-</tr>
-<tr>
-<td align="left">tex</td>
-<td align="left">application/x-tex</td>
-</tr>
-<tr>
-<td align="left">texi</td>
-<td align="left">application/x-texinfo</td>
-</tr>
-<tr>
-<td align="left">texinfo</td>
-<td align="left">application/x-texinfo</td>
-</tr>
-<tr>
-<td align="left">tgz</td>
-<td align="left">application/x-compressed</td>
-</tr>
-<tr>
-<td align="left">tif</td>
-<td align="left">image/tiff</td>
-</tr>
-<tr>
-<td align="left">tiff</td>
-<td align="left">image/tiff</td>
-</tr>
-<tr>
-<td align="left">tr</td>
-<td align="left">application/x-troff</td>
-</tr>
-<tr>
-<td align="left">trm</td>
-<td align="left">application/x-msterminal</td>
-</tr>
-<tr>
-<td align="left">tsv</td>
-<td align="left">text/tab-separated-values</td>
-</tr>
-<tr>
-<td align="left">txt</td>
-<td align="left">text/plain</td>
-</tr>
-<tr>
-<td align="left">uls</td>
-<td align="left">text/iuls</td>
-</tr>
-<tr>
-<td align="left">ustar</td>
-<td align="left">application/x-ustar</td>
-</tr>
-<tr>
-<td align="left">vcf</td>
-<td align="left">text/x-vcard</td>
-</tr>
-<tr>
-<td align="left">vrml</td>
-<td align="left">x-world/x-vrml</td>
-</tr>
-<tr>
-<td align="left">wav</td>
-<td align="left">audio/x-wav</td>
-</tr>
-<tr>
-<td align="left">wcm</td>
-<td align="left">application/vnd.ms-works</td>
-</tr>
-<tr>
-<td align="left">wdb</td>
-<td align="left">application/vnd.ms-works</td>
-</tr>
-<tr>
-<td align="left">wks</td>
-<td align="left">application/vnd.ms-works</td>
-</tr>
-<tr>
-<td align="left">wmf</td>
-<td align="left">application/x-msmetafile</td>
-</tr>
-<tr>
-<td align="left">wps</td>
-<td align="left">application/vnd.ms-works</td>
-</tr>
-<tr>
-<td align="left">wri</td>
-<td align="left">application/x-mswrite</td>
-</tr>
-<tr>
-<td align="left">wrl</td>
-<td align="left">x-world/x-vrml</td>
-</tr>
-<tr>
-<td align="left">wrz</td>
-<td align="left">x-world/x-vrml</td>
-</tr>
-<tr>
-<td align="left">xaf</td>
-<td align="left">x-world/x-vrml</td>
-</tr>
-<tr>
-<td align="left">xbm</td>
-<td align="left">image/x-xbitmap</td>
-</tr>
-<tr>
-<td align="left">xla</td>
-<td align="left">application/vnd.ms-excel</td>
-</tr>
-<tr>
-<td align="left">xlc</td>
-<td align="left">application/vnd.ms-excel</td>
-</tr>
-<tr>
-<td align="left">xlm</td>
-<td align="left">application/vnd.ms-excel</td>
-</tr>
-<tr>
-<td align="left">xls</td>
-<td align="left">application/vnd.ms-excel</td>
-</tr>
-<tr>
-<td align="left">xlt</td>
-<td align="left">application/vnd.ms-excel</td>
-</tr>
-<tr>
-<td align="left">xlw</td>
-<td align="left">application/vnd.ms-excel</td>
-</tr>
-<tr>
-<td align="left">xof</td>
-<td align="left">x-world/x-vrml</td>
-</tr>
-<tr>
-<td align="left">xpm</td>
-<td align="left">image/x-xpixmap</td>
-</tr>
-<tr>
-<td align="left">xwd</td>
-<td align="left">image/x-xwindowdump</td>
-</tr>
-<tr>
-<td align="left">z</td>
-<td align="left">application/x-compress</td>
-</tr>
-<tr>
-<td align="left">zip</td>
-<td align="left">application/zip</td>
-</tr>
-</tbody></table>
-</div><div class="index-category-tag">  <div class="level-item"><i class="fas fa-tags has-text-grey"> </i><a class="article-more button is-small link-muted index-tags" href="/tags/Blob/">Blob</a><span> </span><a class="article-more button is-small link-muted index-tags" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/">文件下载</a></div><hr></div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1 is-sticky"><!--!--><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="/img/avatar.jpg" alt="辣椒の酱"></figure><p class="title is-size-4 is-block line-height-inherit">辣椒の酱</p><p class="is-size-6 is-block">尚未执佩剑，转眼即江湖</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>阿尔及利亚</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">12</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">20</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://www.weibo.com/3863592977" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/YHX0507"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Weibo" href="https://www.weibo.com/3863592977"><i class="fab fa-weibo"></i></a></div><div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
-                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
-                                if(data){
-                                    $('#hitokoto').html("");
-                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
-                                    "<p>"+"From《"+data.from+"》</p><p>Provider-"+data.creator+"</p>");
-                                }});}
-                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget"><div class="card-content"><h3 class="menu-label">Latest Comment</h3><span class="body_hot_comment">Loading...Wait a Minute!</span></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">Recent</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-08-06T12:50:25.000Z">2020-08-06</time></p><p class="title is-6"><a class="link-muted" href="/2020/08/06/%E9%80%9A%E8%BF%87Blob%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD/">通过Blob实现图片下载</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-07-10T14:01:28.000Z">2020-07-10</time></p><p class="title is-6"><a class="link-muted" href="/2020/07/10/Proxy/">Proxy和Object.defineProperty</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-04-04T12:19:36.000Z">2020-04-04</time></p><p class="title is-6"><a class="link-muted" href="/2020/04/04/npm%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E5%8C%85%E5%90%8E%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">npm全局安装包后无法使用问题解决</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-09-14T12:43:25.000Z">2019-09-14</time></p><p class="title is-6"><a class="link-muted" href="/2019/09/14/node/">node</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-07-20T12:04:42.000Z">2019-07-20</time></p><p class="title is-6"><a class="link-muted" href="/2019/07/20/Webpack%E5%85%A5%E9%97%A8/">Webpack入门</a></p><p class="is-uppercase"></p></div></article></div></div><!--!--><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/08/"><span class="level-start"><span class="level-item">August 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/07/"><span class="level-start"><span class="level-item">July 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/04/"><span class="level-start"><span class="level-item">April 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/09/"><span class="level-start"><span class="level-item">September 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/07/"><span class="level-start"><span class="level-item">July 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><a class="level is-mobile is-marginless" href="/archives/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/"><span class="tag">文件下载</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vue/"><span class="tag">Vue</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/defineProperty/"><span class="tag">defineProperty</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Proxy/"><span class="tag">Proxy</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Blob/"><span class="tag">Blob</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/"><span class="tag">Vue组件通信</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Webpack/"><span class="tag">Webpack</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Webpack%E5%85%A5%E9%97%A8/"><span class="tag">Webpack入门</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/cookie/"><span class="tag">cookie</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/csv%E8%A1%A8%E6%A0%BC%E4%B8%8B%E8%BD%BD/"><span class="tag">csv表格下载</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Express/"><span class="tag">Express</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/session/"><span class="tag">session</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%B8%8D%E6%98%AF%E5%86%85%E9%83%A8%E5%91%BD%E4%BB%A4%E6%88%96%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4/"><span class="tag">不是内部命令或外部命令</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%B8%8D%E6%98%AF%E5%8F%AF%E8%BF%90%E8%A1%8C%E7%9A%84%E7%A8%8B%E5%BA%8F/"><span class="tag">不是可运行的程序</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD/"><span class="tag">图片下载</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><span class="tag">小程序</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%80%BB%E7%BB%93/"><span class="tag">总结</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/"><span class="tag">数组方法</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Node/"><span class="tag">Node</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A7%BB%E5%8A%A8%E9%A1%B9%E7%9B%AE/"><span class="tag">移动项目</span><span class="tag is-grey-lightest">1</span></a></div></div><div class="field is-grouped is-grouped-multiline"><a class="tags has-addons" href="/tags/"><span class="tag">查看全部&gt;&gt;</span></a></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe to Updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=removeifFeedsId&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="removeifFeedsId" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="Subscribe"></div></div><p class="help">输入邮箱开始订阅，更博后邮件通知！</p></form></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/avatar.jpg" alt="蜡笔小新Blogs" height="28"></a><p class="size-small"><span>&copy; 2020 蜡笔小新</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif/hexo-theme-amazing" target="_blank">removeif</a> <br><span>© 版权说明：[本网站所有内容均收集于互联网或自己创作,<br />&nbsp;&nbsp;&nbsp;&nbsp;方便于网友与自己学习交流，如有侵权，请<a href="/message" target="_blank">留言</a>，立即处理]<br /></span><div class="size-small"><span>❤️Thx <strong><span id="busuanzi_value_site_uv">99+</span></strong> users <strong><span id="busuanzi_value_site_pv">99+</span></strong> visited！❤️</span></div></p></div><div class="level-end"></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
-            site: {
-                url: 'http://yoursite.com',
-                external_link: {"enable":true,"exclude":[]}
-            },
-            article: {
-                highlight: {
-                    clipboard: true,
-                    fold: 'unfolded'
-                }
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav mobile">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>蜡笔小新</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/YHX0507" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="https://www.weibo.com/3863592977" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/00huan-shi-90/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:1183376071@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=1183376071&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(12)</small></div></li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="12">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color5">数组方法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">小程序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">移动项目</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">总结</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">Vue</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Proxy</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">defineProperty</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Webpack</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">Webpack入门</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">不是内部命令或外部命令</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">不是可运行的程序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">Blob</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">文件下载</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">csv表格下载</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">图片下载</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Vue组件通信</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">Node</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Express</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">cookie</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">session</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2017/12/15/%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%8C%E6%8E%8C%E6%8F%A1%E8%BF%99%E4%BA%9B%E5%B0%B1%E5%A4%9F%E4%BA%86/"
+           data-tag="数组方法"
+           data-author="" >
+            <span class="post-title" title="数组常用方法，掌握这些就够了">数组常用方法，掌握这些就够了</span>
+            <span class="post-date" title="2017-12-15 21:31:43">2017/12/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/02/27/%E5%85%B3%E4%BA%8E%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E7%9A%84%E6%80%BB%E7%BB%93/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="关于小程序开发的总结">关于小程序开发的总结</span>
+            <span class="post-date" title="2018-02-27 20:56:38">2018/02/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/03/01/Vue%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"
+           data-tag="移动项目,总结,Vue"
+           data-author="" >
+            <span class="post-title" title="Vue移动端项目总结">Vue移动端项目总结</span>
+            <span class="post-date" title="2018-03-01 11:43:25">2018/03/01</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/10/Proxy/"
+           data-tag="Proxy,defineProperty"
+           data-author="" >
+            <span class="post-title" title="Proxy和Object.defineProperty">Proxy和Object.defineProperty</span>
+            <span class="post-date" title="2020-07-10 22:01:28">2020/07/10</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/20/Webpack%E5%85%A5%E9%97%A8/"
+           data-tag="Webpack,Webpack入门"
+           data-author="" >
+            <span class="post-title" title="Webpack入门">Webpack入门</span>
+            <span class="post-date" title="2019-07-20 20:04:42">2019/07/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/04/04/npm%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E5%8C%85%E5%90%8E%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"
+           data-tag="不是内部命令或外部命令,不是可运行的程序"
+           data-author="" >
+            <span class="post-title" title="npm全局安装包后无法使用问题解决">npm全局安装包后无法使用问题解决</span>
+            <span class="post-date" title="2020-04-04 20:19:36">2020/04/04</span>
+        </a>
+        
+        <a  class=""
+           href="/2010/08/06/%E5%89%8D%E7%AB%AF%E9%80%9A%E8%BF%87Blob%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/"
+           data-tag="Blob,文件下载"
+           data-author="" >
+            <span class="post-title" title="前端通过Blob实现文件下载">前端通过Blob实现文件下载</span>
+            <span class="post-date" title="2010-08-06 19:59:09">2010/08/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/08/06/%E9%80%9A%E8%BF%87Blob%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD/"
+           data-tag="文件下载,图片下载"
+           data-author="" >
+            <span class="post-title" title="通过Blob实现图片下载">通过Blob实现图片下载</span>
+            <span class="post-date" title="2020-08-06 20:50:25">2020/08/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2016/04/13/Vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/"
+           data-tag="Vue,Vue组件通信"
+           data-author="" >
+            <span class="post-title" title="Vue组件通信">Vue组件通信</span>
+            <span class="post-date" title="2016-04-13 11:08:34">2016/04/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/14/node/"
+           data-tag="Node,Express"
+           data-author="" >
+            <span class="post-title" title="node">node</span>
+            <span class="post-date" title="2019-09-14 20:43:25">2019/09/14</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/10/11/Cookie%E5%92%8CSession/"
+           data-tag="cookie,session"
+           data-author="" >
+            <span class="post-title" title="Cookie">Cookie</span>
+            <span class="post-date" title="2018-10-11 17:23:07">2018/10/11</span>
+        </a>
+        
+        <a  class=""
+           href="/2017/08/15/%E9%80%9A%E8%BF%87json2csv%E5%89%8D%E7%AB%AF%E5%AF%BC%E5%87%BA/"
+           data-tag="文件下载,csv表格下载"
+           data-author="" >
+            <span class="post-title" title="前端前端导出csv文件（通过json2csv前端导出）">前端前端导出csv文件（通过json2csv前端导出）</span>
+            <span class="post-date" title="2017-08-15 20:36:14">2017/08/15</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post index">
+    <div class="pjax">
+        <article class="index">
+            <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Front-end-Engineer"><span class="toc-text">Why Front end Engineer</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对前端的理解"><span class="toc-text">对前端的理解</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+            <h1 id="Why-Front-end-Engineer"><a href="#Why-Front-end-Engineer" class="headerlink" title="Why Front end Engineer"></a>Why Front end Engineer</h1><h2 id="对前端的理解"><a href="#对前端的理解" class="headerlink" title="对前端的理解"></a>对前端的理解</h2><p>喜欢前端的人，会经历三个阶段。</p>
+<blockquote>
+<p>第一阶段，看山是山、看水是水。</p>
+</blockquote>
+<blockquote>
+<p>第二阶段，看山不是山、看水不是水。</p>
+</blockquote>
+<blockquote>
+<p>第三阶段，看山还是山、看水还是水。</p>
+</blockquote>
+
+        </article>
+        
+        <p>
+            <a  class="dashang" onclick="dashangToggle()">赏</a>
+        </p>
+        
+        
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2017 蜡笔小新</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#数组方法','#小程序','#移动项目','#总结','#Vue','#Proxy','#defineProperty','#Webpack','#Webpack入门','#不是内部命令或外部命令','#不是可运行的程序','#Blob','#文件下载','#csv表格下载','#图片下载','#Vue组件通信','#Node','#Express','#cookie','#session',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
             }
-        };</script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to Top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" defer></script><!--!--><!--!--><!--!--><script src="/js/toc.js" defer></script><script src="/js/main.js" defer></script><script>$.getScript('/js/comment-issue-data.js',function(){loadIssueData('46a9f3481b46ea0129d8','79c7c9cb847e141757d7864453bcbf89f0655b24','removeif','blog_comment',false);})</script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="Type something..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
-            var INSIGHT_CONFIG = {
-                TRANSLATION: {
-                    POSTS: 'Posts',
-                    PAGES: 'Pages',
-                    CATEGORIES: 'Categories',
-                    TAGS: 'Tags',
-                    UNTITLED: '(Untitled)',
-                },
-                CONTENT_URL: '/content.json',
-            };
-            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-        })(window);</script><script src="/js/insight.js" defer></script></body></html>
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
