@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Cookie和Session | 蜡笔小新Blogs</title>
-  <meta name="keywords" content=" cookie , session ">
-  <meta name="description" content="Cookie和Session | 蜡笔小新Blogs">
+  <title>git操作 | 蜡笔小新Blogs</title>
+  <meta name="keywords" content=" git , git stash , git 版本回退 ">
+  <meta name="description" content="git操作 | 蜡笔小新Blogs">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="使用git stash命令保存和恢复进度git stash保存当前工作进度，会把暂存区和工作区的改动保存起来。执行完这个命令后，在运行git status命令，就会发现当前是一个干净的工作区，没有任何改动。使用git stash save &#39;message...&#39;可以添加一些注释 git stash list显示保存进度的列表。也就意味着，git stash命令可以多次执行。 gi">
 <meta property="og:type" content="article">
@@ -413,9 +413,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Cookie和Session" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-git操作" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Cookie和Session</h1>
+        <h1 class="article-title">git操作</h1>
     
     <div class="article-meta">
         
@@ -424,16 +424,18 @@
         
         <span class="tag">
             
-            <a class="color2">cookie</a>
+            <a class="color4">git</a>
             
-            <a class="color3">session</a>
+            <a class="color5">git stash</a>
+            
+            <a class="color4">git 版本回退</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-10-12 21:39:29'>2018-10-11 17:23</time>
+        创建时间:<time class="date" title='更新时间: 2020-10-30 21:36:14'>2020-10-30 20:59</time>
         
     </div>
     <div class="article-meta">
@@ -455,7 +457,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Cookie"><span class="toc-text">Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Cookie%EF%BC%9F"><span class="toc-text">什么是 Cookie？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%B0%B1%E6%98%AF%E7%94%A8%E4%BA%8E%E8%A7%A3%E5%86%B3-%E2%80%9C%E5%A6%82%E4%BD%95%E8%AE%B0%E5%BD%95%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E2%80%9D"><span class="toc-text">Cookie 的作用就是用于解决 “如何记录客户端的用户信息”:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AECookie"><span class="toc-text">设置Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%94%9F%E6%96%B9%E6%B3%95"><span class="toc-text">原生方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Express%E6%96%B9%E6%B3%95"><span class="toc-text">Express方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96Cookie"><span class="toc-text">服务器获取Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%94%9F%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90"><span class="toc-text">原生方法解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4Cookie"><span class="toc-text">删除Cookie</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Session"><span class="toc-text">Session</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Express%E6%A1%86%E6%9E%B6%E5%A4%84%E7%90%86session"><span class="toc-text">Express框架处理session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AESession"><span class="toc-text">设置Session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96Session"><span class="toc-text">获取Session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4Session"><span class="toc-text">删除Session</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8git-stash%E5%91%BD%E4%BB%A4%E4%BF%9D%E5%AD%98%E5%92%8C%E6%81%A2%E5%A4%8D%E8%BF%9B%E5%BA%A6"><span class="toc-text">使用git stash命令保存和恢复进度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-stash"><span class="toc-text">git stash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-stash-list"><span class="toc-text">git stash list</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-stash-pop-%E2%80%93index-stash-id"><span class="toc-text">git stash pop [–index] [stash_id]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-stash-apply-%E2%80%93index-stash-id"><span class="toc-text">git stash apply [–index] [stash_id]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-stash-drop-stash-id"><span class="toc-text">git stash drop [stash_id]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-stash-clear"><span class="toc-text">git stash clear</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80"><span class="toc-text">git版本回退</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -471,49 +473,63 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><h2 id="什么是-Cookie？"><a href="#什么是-Cookie？" class="headerlink" title="什么是 Cookie？"></a>什么是 Cookie？</h2><ul>
-<li><p>Cookie 是一些数据, 存储于你电脑上的文本文件中。</p>
-</li>
-<li><p>当 web 服务器向浏览器发送 web 页面时，在连接关闭后，服务端不会记录用户的信息。</p>
-</li>
+        <h1 id="使用git-stash命令保存和恢复进度"><a href="#使用git-stash命令保存和恢复进度" class="headerlink" title="使用git stash命令保存和恢复进度"></a>使用git stash命令保存和恢复进度</h1><h2 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h2><p>保存当前工作进度，会把暂存区和工作区的改动保存起来。执行完这个命令后，在运行<code>git status</code>命令，就会发现当前是一个干净的工作区，没有任何改动。使用<code>git stash save &#39;message...&#39;</code>可以添加一些注释</p>
+<h2 id="git-stash-list"><a href="#git-stash-list" class="headerlink" title="git stash list"></a>git stash list</h2><p>显示保存进度的列表。也就意味着，<code>git stash</code>命令可以多次执行。</p>
+<h2 id="git-stash-pop-–index-stash-id"><a href="#git-stash-pop-–index-stash-id" class="headerlink" title="git stash pop [–index] [stash_id]"></a>git stash pop [–index] [stash_id]</h2><ul>
+<li><code>git stash pop</code> 恢复最新的进度到工作区。git默认会把工作区和暂存区的改动都恢复到工作区。</li>
+<li><code>git stash pop --index</code> 恢复最新的进度到工作区和暂存区。（尝试将原来暂存区的改动还恢复到暂存区）</li>
+<li><code>git stash pop stash@&#123;1&#125;</code>恢复指定的进度到工作区。stash_id是通过<code>git stash list</code>命令得到的<br>通过<code>git stash pop</code>命令恢复进度后，会删除当前进度。</li>
 </ul>
-<h2 id="Cookie-的作用就是用于解决-“如何记录客户端的用户信息”"><a href="#Cookie-的作用就是用于解决-“如何记录客户端的用户信息”" class="headerlink" title="Cookie 的作用就是用于解决 “如何记录客户端的用户信息”:"></a>Cookie 的作用就是用于解决 “如何记录客户端的用户信息”:</h2><ul>
-<li><p>当用户访问 web 页面时，他的名字可以记录在 cookie 中。</p>
-</li>
-<li><p>在用户下一次访问该页面时，可以在 cookie 中读取用户访问记录。</p>
-</li>
-</ul>
-<h2 id="设置Cookie"><a href="#设置Cookie" class="headerlink" title="设置Cookie"></a>设置Cookie</h2><h3 id="原生方法"><a href="#原生方法" class="headerlink" title="原生方法"></a>原生方法</h3><ul>
-<li>设置单个cookie</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.setHeader(<span class="string">&#x27;set-cookie&#x27;</span>,<span class="string">&#x27;属性名=属性值&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="git-stash-apply-–index-stash-id"><a href="#git-stash-apply-–index-stash-id" class="headerlink" title="git stash apply [–index] [stash_id]"></a>git stash apply [–index] [stash_id]</h2><p>除了不删除恢复的进度之外，其余和<code>git stash pop</code> 命令一样。</p>
+<h2 id="git-stash-drop-stash-id"><a href="#git-stash-drop-stash-id" class="headerlink" title="git stash drop [stash_id]"></a>git stash drop [stash_id]</h2><p>删除一个存储的进度。如果不指定stash_id，则默认删除最新的存储进度。</p>
+<h2 id="git-stash-clear"><a href="#git-stash-clear" class="headerlink" title="git stash clear"></a>git stash clear</h2><p>删除所有存储的进度。</p>
+<h1 id="git版本回退"><a href="#git版本回退" class="headerlink" title="git版本回退"></a>git版本回退</h1><p><strong><em>\</em>首先**</strong>，在本地建立一个git项目，并且与 远程服务端（github） 上的项目进行关联</p>
+<p>1： 第一次建立git项目，提交到远程分支，并且记录为 第一个版本</p>
+ <img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-10-30_21-22-53.png" class=""> 
 
-<ul>
-<li>设置多个cookie</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.setHeader(<span class="string">&#x27;set-cookie&#x27;</span>,[<span class="string">&#x27;属性名=属性值&#x27;</span>,<span class="string">&#x27;属性名=属性值&#x27;</span>]);</span><br></pre></td></tr></table></figure>
+<p>2：更改项目中文件的内容，提交到远程分支，记录为 第二个版本</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-10-30_21-24-13.png" class="">
 
-<h3 id="Express方法"><a href="#Express方法" class="headerlink" title="Express方法"></a>Express方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">res.cookie(<span class="string">&#x27;属性名&#x27;</span>,<span class="string">&#x27;属性值&#x27;</span>,&#123;属性&#125;);</span><br><span class="line"><span class="comment">//	这里属性可以设置cookie有限期</span></span><br><span class="line">&#123;</span><br><span class="line">    expires: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>() + <span class="number">1000</span>*<span class="number">5</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3：更改项目中文件的内容，提交到远程分支，记录为 第三个版本</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-10-30_21-24-57.png" class="">
 
-<h2 id="服务器获取Cookie"><a href="#服务器获取Cookie" class="headerlink" title="服务器获取Cookie"></a>服务器获取Cookie</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res.headers.cookie</span><br><span class="line"><span class="comment">// 注意这里查询到的为&#x27;a=1;b=2&#x27;字符串</span></span><br></pre></td></tr></table></figure>
+<p>本地分支的源文件的内容，如下图所示：</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-10-30_21-25-44.png" class="">
 
-<h3 id="原生方法解析"><a href="#原生方法解析" class="headerlink" title="原生方法解析"></a>原生方法解析</h3><ul>
-<li><p>通过replace方法替换<code>；</code>为<code>&amp;</code>后利用<code>queryString</code>包解析为对象</p>
-</li>
-<li><p>通过<code>cookie-parser</code>包解析</p>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cookieParser = <span class="built_in">require</span>(<span class="string">&#x27;cookie-parser&#x27;</span>);</span><br><span class="line">app.use(cookieParser())</span><br><span class="line"><span class="comment">// cookie会保存在req对象中，req.cookies会解析为cookie对象</span></span><br></pre></td></tr></table></figure>
+<p>经过三次提交以后，我们可以在github上看到项目的提交记录，如下图：</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-10-30_21-26-36.png" class=""> 
 
-<h2 id="删除Cookie"><a href="#删除Cookie" class="headerlink" title="删除Cookie"></a>删除Cookie</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.clearcookie(<span class="string">&#x27;属性名&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>也可以通过在dos窗口进行查看提交历史记录, 通过 git log 命令:</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-10-30_21-27-13.png" class="">
 
-<h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><h2 id="Express框架处理session"><a href="#Express框架处理session" class="headerlink" title="Express框架处理session"></a>Express框架处理session</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//	安装</span></span><br><span class="line">npm install express-session</span><br><span class="line"><span class="comment">//  引入包</span></span><br><span class="line"><span class="keyword">const</span> session = <span class="built_in">require</span>(<span class="string">&#x27;express-session&#x27;</span>)</span><br><span class="line"><span class="comment">//	使用包</span></span><br><span class="line">app.use(session(conf))</span><br></pre></td></tr></table></figure>
+<p>ps： git log 命令显示从最近到最远的显示日志，我们可以看到最近三次提交；最近的是第三个版本，上一次是第二个版本，第一次是第一个版本； 如果觉得上面的 git log 显示的信息太多的话，可以使用命令 git log –pretty = online (注意是两个杠哦)</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-10-30_21-28-05.png" class="">
 
-<h2 id="设置Session"><a href="#设置Session" class="headerlink" title="设置Session"></a>设置Session</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">req.session.属性名 = 属性值</span><br></pre></td></tr></table></figure>
+<p>通过以上步骤，我们已经有三次提交记录。现在我要开始进行版本回退操作。版本回退操作，可以使用如下两种方法：</p>
+<p><strong>方法1</strong>： git reset –hard HEAD ^  ( ^ 表示回到上一个版本，如果需要回退到上上个版本的话，将HEAD^改成HEAD^^, 以此类推。那如果要回退到前100个版本，这种方法肯定不方便，我们可以使用简便命令操作：git reset –hard HEAD~100 );</p>
+<p>未回退的之前的文件的内容为</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-10-30_21-29-17.png" class="">
 
-<h2 id="获取Session"><a href="#获取Session" class="headerlink" title="获取Session"></a>获取Session</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">req.session.属性名</span><br></pre></td></tr></table></figure>
+<p>现在我们将文件恢复到上一个版本的内容：</p>
+ <img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-10-30_21-29-53.png" class="">
 
-<h2 id="删除Session"><a href="#删除Session" class="headerlink" title="删除Session"></a>删除Session</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">req.session.destroy()</span><br></pre></td></tr></table></figure>
+ <img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-10-30_21-30-20.png" class="">
+
+<p>可以看到，文件中内容已经恢复到上一版本了，我们可以继续使用git log 来查看历史记录信息；</p>
+ <img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-10-30_21-30-54.png" class="">
+
+<p>我们可以看到第三个版本的信息已经看不到了，但是我如果现在又想回到第三个版本，应该怎么做呐；方法如下：</p>
+<p><strong>方法2</strong> ：git reset –hard 版本号 ，但是现在的问题是加入我已经关掉了命令行或者第三个版本的版本号，我并不知道？那么要如何知道第三个版本的版本号呐。可以通过如下命令获取到版本号： git reflog  演示如下：</p>
+ <img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-10-30_21-31-31.png" class="">
+
+<p>通过上面的显示我们可以知道，第三个版本的版本号是 e12928c 那么现在我们可以通过命令： git reset –hard e12928c</p>
+<p>演示如下：</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-10-30_21-32-13.png" class="">
+
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-10-30_21-32-41.png" class="">
+
+<p>我们可以看到文件回到第三个版本了。</p>
+
       
        
     </div>
