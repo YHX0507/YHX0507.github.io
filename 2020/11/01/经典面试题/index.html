@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>经典面试题 | 蜡笔小新Blogs</title>
+  <meta name="keywords" content=" 面试题 ">
+  <meta name="description" content="经典面试题 | 蜡笔小新Blogs">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="精选面试题React 和 Vue 对比(使用层面)1. 脚手架生成项目  2. 组件化 React  基本上使用原生JS进行编码，组件格式为: .js 组件创建：  使用函数（箭头函数） 使用class 关键字  12345678import React from &amp;#x27;react&amp;#x27;;const Hello &#x3D; () &#x3D;&gt; &amp;#123;  return (    &lt;h1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="经典面试题">
+<meta property="og:url" content="http://yoursite.com/2020/11/01/%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="蜡笔小新Blogs">
+<meta property="og:description" content="精选面试题React 和 Vue 对比(使用层面)1. 脚手架生成项目  2. 组件化 React  基本上使用原生JS进行编码，组件格式为: .js 组件创建：  使用函数（箭头函数） 使用class 关键字  12345678import React from &amp;#x27;react&amp;#x27;;const Hello &#x3D; () &#x3D;&gt; &amp;#123;  return (    &lt;h1">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20191229125706228.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20191229135122084.png">
+<meta property="article:published_time" content="2020-11-01T07:20:58.000Z">
+<meta property="article:modified_time" content="2020-11-01T07:25:04.234Z">
+<meta property="article:author" content="蜡笔小新">
+<meta property="article:tag" content="面试题">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yhx0507.github.io/wxapp_static/app/image-20191229125706228.png">
+
+
+<link rel="icon" href="/img/avatar3.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/brown-paper.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>蜡笔小新</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/YHX0507" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="https://www.weibo.com/3863592977" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/00huan-shi-90/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:1183376071@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=1183376071&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(15)</small></div></li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="15">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color2">cookie</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">session</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Proxy</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">defineProperty</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">Vue</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">移动项目</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">总结</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Vue组件通信</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">Node</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Express</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">不是内部命令或外部命令</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">不是可运行的程序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">小程序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">数组方法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">图片下载</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">文件下载</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">csv表格下载</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Webpack</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">Webpack入门</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">Blob</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">redux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">react</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">git stash</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">git 版本回退</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">面试题</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2018/10/11/Cookie%E5%92%8CSession/"
+           data-tag="cookie,session"
+           data-author="" >
+            <span class="post-title" title="Cookie和Session">Cookie和Session</span>
+            <span class="post-date" title="2018-10-11 17:23:07">2018/10/11</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/07/10/Proxy/"
+           data-tag="Proxy,defineProperty"
+           data-author="" >
+            <span class="post-title" title="Proxy和Object.defineProperty">Proxy和Object.defineProperty</span>
+            <span class="post-date" title="2020-07-10 22:01:28">2020/07/10</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/03/01/Vue%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"
+           data-tag="Vue,移动项目,总结"
+           data-author="" >
+            <span class="post-title" title="Vue移动端项目总结">Vue移动端项目总结</span>
+            <span class="post-date" title="2018-03-01 11:43:25">2018/03/01</span>
+        </a>
+        
+        <a  class=""
+           href="/2016/04/13/Vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/"
+           data-tag="Vue,Vue组件通信"
+           data-author="" >
+            <span class="post-title" title="Vue组件通信">Vue组件通信</span>
+            <span class="post-date" title="2016-04-13 11:08:34">2016/04/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/14/node/"
+           data-tag="Node,Express"
+           data-author="" >
+            <span class="post-title" title="node">node</span>
+            <span class="post-date" title="2019-09-14 20:43:25">2019/09/14</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/04/04/npm%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E5%8C%85%E5%90%8E%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"
+           data-tag="不是内部命令或外部命令,不是可运行的程序"
+           data-author="" >
+            <span class="post-title" title="npm全局安装包后无法使用问题解决">npm全局安装包后无法使用问题解决</span>
+            <span class="post-date" title="2020-04-04 20:19:36">2020/04/04</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/02/27/%E5%85%B3%E4%BA%8E%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E7%9A%84%E6%80%BB%E7%BB%93/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="关于小程序开发的总结">关于小程序开发的总结</span>
+            <span class="post-date" title="2018-02-27 20:56:38">2018/02/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2017/12/15/%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%8C%E6%8E%8C%E6%8F%A1%E8%BF%99%E4%BA%9B%E5%B0%B1%E5%A4%9F%E4%BA%86/"
+           data-tag="数组方法"
+           data-author="" >
+            <span class="post-title" title="数组常用方法，掌握这些就够了">数组常用方法，掌握这些就够了</span>
+            <span class="post-date" title="2017-12-15 21:31:43">2017/12/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/08/06/%E9%80%9A%E8%BF%87Blob%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD/"
+           data-tag="图片下载,文件下载"
+           data-author="" >
+            <span class="post-title" title="通过Blob实现图片下载">通过Blob实现图片下载</span>
+            <span class="post-date" title="2020-08-06 20:50:25">2020/08/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2017/08/15/%E9%80%9A%E8%BF%87json2csv%E5%89%8D%E7%AB%AF%E5%AF%BC%E5%87%BA/"
+           data-tag="文件下载,csv表格下载"
+           data-author="" >
+            <span class="post-title" title="前端前端导出csv文件（通过json2csv前端导出）">前端前端导出csv文件（通过json2csv前端导出）</span>
+            <span class="post-date" title="2017-08-15 20:36:14">2017/08/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/20/Webpack%E5%85%A5%E9%97%A8/"
+           data-tag="Webpack,Webpack入门"
+           data-author="" >
+            <span class="post-title" title="Webpack入门">Webpack入门</span>
+            <span class="post-date" title="2019-07-20 20:04:42">2019/07/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2010/08/06/%E5%89%8D%E7%AB%AF%E9%80%9A%E8%BF%87Blob%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/"
+           data-tag="文件下载,Blob"
+           data-author="" >
+            <span class="post-title" title="前端通过Blob实现文件下载">前端通过Blob实现文件下载</span>
+            <span class="post-date" title="2010-08-06 19:59:09">2010/08/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/10/30/redux/"
+           data-tag="redux,react"
+           data-author="" >
+            <span class="post-title" title="redux">redux</span>
+            <span class="post-date" title="2020-10-30 20:37:10">2020/10/30</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/10/30/git%E6%93%8D%E4%BD%9C/"
+           data-tag="git,git stash,git 版本回退"
+           data-author="" >
+            <span class="post-title" title="git操作">git操作</span>
+            <span class="post-date" title="2020-10-30 20:59:36">2020/10/30</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/11/01/%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98/"
+           data-tag="面试题"
+           data-author="" >
+            <span class="post-title" title="经典面试题">经典面试题</span>
+            <span class="post-date" title="2020-11-01 15:20:58">2020/11/01</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-经典面试题" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">经典面试题</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+        <span class="tag">
+            
+            <a class="color4">面试题</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-11-01 15:25:04'>2020-11-01 15:20</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%BE%E9%80%89%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-text">精选面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E5%92%8C-Vue-%E5%AF%B9%E6%AF%94-%E4%BD%BF%E7%94%A8%E5%B1%82%E9%9D%A2"><span class="toc-text">React 和 Vue 对比(使用层面)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%84%9A%E6%89%8B%E6%9E%B6%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE"><span class="toc-text">1. 脚手架生成项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%BB%84%E4%BB%B6%E5%8C%96"><span class="toc-text">2. 组件化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94"><span class="toc-text">3. 数据响应</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="toc-text">4. 事件绑定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1"><span class="toc-text">5. 组件通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Vuex%E5%92%8CRedux"><span class="toc-text">6. Vuex和Redux</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js%E4%B8%AD%E6%9C%89%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-text">js中有基本类型有哪些？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#typeof-%E6%98%AF%E5%90%A6%E8%83%BD%E6%AD%A3%E7%A1%AE%E5%88%A4%E6%96%AD%E7%B1%BB%E5%9E%8B%EF%BC%9F"><span class="toc-text">typeof 是否能正确判断类型？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%88%A4%E6%96%ADthis"><span class="toc-text">怎么判断this?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E7%9A%84this%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">箭头函数的this是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%EF%BC%8C%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%B0%83%E7%94%A8%E8%BE%93%E5%87%BA1%EF%BC%8C%E7%AC%AC%E4%BA%8C%E6%AC%A12%EF%BC%8C%E4%BB%A5%E6%AD%A4%E7%B1%BB%E6%8E%A8%E2%80%A6"><span class="toc-text">实现一个函数，第一次调用输出1，第二次2，以此类推…?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Es5%E5%92%8Ces6%E7%BB%A7%E6%89%BF%E5%AE%9E%E7%8E%B0%EF%BC%9F"><span class="toc-text">Es5和es6继承实现？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8es6%E5%AE%9E%E7%8E%B0%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%EF%BC%9F"><span class="toc-text">使用es6实现单例模式？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#var%E3%80%81let-%E5%8F%8A-const-%E5%8C%BA%E5%88%AB"><span class="toc-text">var、let 及 const 区别?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%B2%E8%AE%B2js%E6%A8%A1%E5%9D%97%E5%8C%96%EF%BC%9F"><span class="toc-text">讲讲js模块化？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#map-filter-reduce%E4%BD%9C%E7%94%A8%E6%98%AF%E5%95%A5%EF%BC%9F"><span class="toc-text">map, filter, reduce作用是啥？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0forEach"><span class="toc-text">如何实现forEach?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#async-%E5%92%8C-await-%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%8C%E5%AE%83%E4%BB%AC%E7%9A%84%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9%E5%88%86%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">async 和 await 的特点，它们的优点和缺点分别是什么?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0bind%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-text">实现bind方法？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">DOM事件代理是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%B7%A8%E5%9F%9F%EF%BC%9F"><span class="toc-text">什么是跨域？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVVM%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">MVVM是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%AA%E7%BD%91%E5%9D%80%E5%90%8E%E5%81%9A%E4%BA%86%E5%95%A5%EF%BC%9F"><span class="toc-text">浏览器输入一个网址后做了啥？</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="精选面试题"><a href="#精选面试题" class="headerlink" title="精选面试题"></a>精选面试题</h2><h3 id="React-和-Vue-对比-使用层面"><a href="#React-和-Vue-对比-使用层面" class="headerlink" title="React 和 Vue 对比(使用层面)"></a>React 和 Vue 对比(使用层面)</h3><h4 id="1-脚手架生成项目"><a href="#1-脚手架生成项目" class="headerlink" title="1. 脚手架生成项目"></a>1. 脚手架生成项目</h4><img src="https://yhx0507.github.io/wxapp_static/app/image-20191229125706228.png" class="">
+
+<h4 id="2-组件化"><a href="#2-组件化" class="headerlink" title="2. 组件化"></a>2. 组件化</h4><ul>
+<li>React</li>
+</ul>
+<p>基本上使用原生JS进行编码，组件格式为: <code>.js</code></p>
+<p>组件创建：</p>
+<ol>
+<li>使用函数（箭头函数）</li>
+<li>使用class 关键字</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Hello = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;h1&gt;函数组件&lt;/h1&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Hello</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassCp</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  num = <span class="number">10</span>;</span><br><span class="line">  handler() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;h2 className=<span class="string">&quot;test&quot;</span>&gt;类组件&lt;/h2&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> ClassCp</span><br></pre></td></tr></table></figure>
+
+
+
+<p>视图模版使用类HTML的jsx编写，简单直观。(jsx模版和Vue一样也只能只有一个根元素)</p>
+<p>样式通过import导入，当前组件内样式优先级最高。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./component.css&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>Vue</li>
+</ul>
+<p>封装性强，组件格式为：<code>.vue</code></p>
+<p>组件内：template、script、style三部分</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;hello&quot;&gt;</span><br><span class="line">    &lt;h1 @click&#x3D;&quot;hc(100)&quot;&gt;&#123;&#123; msg &#125;&#125;&#123;&#123;cd&#125;&#125;&lt;&#x2F;h1&gt;  </span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &quot;HelloWorld&quot;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    msg: String,</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    hc(e) &#123;</span><br><span class="line">      console.log(e);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  created() &#123;</span><br><span class="line">    console.log(this);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- Add &quot;scoped&quot; attribute to limit CSS to this component only --&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">h1 &#123;</span><br><span class="line">  margin: 40px 0 0;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-数据响应"><a href="#3-数据响应" class="headerlink" title="3. 数据响应"></a>3. 数据响应</h4><blockquote>
+<p>Vue和React如何更新视图？</p>
+</blockquote>
+<ul>
+<li>Vue：赋值data，如<code>this.value = 10</code></li>
+<li>React：<code>this.setState(&#123;value: 10&#125;)</code> </li>
+</ul>
+<p>Vue和React的其中一个最重要的区别是它们对于数据更新的管理方式不同，Vue基本上是一套基于getter/setter实现的依赖收集/依赖更新的订阅式机制，而React则是通过显式的触发函数调用来更新数据。</p>
+<ul>
+<li>React </li>
+</ul>
+<p>专注于 State =&gt; View 的最优更。</p>
+<blockquote>
+<p>setState之后发生了啥？</p>
+</blockquote>
+<ol>
+<li><p>setState是异步的</p>
+</li>
+<li><p>React在setState之后，会经对state进行diff，判断是否有改变，然后去diff 虚拟DOM决定是否要更新UI。如果这一系列过程立刻发生在每一个setState之后，就可能会有性能问题。（但是，React 依然提供了允许我们手动管理 View 更新与否的能力，而在 Vue 中这一点是被内部自动优化的。）</p>
+</li>
+<li><p>在短时间内频繁setState。React会将state的改变压入栈中，在合适的时机，批量更新state和视图，达到提高性能的效果。</p>
+</li>
+</ol>
+<ul>
+<li>Vue</li>
+</ul>
+<p>Vue 是基于 <code>Object.defineproperty</code> 及<strong>观察者模式</strong>实现的双向绑定，指令 v-model 就是一种表现。</p>
+<p>前端框架里 Directive 的实现最早来自于 angular.js，但在以 angular.js 为代表的 MVC 时代，Controller 往往才是主角，相当于 Vue 中的组件的 Script 部分。 </p>
+<p>至于数据流的单双向问题，更多取决于开发者的业务实现，在 Vue2.0 之后，官方提倡优先以单向数据流为设计原则。 由于基于 Object.defineproperty 所以 Vue.js 有条件在核心就支持 computed 等相关数据动态计算功能，而 React 中是不存在的。 </p>
+<p><strong>小结</strong> </p>
+<p>Vue 靠<code> Object.defineproperty</code> 对象的拦截知道何时更新视图，React 靠 setState 的代理模式来做到同样的事。 </p>
+<p>假设丢弃或不使用 Vue 中 v-model 类似的 API，你会发现单事件流来说和 React 其实没什么区别。 </p>
+<p>Vue 的组件系统中，我们往往假设数据是可变的，所以也往往都是直接改变数据，正因为如此，我们可以得到最细粒度更新的效果。 React 提倡数据不可变，每一次我们应该创建一个新的 State 覆盖之前的，至于最终更新所需的资源靠 Diff 算法来优化。 </p>
+<blockquote>
+<p>两种拦截模式背后进行了怎样复杂的计算？</p>
+</blockquote>
+<p> Vue 在不同环境下会降级为不同的异步 API 作为一个数据捕获周期，如Promise.resolve().then, MutationObserver, setTimeout。</p>
+<p> React 根据版本不同，有稍微不同的更新策略，大致是维护一个状态队列，将所有状态的更改推进队列，按照不同的事务类型进行不同周期的批量更新。 </p>
+<ul>
+<li><p>React 中的state 等价于 Vue 中的data; </p>
+</li>
+<li><p>React 中的setState 等价于 Vue 中的直接赋值; </p>
+</li>
+<li><p>React 中的setState.callback 等价于 Vue 中的$nextTick;</p>
+</li>
+<li><p>React 中的render 等价于 Vue 中的render/template; </p>
+</li>
+</ul>
+<h4 id="4-事件绑定"><a href="#4-事件绑定" class="headerlink" title="4. 事件绑定"></a>4. 事件绑定</h4><ul>
+<li>React</li>
+</ul>
+<p>在 React 中，为了兼顾 浏览器兼容性、事件统一机制的高性能，React 内置了一套 SyntheticEvent 用于统一事件管理的系统。 </p>
+<p>简单说，从头到尾，React 只为最顶级元素绑定了一大套事件，我们为某某元素绑定的事件都相当于在 React 的 SyntheticEvent 里 “注册”； 当事件发生时，我们注册的事件会相应地被触发。</p>
+<ul>
+<li>Vue</li>
+</ul>
+<p>Vue 对于原生 DOM 元素的原生事件都有进行一层包装，简单说就是将所有 dispatchEvent 转化为 基于中介者模式的$emit， 最终导致了事件传播形式的统一，开发者只需要关注框架的事件派发标准就可以。</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Vue 中事件捕获 --&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;box&quot;</span> @click=<span class="string">&quot;handleClick&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- React 中事件捕获 --&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;box&quot;</span> onClick=&#123;<span class="function"><span class="params">event</span> =&gt;</span> handleClick()&#125;&gt;&lt;/div&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="5-组件通信"><a href="#5-组件通信" class="headerlink" title="5. 组件通信"></a>5. 组件通信</h4><p>两者的通信机制基本类似。</p>
+<ul>
+<li>常用通信</li>
+</ul>
+<ol>
+<li><p>父 =&gt; 子：数据不可变，单向数据流 </p>
+</li>
+<li><p>子 =&gt; 父：事件派发（Vue），回调派发（React） </p>
+</li>
+<li><p>兄弟：事件派发（Vue），状态提升（React)</p>
+</li>
+</ol>
+<ul>
+<li>复杂的跨组件通信</li>
+</ul>
+<p>Vue：通过 <code>V2.2.0</code> 中新增的 <code>provide/inject</code> 来实现父组件向子组件注入数据，可以跨越多个层级。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父组件 A</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  provide: &#123;</span><br><span class="line">    data: <span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 子组件 B</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  inject: [<span class="string">&#x27;data&#x27;</span>],</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    <span class="comment">// 无论跨几层都能获得父组件的 data 属性</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.data) <span class="comment">// =&gt; 1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>React：使用Context提供的 Provider（提供数据） 和 Consumer（消费数据） 两个组件。</p>
+<ul>
+<li>Vue</li>
+</ul>
+<p>通过 Vuex 或者 Event Bus 解决，可以使用这种方式解决上述所有的通信情况。</p>
+<p>因为其内置了基于发布订阅模式的事件派发机制，使用 <code>$emit</code> 和 <code>$on</code> 作为派发器和接收器。</p>
+<ul>
+<li>React</li>
+</ul>
+<p>将父组件的事件处理 以 props 的形式传递给子组件直接调用。  </p>
+<h4 id="6-Vuex和Redux"><a href="#6-Vuex和Redux" class="headerlink" title="6. Vuex和Redux"></a>6. Vuex和Redux</h4><ol>
+<li>表面上store 注入和使用方式有一些区别。</li>
+</ol>
+<p>在 Vuex 中，<code>$store</code> 被直接注入到了组件实例中，因此可以比较灵活的使用：</p>
+<ul>
+<li>使用 <code>dispatch</code> 和 <code>commit</code> 提交更新</li>
+</ul>
+<ul>
+<li>通过 <code>mapState</code> 或者直接通过 <code>this.$store</code> 来读取数据</li>
+</ul>
+<ul>
+<li>在 Redux 中，我们每一个组件都需要显示的用 <code>connect</code> 把需要的 <code>props</code> 和 <code>dispatch</code> 连接起来。</li>
+</ul>
+<p>另外 Vuex 更加灵活一些，组件中既可以 <code>dispatch</code> action 也可以 <code>commit</code> updates，而 Redux 中只能进行 <code>dispatch</code>，并不能直接调用 reducer 进行修改。</p>
+<ol start="2">
+<li>从实现原理上来说，最大的区别是两点：</li>
+</ol>
+<ul>
+<li>Redux 使用的是不可变数据，而Vuex的数据是可变的。Redux每次都是用新的state替换旧的state，而Vuex是直接修改</li>
+<li>Redux 在检测数据变化的时候，是通过 diff 的方式比较差异的，而Vuex其实和Vue的原理一样，是通过 <code>getter/setter</code>来比较的（如果看Vuex源码会知道，其实他内部直接创建一个Vue实例用来跟踪数据变化）</li>
+</ul>
+<p>而这两点的区别，其实也是因为 React 和 Vue的设计理念上的区别。React更偏向于构建稳定大型的应用，非常的科班化。相比之下，Vue更偏向于简单迅速的解决问题，更灵活，不那么严格遵循条条框框。因此也会给人一种大型项目用React，小型项目用 Vue 的感觉。</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><blockquote>
+<p>设计结果背后的设计目的？</p>
+</blockquote>
+<p> Vue 需要 DSL，且需要关注 DSL，DSL 是其灵魂，实际上 Vue 的 DSL 很简单，且满足并约束了大部分开发场景，弱化了开发者的自由度，使开发者仅需关注业务（组件）单元的关系。 </p>
+<p>React 没有 DSL，React 只有 JSX，JSX 的本质就是 JS，开发者需要关注 「使用 JS 渲染数据」 的最优解，同时需要关注额外的数据单元组织，抽象能力对 React 项目的组织有很大影响。</p>
+<p> 在 Vue 中，绝大部分抽象在 Vue 被表现为 filter、directive、event… 在 React 中，大部分抽象可能都会是函数，而对函数的设计和运用就至关重要了。 </p>
+<p>扩展阅读：<a target="_blank" rel="noopener" href="https://github.com/lq782655835/blogs">https://github.com/lq782655835/blogs</a></p>
+<h3 id="js中有基本类型有哪些？"><a href="#js中有基本类型有哪些？" class="headerlink" title="js中有基本类型有哪些？"></a>js中有基本类型有哪些？</h3><ul>
+<li><code>boolean</code></li>
+<li><code>null</code></li>
+<li><code>undefined</code></li>
+<li><code>number</code></li>
+<li><code>string</code></li>
+<li><code>symbol</code></li>
+</ul>
+<h3 id="typeof-是否能正确判断类型？"><a href="#typeof-是否能正确判断类型？" class="headerlink" title="typeof 是否能正确判断类型？"></a>typeof 是否能正确判断类型？</h3><p><code>typeof</code> 对于原始类型来说，除了 <code>null</code> 都可以显示正确的类型。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="number">1</span> <span class="comment">// &#x27;number&#x27;</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">&#x27;1&#x27;</span> <span class="comment">// &#x27;string&#x27;</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> <span class="comment">// &#x27;undefined&#x27;</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span> <span class="comment">// &#x27;boolean&#x27;</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">Symbol</span>() <span class="comment">// &#x27;symbol&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="怎么判断this"><a href="#怎么判断this" class="headerlink" title="怎么判断this?"></a>怎么判断this?</h3><p>根据方法的调用者确认。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;<span class="attr">a</span>:<span class="number">10</span>, <span class="attr">fn</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="built_in">this</span>.a)&#125;&#125;;</span><br><span class="line">obj.fn() <span class="comment">// =&gt; 10</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="箭头函数的this是什么？"><a href="#箭头函数的this是什么？" class="headerlink" title="箭头函数的this是什么？"></a>箭头函数的this是什么？</h3><p>书写时就确定了。（runtime）</p>
+<h3 id="实现一个函数，第一次调用输出1，第二次2，以此类推…"><a href="#实现一个函数，第一次调用输出1，第二次2，以此类推…" class="headerlink" title="实现一个函数，第一次调用输出1，第二次2，以此类推…?"></a>实现一个函数，第一次调用输出1，第二次2，以此类推…?</h3><p>闭包实现</p>
+<h3 id="Es5和es6继承实现？"><a href="#Es5和es6继承实现？" class="headerlink" title="Es5和es6继承实现？"></a>Es5和es6继承实现？</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用es5 创建类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 类的静态属性：不需要new，直接可以从类名上获取的属性</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;*&#125;</span> </span>name </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 原型上定义方法</span></span><br><span class="line">Parent.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 继承</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 使用call继承父类实例上的属性</span></span><br><span class="line">  Parent.call(<span class="built_in">this</span>, name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义静态属性</span></span><br><span class="line">Child.sta = <span class="number">100</span>;</span><br><span class="line"><span class="comment">// 使用Object.create继承原型属性和方法</span></span><br><span class="line">Child.prototype = <span class="built_in">Object</span>.create(Parent.prototype, &#123;</span><br><span class="line">  <span class="comment">// 设置子类构造器</span></span><br><span class="line">  <span class="keyword">constructor</span>: &#123;</span><br><span class="line">    value: Child</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> chi1 = <span class="keyword">new</span> Child(<span class="string">&#x27;小红&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(chi1);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * es6 class关键字创建类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Par</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name) &#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getName() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// es6 继承：extends关键字</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chi</span> <span class="keyword">extends</span> <span class="title">Par</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name) &#123;</span><br><span class="line">    <span class="built_in">super</span>(name);</span><br><span class="line">    <span class="built_in">this</span>.age = <span class="number">10</span>;</span><br><span class="line">    <span class="built_in">this</span>.setAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">this</span>.age = <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 定义属性</span></span><br><span class="line">  other = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 定义方法</span></span><br><span class="line">  handler() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.other);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 定义静态属性：static关键字</span></span><br><span class="line">  <span class="keyword">static</span> sta = <span class="number">10000</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> Chi2 = <span class="keyword">new</span> Chi(<span class="string">&#x27;小明&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;es6:&#x27;</span>, Chi2);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="使用es6实现单例模式？"><a href="#使用es6实现单例模式？" class="headerlink" title="使用es6实现单例模式？"></a>使用es6实现单例模式？</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 单例模式</span></span><br><span class="line"><span class="comment"> * 定义：一个页面里边一个js类只初始化一次</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parent</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="built_in">this</span>.name = <span class="string">&#x27;小明&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getName() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// static singel = function () &#123;</span></span><br><span class="line">  <span class="comment">//   console.log(this);</span></span><br><span class="line">  <span class="comment">//   if (!this.instance) &#123;</span></span><br><span class="line">  <span class="comment">//     console.log(&#x27;只执行一次&#x27;);</span></span><br><span class="line">  <span class="comment">//     this.instance = new Parent()</span></span><br><span class="line">  <span class="comment">//   &#125;</span></span><br><span class="line">  <span class="comment">//   return this.instance</span></span><br><span class="line">  <span class="comment">// &#125;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 单例模式</span></span><br><span class="line"><span class="comment">// 工厂函数：创建单例模式</span></span><br><span class="line">Parent.singel = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">  <span class="keyword">if</span> (!<span class="built_in">this</span>.instance) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;只执行一次&#x27;</span>);</span><br><span class="line">    <span class="built_in">this</span>.instance = <span class="keyword">new</span> Parent()</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">this</span>.instance</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="var、let-及-const-区别"><a href="#var、let-及-const-区别" class="headerlink" title="var、let 及 const 区别?"></a>var、let 及 const 区别?</h3><ul>
+<li>var 变量提成到作用域顶部</li>
+<li>使用let和const，变量不会被挂载到window上，声明后才能使用</li>
+</ul>
+<h3 id="讲讲js模块化？"><a href="#讲讲js模块化？" class="headerlink" title="讲讲js模块化？"></a>讲讲js模块化？</h3><p>好处：</p>
+<ul>
+<li>解决命名冲突</li>
+<li>提供复用性</li>
+<li>提高代码可维护性</li>
+</ul>
+<p>有哪些？</p>
+<ol>
+<li><p>AMD 和 CMD</p>
+</li>
+<li><p>CommonJS</p>
+</li>
+</ol>
+<p>CommonJS 最早是 Node 在使用，目前也仍然广泛使用，比如在 Webpack 中。</p>
+<ol start="3">
+<li>ES Module</li>
+</ol>
+<p>ES Module 是原生支持的模块化。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入模块 API</span></span><br><span class="line"><span class="keyword">import</span> XXX <span class="keyword">from</span> <span class="string">&#x27;./a.js&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; XXX &#125; <span class="keyword">from</span> <span class="string">&#x27;./a.js&#x27;</span></span><br><span class="line"><span class="comment">// 导出模块 API</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="map-filter-reduce作用是啥？"><a href="#map-filter-reduce作用是啥？" class="headerlink" title="map, filter, reduce作用是啥？"></a>map, filter, reduce作用是啥？</h3><p><code>map</code> 作用是生成一个新数组，遍历原数组，将每个元素拿出来做一些变换然后放入到新的数组中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].map(<span class="function"><span class="params">v</span> =&gt;</span> v + <span class="number">1</span>) <span class="comment">// =&gt; [2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>filter</code> 的作用也是生成一个新数组，在遍历数组的时候将返回值为 <code>true</code> 的元素放入新数组。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">7</span>]</span><br><span class="line"><span class="keyword">let</span> newArr = arr.filter(<span class="function"><span class="params">item</span> =&gt;</span> item !== <span class="number">7</span>)</span><br><span class="line"><span class="built_in">console</span>.log(newArr) <span class="comment">// =&gt; [1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>reduce</code> 可以将数组中的元素通过回调函数最终转换为一个值。</p>
+<blockquote>
+<p>它接受两个参数，分别是回调函数和初始值</p>
+</blockquote>
+<p>示例求和：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">const</span> sum = arr.reduce(<span class="function">(<span class="params">acc, current</span>) =&gt;</span> acc + current, <span class="number">0</span>)</span><br><span class="line"><span class="built_in">console</span>.log(sum) <span class="comment">// =&gt; 6</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="如何实现forEach"><a href="#如何实现forEach" class="headerlink" title="如何实现forEach?"></a>如何实现forEach?</h3><h3 id="async-和-await-的特点，它们的优点和缺点分别是什么"><a href="#async-和-await-的特点，它们的优点和缺点分别是什么" class="headerlink" title="async 和 await 的特点，它们的优点和缺点分别是什么?"></a>async 和 await 的特点，它们的优点和缺点分别是什么?</h3><p><code>async</code> 和 <code>await</code> 是异步编程的最优解。</p>
+<ol>
+<li>解决了<code>Promise</code>的回调地狱问题</li>
+<li>因为 <code>await</code> 将异步代码改造成了同步代码，如果多个异步代码没有依赖性却使用了 <code>await</code> 会导致性能上的降低</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">await</span> axios()</span><br><span class="line">  <span class="keyword">await</span> axios()</span><br><span class="line">  <span class="keyword">return</span> <span class="number">100</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(test()) <span class="comment">// =&gt; 100</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="实现bind方法？"><a href="#实现bind方法？" class="headerlink" title="实现bind方法？"></a>实现bind方法？</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myBind = <span class="function"><span class="keyword">function</span> (<span class="params">context</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">this</span> !== <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">&#x27;Error&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> _this = <span class="built_in">this</span></span><br><span class="line">  <span class="keyword">const</span> args = [...arguments].slice(<span class="number">1</span>)</span><br><span class="line">  <span class="comment">// 返回一个函数</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 因为返回了一个函数，两种调用方式分别处理：()和 new</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span> <span class="keyword">instanceof</span> F) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> _this(...args, ...arguments)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _this.apply(context, args.concat(...arguments))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="DOM事件代理是什么？"><a href="#DOM事件代理是什么？" class="headerlink" title="DOM事件代理是什么？"></a>DOM事件代理是什么？</h3><p>事件委托</p>
+<h3 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h3><p>浏览器出于安全考虑，有同源策略。也就是说，如果协议、域名或者端口有一个不同就是跨域，Ajax 请求会失败。</p>
+<h3 id="MVVM是什么？"><a href="#MVVM是什么？" class="headerlink" title="MVVM是什么？"></a>MVVM是什么？</h3><p> React 和 Vue，它们都不是 MVVM 框架，只是有借鉴 MVVM 的思路。</p>
+<p>View 和 Model：</p>
+<ul>
+<li>View：用户看到的视图</li>
+<li>Model：本地数据和数据库中的数据</li>
+</ul>
+<p>在 MVVM 架构中，引入了 <strong>ViewModel</strong> 的概念。ViewModel 只关心数据和业务的处理，不关心 View 如何处理数据，在这种情况下，View 和 Model 都可以独立出来，任何一方改变了也不一定需要改变另一方，并且可以将一些可复用的逻辑放在一个 ViewModel 中，让多个 View 复用这个 ViewModel。</p>
+<p>以 Vue 框架来举例，ViewModel 就是组件的实例。View 就是模板，Model 的就是data()。</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20191229135122084.png" class="">
+
+
+
+<h3 id="浏览器输入一个网址后做了啥？"><a href="#浏览器输入一个网址后做了啥？" class="headerlink" title="浏览器输入一个网址后做了啥？"></a>浏览器输入一个网址后做了啥？</h3><ol>
+<li>DNS查询，找对应域名的IP地址</li>
+<li>接下来是 TCP 握手，应用层会下发数据给传输层，这里 TCP 协议会指明两端的端口号，然后下发给网络层。网络层中的 IP 协议会确定 IP 地址，并且指示了数据传输中如何跳转路由器。</li>
+<li>然后包会再被封装到数据链路层的数据帧结构中，最后就是物理层面的传输了。</li>
+<li>服务器返回数据到浏览器，浏览器首先判断状态吗，如果是200就继续解析。</li>
+<li>浏览器开始解析文件，如果是 gzip 格式的话会先解压一下，然后通过文件的编码格式知道该如何去解码文件。</li>
+<li>文件解码成功后会正式开始渲染流程，先会根据 HTML 构建 DOM 树，有 CSS 的话会去构建 CSSOM 树。如果遇到 script 标签的话，会判断是否存在 async 或者 defer ，前者会并行进行下载并执行 JS，后者会先下载文件，然后等待 HTML 解析完成后顺序执行。</li>
+<li>如果以上都没有，就会阻塞住渲染流程直到 JS 执行完毕。遇到文件下载的会去下载文件，这里如果使用 HTTP/2 协议的话会极大的提高多图的下载效率。</li>
+<li>CSSOM 树和 DOM 树构建完成后会开始生成 Render 树，这一步就是确定页面元素的布局、样式等等诸多方面的东西。在生成 Render 树的过程中，浏览器就开始调用 GPU 绘制，合成图层，将内容显示在屏幕上了。</li>
+</ol>
+
+      
+       
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2017 蜡笔小新</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#cookie','#session','#Proxy','#defineProperty','#Vue','#移动项目','#总结','#Vue组件通信','#Node','#Express','#不是内部命令或外部命令','#不是可运行的程序','#小程序','#数组方法','#图片下载','#文件下载','#csv表格下载','#Webpack','#Webpack入门','#Blob','#redux','#react','#git','#git stash','#git 版本回退','#面试题',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+    .post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>
