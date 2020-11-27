@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Cookie和Session | 蜡笔小新Blogs</title>
-  <meta name="keywords" content=" cookie , session ">
-  <meta name="description" content="Cookie和Session | 蜡笔小新Blogs">
+  <title>Vue3新特性 | 蜡笔小新Blogs</title>
+  <meta name="keywords" content=" Vue , Vue3 , Vue3新特性 ">
+  <meta name="description" content="Vue3新特性 | 蜡笔小新Blogs">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="vue3 如何注册全局组件123456789import &amp;#123; createApp &amp;#125; from &amp;#x27;vue&amp;#x27;import App from &amp;#x27;.&#x2F;App.vue&amp;#x27;const app &#x3D; createApp(App)&#x2F;&#x2F; 注册全局组件import SaveButton from &amp;#x27;@&#x2F;globalComponents&#x2F;SaveBut">
 <meta property="og:type" content="article">
@@ -464,9 +464,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Cookie和Session" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Vue3新特性" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Cookie和Session</h1>
+        <h1 class="article-title">Vue3新特性</h1>
     
     <div class="article-meta">
         
@@ -475,16 +475,18 @@
         
         <span class="tag">
             
-            <a class="color2">cookie</a>
+            <a class="color4">Vue</a>
             
-            <a class="color3">session</a>
+            <a class="color5">Vue3</a>
+            
+            <a class="color3">Vue3新特性</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-10-12 21:39:29'>2018-10-11 17:23</time>
+        创建时间:<time class="date" title='更新时间: 2020-11-27 22:45:28'>2020-11-27 21:39</time>
         
     </div>
     <div class="article-meta">
@@ -506,7 +508,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Cookie"><span class="toc-text">Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-Cookie%EF%BC%9F"><span class="toc-text">什么是 Cookie？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%B0%B1%E6%98%AF%E7%94%A8%E4%BA%8E%E8%A7%A3%E5%86%B3-%E2%80%9C%E5%A6%82%E4%BD%95%E8%AE%B0%E5%BD%95%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E2%80%9D"><span class="toc-text">Cookie 的作用就是用于解决 “如何记录客户端的用户信息”:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AECookie"><span class="toc-text">设置Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%94%9F%E6%96%B9%E6%B3%95"><span class="toc-text">原生方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Express%E6%96%B9%E6%B3%95"><span class="toc-text">Express方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%8E%B7%E5%8F%96Cookie"><span class="toc-text">服务器获取Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%94%9F%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90"><span class="toc-text">原生方法解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4Cookie"><span class="toc-text">删除Cookie</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Session"><span class="toc-text">Session</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Express%E6%A1%86%E6%9E%B6%E5%A4%84%E7%90%86session"><span class="toc-text">Express框架处理session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AESession"><span class="toc-text">设置Session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96Session"><span class="toc-text">获取Session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4Session"><span class="toc-text">删除Session</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#setup-%E5%87%BD%E6%95%B0"><span class="toc-text">setup 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA"><span class="toc-text">执行时机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%A2%E5%8F%82"><span class="toc-text">形参</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#reactive-%E5%87%BD%E6%95%B0"><span class="toc-text">reactive 函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ref-%E5%87%BD%E6%95%B0"><span class="toc-text">ref 函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ref-%E5%87%BD%E6%95%B0%E4%B8%8Ereactive-%E5%87%BD%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">ref()函数与reactive()函数的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#isRef"><span class="toc-text">isRef</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#toRefs"><span class="toc-text">toRefs</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#computed"><span class="toc-text">computed</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%8F%AA%E8%AF%BB%E7%9A%84%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7"><span class="toc-text">创建只读的计算属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%8F%AF%E8%AF%BB%E5%8F%AF%E5%86%99%E7%9A%84%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7"><span class="toc-text">创建可读可写的计算属性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#watch"><span class="toc-text">watch</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%91%E8%A7%86%E6%8C%87%E5%AE%9A%E7%9A%84%E6%95%B0%E6%8D%AE%E6%BA%90"><span class="toc-text">监视指定的数据源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%91%E8%A7%86%E5%A4%9A%E4%B8%AA%E6%95%B0%E6%8D%AE%E6%BA%90"><span class="toc-text">监视多个数据源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E7%9B%91%E8%A7%86"><span class="toc-text">清除监视</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LifeCycle-Hooks"><span class="toc-text">LifeCycle Hooks</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#provide-%E3%80%81inject"><span class="toc-text">provide()、inject()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ref%E5%BC%95%E7%94%A8%E9%A1%B5%E9%9D%A2DOM%E5%85%83%E7%B4%A0%E5%92%8C%E7%BB%84%E4%BB%B6"><span class="toc-text">Ref引用页面DOM元素和组件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-3-0-v-model%E7%94%A8%E6%B3%95"><span class="toc-text">Vue 3.0 v-model用法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -522,49 +524,108 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><h2 id="什么是-Cookie？"><a href="#什么是-Cookie？" class="headerlink" title="什么是 Cookie？"></a>什么是 Cookie？</h2><ul>
-<li><p>Cookie 是一些数据, 存储于你电脑上的文本文件中。</p>
-</li>
-<li><p>当 web 服务器向浏览器发送 web 页面时，在连接关闭后，服务端不会记录用户的信息。</p>
-</li>
+        <h1 id="setup-函数"><a href="#setup-函数" class="headerlink" title="setup 函数"></a>setup 函数</h1><p> <code>setup()</code> 函数是 vue3 中，专门为组件提供的新属性。它为我们使用 vue3 的 <code>Composition API</code> 新特性提供了统一的入口 </p>
+<h2 id="执行时机"><a href="#执行时机" class="headerlink" title="执行时机"></a>执行时机</h2><p>setup 函数会在 beforeCreate 之后、created 之前执行</p>
+<p> 注意：由于在执行 setup 时尚未创建组件实例，因此在 setup 选项中没有 this。这意味着，除了 props 之外，你将无法访问组件中声明的任何属性——本地状态、计算属性或方法。 </p>
+<h2 id="形参"><a href="#形参" class="headerlink" title="形参"></a>形参</h2><p><strong>第一个形参 props 用来接收 <code>props</code> 数据</strong></p>
+<ul>
+<li>在 props 中定义当前组件允许外界传递过来的参数名称</li>
+<li>通过 setup 函数的第一个形参，接收 props 数据</li>
 </ul>
-<h2 id="Cookie-的作用就是用于解决-“如何记录客户端的用户信息”"><a href="#Cookie-的作用就是用于解决-“如何记录客户端的用户信息”" class="headerlink" title="Cookie 的作用就是用于解决 “如何记录客户端的用户信息”:"></a>Cookie 的作用就是用于解决 “如何记录客户端的用户信息”:</h2><ul>
-<li><p>当用户访问 web 页面时，他的名字可以记录在 cookie 中。</p>
-</li>
-<li><p>在用户下一次访问该页面时，可以在 cookie 中读取用户访问记录。</p>
-</li>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_21-57-30.png" class=""> 
+
+<p>第二个形参 <code>context</code> 用来定义上下文** </p>
+<ul>
+<li>这个上下文对象中包含了一些有用的属性，这些属性在 vue 2.x 中需要通过 this 才能访问到，在 vue 3.x 中，它们的访问方式如下 </li>
 </ul>
-<h2 id="设置Cookie"><a href="#设置Cookie" class="headerlink" title="设置Cookie"></a>设置Cookie</h2><h3 id="原生方法"><a href="#原生方法" class="headerlink" title="原生方法"></a>原生方法</h3><ul>
-<li>设置单个cookie</li>
+<h1 id="reactive-函数"><a href="#reactive-函数" class="headerlink" title="reactive 函数"></a>reactive 函数</h1><p> <code>reactive()</code> 函数接收一个普通对象，返回一个响应式的数据对象 </p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-00-59.png" class="">
+
+<h1 id="ref-函数"><a href="#ref-函数" class="headerlink" title="ref 函数"></a>ref 函数</h1><p>  <code>ref()</code> 函数用来根据给定的值创建一个响应式的数据对象，<code>ref()</code> 函数调用的返回值是一个对象，这个对象上只包含一个 <code>value</code> 属性 </p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-02-36.png" class=""> 
+
+<p> 注意：只在<code>setup</code>函数内部访问<code>ref</code>函数需要加<code>.value</code> </p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-07-27.png" class=""> 
+
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-07-52.png" class=""> 
+
+<h1 id="ref-函数与reactive-函数的区别"><a href="#ref-函数与reactive-函数的区别" class="headerlink" title="ref()函数与reactive()函数的区别"></a><code>ref()</code>函数与<code>reactive()</code>函数的区别</h1><ul>
+<li>reactive()函数一次创建的是一个对象 如 const state = reactive({ number:1,age:11 }) 一次性可以创建很多值</li>
+<li>ref() 函数一次性只能创建一个值 如： const number = ref(0)</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.setHeader(<span class="string">&#x27;set-cookie&#x27;</span>,<span class="string">&#x27;属性名=属性值&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="isRef"><a href="#isRef" class="headerlink" title="isRef"></a>isRef</h1><p><code>isRef()</code> 用来判断某个值是否为 ref() 创建出来的对象</p>
+<p>应用场景：当需要展开某个可能为 ref() 创建出来的值的时候</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-08-51.png" class=""> 
+
+<h1 id="toRefs"><a href="#toRefs" class="headerlink" title="toRefs"></a>toRefs</h1><p>当setup()函数一次性要返回数据、方法等布置一个数据的时候，这时候使用<code>reactive()</code>函数创建的缺陷就体现出来了，一个方法只能有一个return语句，又没有办法写在一起return， 所以只能这时候只能将<code>reactive()</code>创建的响应式对象拆开，但是拆开这些属性就缺失了响应式的功能，所以这时候就需要<code>toRefs()</code>方法将单个数据转成响应式对象，这个也就是为什么<code>ref()</code>使用的优先级比较高了。</p>
+<p>当有多个数据需要访问的时候 就可以使用 toRefs() 函数 将数据转换成单个的响应式数据 再统一的返回</p>
+<p><code>toRefs()</code> 函数可以将 <code>reactive()</code> 创建出来的响应式对象，转换为普通的对象，只不过，这个对象上的每个属性节点，都是 <code>ref()</code> 类型的响应式数据，最常见的应用场景如下</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-09-48.png" class=""> 
+
+<h1 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h1><h2 id="创建只读的计算属性"><a href="#创建只读的计算属性" class="headerlink" title="创建只读的计算属性"></a>创建只读的计算属性</h2><img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-11-27.png" class=""> 
+
+<h2 id="创建可读可写的计算属性"><a href="#创建可读可写的计算属性" class="headerlink" title="创建可读可写的计算属性"></a>创建可读可写的计算属性</h2><img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-12-21.png" class=""> 
+
+<h1 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h1><p>Vue3中的 <code>watch</code> 的功能 还是我们理解的那个watch的功能 和 Vue2x 是一样的 只是功能变得更加的强大</p>
+<ul>
+<li>watch的第一个参数存放的是监听变量的值<br>如果是ref创建的直接输出创建的对象就行 如果是reactive创建的对象需要使用箭头函数导<br>当一次监听多个变量的时候 第一个对象可以以数组的形式写入</li>
+<li>watch第二个参数是一个函数有三个形参，分别是 新值、 旧值 和 清楚函数<br>如果是传递多个参数的时候 新值和旧值是可以通过解构赋值的方式分别导出的<br>清楚函数可以 清楚掉这个监听器的上次未完成的异步任务</li>
+<li>第三个参数 {lazy:true/false} 分别表示的是页面一刷新会不会就执行一次watch监听</li>
+</ul>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-14-54.png" class=""> 
+
+<h2 id="监视指定的数据源"><a href="#监视指定的数据源" class="headerlink" title="监视指定的数据源"></a>监视指定的数据源</h2><ul>
+<li>监视 reactive 类型的数据源 </li>
+</ul>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-15-19.png" class=""> 
 
 <ul>
-<li>设置多个cookie</li>
+<li>监视 ref 类型的数据源： </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.setHeader(<span class="string">&#x27;set-cookie&#x27;</span>,[<span class="string">&#x27;属性名=属性值&#x27;</span>,<span class="string">&#x27;属性名=属性值&#x27;</span>]);</span><br></pre></td></tr></table></figure>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-15-45.png" class=""> 
 
-<h3 id="Express方法"><a href="#Express方法" class="headerlink" title="Express方法"></a>Express方法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">res.cookie(<span class="string">&#x27;属性名&#x27;</span>,<span class="string">&#x27;属性值&#x27;</span>,&#123;属性&#125;);</span><br><span class="line"><span class="comment">//	这里属性可以设置cookie有限期</span></span><br><span class="line">&#123;</span><br><span class="line">    expires: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>() + <span class="number">1000</span>*<span class="number">5</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="监视多个数据源"><a href="#监视多个数据源" class="headerlink" title="监视多个数据源"></a>监视多个数据源</h2><img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-16-11.png" class=""> 
 
-<h2 id="服务器获取Cookie"><a href="#服务器获取Cookie" class="headerlink" title="服务器获取Cookie"></a>服务器获取Cookie</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res.headers.cookie</span><br><span class="line"><span class="comment">// 注意这里查询到的为&#x27;a=1;b=2&#x27;字符串</span></span><br></pre></td></tr></table></figure>
+<h2 id="清除监视"><a href="#清除监视" class="headerlink" title="清除监视"></a>清除监视</h2><p>在 setup() 函数内创建的 watch 监视，会在当前组件被销毁的时候自动停止。如果想要明确地停止某个监视，可以调用 watch() 函数的返回值即可，语法如下 </p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-17-02.png" class=""> 
 
-<h3 id="原生方法解析"><a href="#原生方法解析" class="headerlink" title="原生方法解析"></a>原生方法解析</h3><ul>
-<li><p>通过replace方法替换<code>；</code>为<code>&amp;</code>后利用<code>queryString</code>包解析为对象</p>
-</li>
-<li><p>通过<code>cookie-parser</code>包解析</p>
-</li>
+<h1 id="LifeCycle-Hooks"><a href="#LifeCycle-Hooks" class="headerlink" title="LifeCycle Hooks"></a>LifeCycle Hooks</h1><p> 新版的<code>生命周期函数</code>，可以按需导入到组件中，且<code>只能在 setup() 函数</code>中使用，代码示例如下 </p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-18-49.png" class=""> 
+
+<p> vue 2.x 的生命周期函数与新版 <code>Composition API</code> 之间的映射关系 </p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-19-29.png" class=""> 
+
+<h1 id="provide-、inject"><a href="#provide-、inject" class="headerlink" title="provide()、inject()"></a>provide()、inject()</h1><p>使用 <code>provide</code> <code>inject</code> 可以实现跨越父子之间的传值<br>比如父组件要给孙组件传值， 就可以在父组件用 <code>provide(键,值)</code> 的方式声明一个值<br>它的后代组件就可以使用 <code>inject(键) </code>的方式来获取这个共享的值<br>使用了这个新特性之后 我们就可以不用一层一层的 props 组件传值</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-30-47.png" class=""> 
+
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-31-13.png" class=""> 
+
+<h1 id="Ref引用页面DOM元素和组件"><a href="#Ref引用页面DOM元素和组件" class="headerlink" title="Ref引用页面DOM元素和组件"></a>Ref引用页面DOM元素和组件</h1><p>ref除了可以创建响应式的数据意外，还可以对页面的DOM元素和组件进行引用，这点和Vue2是一样，</p>
+<p>Vue2也是有ref，Vue3只需要保证html标签结点的ref值和我们自己创建的ref是同一个值，即可绑定引用</p>
+<ul>
+<li>绑定引用 </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cookieParser = <span class="built_in">require</span>(<span class="string">&#x27;cookie-parser&#x27;</span>);</span><br><span class="line">app.use(cookieParser())</span><br><span class="line"><span class="comment">// cookie会保存在req对象中，req.cookies会解析为cookie对象</span></span><br></pre></td></tr></table></figure>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-32-42.png" class=""> 
 
-<h2 id="删除Cookie"><a href="#删除Cookie" class="headerlink" title="删除Cookie"></a>删除Cookie</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.clearcookie(<span class="string">&#x27;属性名&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>绑定组件 </li>
+</ul>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-35-17.png" class=""> 
 
-<h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><h2 id="Express框架处理session"><a href="#Express框架处理session" class="headerlink" title="Express框架处理session"></a>Express框架处理session</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//	安装</span></span><br><span class="line">npm install express-session</span><br><span class="line"><span class="comment">//  引入包</span></span><br><span class="line"><span class="keyword">const</span> session = <span class="built_in">require</span>(<span class="string">&#x27;express-session&#x27;</span>)</span><br><span class="line"><span class="comment">//	使用包</span></span><br><span class="line">app.use(session(conf))</span><br></pre></td></tr></table></figure>
+<h1 id="Vue-3-0-v-model用法"><a href="#Vue-3-0-v-model用法" class="headerlink" title="Vue 3.0 v-model用法"></a>Vue 3.0 v-model用法</h1><img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-39-40.png" class=""> 
 
-<h2 id="设置Session"><a href="#设置Session" class="headerlink" title="设置Session"></a>设置Session</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">req.session.属性名 = 属性值</span><br></pre></td></tr></table></figure>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-40-02.png" class=""> 
 
-<h2 id="获取Session"><a href="#获取Session" class="headerlink" title="获取Session"></a>获取Session</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">req.session.属性名</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>Vue3的一些比较会用的到的特性都已经总结完毕了，需要注意的点如下：</p>
+<ul>
+<li><code>setup()</code>函数很重要，操作基本都在这里面完成</li>
+<li>定义响应式变量的时候尽量都使用<code>ref</code>来定义，在<code>setup()</code>里面要使用用ref的值需要<code>.value</code>才能访问到，在html部门可以直接访问。</li>
+<li><code>watch()</code>事件监听现在更加强大，能够一次性的监听多个对象，（需要使用解构赋值）、和清楚上次监听的一些异步任务</li>
+<li>生命周期函数函数全部都写在<code>setup</code>内部，并且周期的名字都加了on,如<code>onMounted()</code></li>
+<li><code>provide</code>,<code>inject</code>真的很好用，很方便的组件传值</li>
+<li>Ref引用DOM，和引用组件的细节就是要保证ref的值和我们用ref创建的值要保持一致。</li>
+</ul>
 
-<h2 id="删除Session"><a href="#删除Session" class="headerlink" title="删除Session"></a>删除Session</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">req.session.destroy()</span><br></pre></td></tr></table></figure>
       
        
     </div>
