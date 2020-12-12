@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>蜡笔小新Blogs</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="蜡笔小新Blogs">
+  <title>Vue-router4的一些变化 | 蜡笔小新Blogs</title>
+  <meta name="keywords" content=" Vue , router , Vue-router ">
+  <meta name="description" content="Vue-router4的一些变化 | 蜡笔小新Blogs">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="vue-router 4.0createRouter 创建路由Vue Router不再是类，而是一组功能 new Router()现在您无需调用即可调用createRouter， history替换新选项mode 移动了base选项，base现在作为第一个参数传递给createWebHistory routes 该选项是必需的 options    123456import &amp;#123; crea">
 <meta property="og:type" content="article">
@@ -63,7 +63,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -492,12 +492,53 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-Vue-router4的一些变化" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Front-end-Engineer"><span class="toc-text">Why Front end Engineer</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%89%8D%E7%AB%AF%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">对前端的理解</span></a></li></ol></li></ol>
+        <h1 class="article-title">Vue-router4的一些变化</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+        <span class="tag">
+            
+            <a class="color4">Vue</a>
+            
+            <a class="color2">router</a>
+            
+            <a class="color1">Vue-router</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-12-12 20:45:46'>2020-12-12 19:54</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vue-router-4-0"><span class="toc-text">vue-router 4.0</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#createRouter-%E5%88%9B%E5%BB%BA%E8%B7%AF%E7%94%B1"><span class="toc-text">createRouter 创建路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-Router%E4%B8%8D%E5%86%8D%E6%98%AF%E7%B1%BB%EF%BC%8C%E8%80%8C%E6%98%AF%E4%B8%80%E7%BB%84%E5%8A%9F%E8%83%BD"><span class="toc-text">Vue Router不再是类，而是一组功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#history%E5%B1%9E%E6%80%A7"><span class="toc-text">history属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4-%EF%BC%88%E5%8A%A0%E6%B3%A8%E6%98%9F%E6%A0%87%E6%88%96%E6%8D%95%E8%8E%B7%E5%85%A8%E9%83%A8%EF%BC%89%E8%B7%AF%E7%94%B1"><span class="toc-text">删除*（加注星标或捕获全部）路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scrollBehavior"><span class="toc-text">scrollBehavior</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%88%E6%88%90API"><span class="toc-text">合成API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#addRoute"><span class="toc-text">addRoute</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E5%86%85%E9%83%A8%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%A4%E4%B8%AA%E8%B7%AF%E7%94%B1%E9%92%A9%E5%AD%90"><span class="toc-text">组件内部使用的两个路由钩子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E5%86%85%E9%83%A8%E4%BD%BF%E7%94%A8%E5%BD%93%E5%89%8D%E8%B7%AF%E7%94%B1%E4%BF%A1%E6%81%AF%E5%92%8C%E8%8E%B7%E5%8F%96%E8%B7%AF%E7%94%B1%E5%8F%82%E6%95%B0"><span class="toc-text">组件内部使用当前路由信息和获取路由参数</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -510,24 +551,141 @@
     }
 </style>
 </div>
-            <h1 id="Why-Front-end-Engineer"><a href="#Why-Front-end-Engineer" class="headerlink" title="Why Front end Engineer"></a>Why Front end Engineer</h1><h2 id="对前端的理解"><a href="#对前端的理解" class="headerlink" title="对前端的理解"></a>对前端的理解</h2><p>喜欢前端的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，看山是山、看水是水。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，看山不是山、看水不是水。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，看山还是山、看水还是水。</p>
-</blockquote>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vue-router-4-0"><a href="#vue-router-4-0" class="headerlink" title="vue-router 4.0"></a>vue-router 4.0</h1><h2 id="createRouter-创建路由"><a href="#createRouter-创建路由" class="headerlink" title="createRouter 创建路由"></a>createRouter 创建路由</h2><h3 id="Vue-Router不再是类，而是一组功能"><a href="#Vue-Router不再是类，而是一组功能" class="headerlink" title="Vue Router不再是类，而是一组功能"></a>Vue Router不再是类，而是一组功能</h3><ul>
+<li><code>new Router()</code>现在您无需调用即可调用<code>createRouter</code>，</li>
+<li>history替换新选项mode</li>
+<li>移动了base选项，base现在作为第一个参数传递给<code>createWebHistory</code></li>
+<li><code>routes</code> 该选项是必需的 <code>options</code></li>
+</ul>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-12_20-36-51.png" class="">
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createRouter, createWebHistory &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = createRouter(&#123;</span><br><span class="line">  history: createWebHistory(),</span><br><span class="line">  routes: [],</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="history属性"><a href="#history属性" class="headerlink" title="history属性"></a>history属性</h3><ul>
+<li><code>&quot;history&quot;</code>： <code>createWebHistory()</code></li>
+<li><code>&quot;hash&quot;</code>： <code>createWebHashHistory()</code></li>
+<li><code>&quot;abstract&quot;</code>： <code>createMemoryHistory()</code></li>
+</ul>
+<h3 id="删除-（加注星标或捕获全部）路由"><a href="#删除-（加注星标或捕获全部）路由" class="headerlink" title="删除*（加注星标或捕获全部）路由"></a>删除*（加注星标或捕获全部）路由</h3><img src="https://yhx0507.github.io/wxapp_static/app/image-20201209094302843.png" class="">
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123; <span class="attr">path</span>: <span class="string">&#x27;/:pathMatch(.*)&#x27;</span>, <span class="attr">name</span>: <span class="string">&#x27;bad-not-found&#x27;</span>, <span class="attr">component</span>: NotFound &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h3 id="scrollBehavior"><a href="#scrollBehavior" class="headerlink" title="scrollBehavior"></a>scrollBehavior</h3><p> 该<code>scrollBehavior</code>函数接收<code>to</code>和<code>from</code>路由对象。第三个参数，<code>savedPosition</code>仅在通过<code>popstate</code>导航（由浏览器的后退/前进按钮触发）时才可用。 </p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-12_20-38-05.png" class="">
+
+<p>由以前的<code>x</code>，<code>y</code>改为现在的<code>left</code>，<code>top</code></p>
+<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-12_20-39-42.png" class="">
+
+<h2 id="合成API"><a href="#合成API" class="headerlink" title="合成API"></a>合成API</h2><h3 id="addRoute"><a href="#addRoute" class="headerlink" title="addRoute"></a>addRoute</h3><p>将新的路由记录添加到路由器。如果路线中有个name并且已经存在一个相同的路径，则会先将其删除，这里的添加路由记录有两种添加方式</p>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>参数类型</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>routes</strong></td>
+<td><code>RouteRecordRaw</code></td>
+<td><strong>路线记录添加</strong></td>
+</tr>
+<tr>
+<td><strong>parentName</strong></td>
+<td><code>string</code>,<code>symbol</code></td>
+<td><strong>附加在父路由记录</strong><code>route</code></td>
+</tr>
+</tbody></table>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201209110809029.png" class="">
+
+<ul>
+<li><p>在父路由下添加路由</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201209095648742.png" class="">
+
+<p>注意：这里第一个参数parentName就是父路由记录options里的name</p>
+</li>
+<li><p>直接添加一条路由记录</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201209095507374.png" class="">
+
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201209111034131.png" class="">
+
+</li>
+</ul>
+<h3 id="组件内部使用的两个路由钩子"><a href="#组件内部使用的两个路由钩子" class="headerlink" title="组件内部使用的两个路由钩子"></a>组件内部使用的两个路由钩子</h3><ul>
+<li><p>onBeforeRouteLeave 路由离开钩子</p>
+</li>
+<li><p>onBeforeRouteLeave 路由离开钩子</p>
+<p>参数：</p>
+<p>​    to 目标路由信息<br>​    from 当前路由信息<br>​    next 跳转函数</p>
+<p>注意：导航守卫可以是返回值而不是next</p>
+</li>
+</ul>
+<h3 id="组件内部使用当前路由信息和获取路由参数"><a href="#组件内部使用当前路由信息和获取路由参数" class="headerlink" title="组件内部使用当前路由信息和获取路由参数"></a>组件内部使用当前路由信息和获取路由参数</h3><img src="https://yhx0507.github.io/wxapp_static/app/image-20201209101139573.png" class="">
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useRoute, useRouter, useLink &#125; <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  setup() &#123;</span><br><span class="line">    <span class="keyword">const</span> route = useRoute()</span><br><span class="line">    <span class="keyword">const</span> router = useRouter()</span><br><span class="line">    <span class="keyword">const</span> link = useLink()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>useRoute 返回当前路由</strong></p>
+<p>该route对象是反应性对象，因此可以监视其任何属性，并且应避免监视整个route对象</p>
+<ul>
+<li>path</li>
+<li>name</li>
+<li>params</li>
+<li>query</li>
+<li>hash</li>
+<li>fullpath</li>
+<li>matched</li>
+<li>meta</li>
+<li>redirectedFrom</li>
+</ul>
+<p><strong>useRouter 返回路由实例</strong></p>
+<ul>
+<li>currentRoute 返回当前路由 , 非ref</li>
+<li>addRoute 动态添加路由</li>
+<li>removeRoute 动态删除路由</li>
+<li>hasRoute 检查路由是否存在</li>
+<li>getRoutes 获取路由记录的数组, 替换原 3.0 routes 属性</li>
+<li>push 路由跳转</li>
+<li>replace 路由重定向</li>
+<li>resolve 解析目标路由</li>
+<li>beforeEach 全局路由守卫,  路由跳转前</li>
+<li>afterEach 全局路由守卫, 路由跳转后台</li>
+<li>onError 报错监听</li>
+<li>isReady 路由是否初始话， 返回Promise,  替代原3.0 onReady</li>
+<li>history 路由执行器</li>
+<li>install vue插件安装器</li>
+</ul>
+<p><strong>useLink 自定义路由跳转函数, 接受一个路由配置，并返回路由信息及执行回调</strong></p>
+<ul>
+<li>route 路由对象</li>
+<li>href 目标地址</li>
+<li>isActive 是否被激活</li>
+<li>isExactActive</li>
+<li>navigate 跳转回调</li>
+</ul>
+
+      
+       
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2017 蜡笔小新</p>

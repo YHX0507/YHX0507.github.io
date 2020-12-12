@@ -6,23 +6,30 @@
   <meta name="keywords" content=" 不是内部命令或外部命令 , 不是可运行的程序 ">
   <meta name="description" content="npm全局安装包后无法使用问题解决 | 蜡笔小新Blogs">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="子组件      父组件">
+<meta name="description" content="vue-router 4.0createRouter 创建路由Vue Router不再是类，而是一组功能 new Router()现在您无需调用即可调用createRouter， history替换新选项mode 移动了base选项，base现在作为第一个参数传递给createWebHistory routes 该选项是必需的 options    123456import &amp;#123; crea">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue3v-model">
-<meta property="og:url" content="http://yoursite.com/2020/11/27/Vue3v-model/index.html">
+<meta property="og:title" content="Vue-router4的一些变化">
+<meta property="og:url" content="http://yoursite.com/2020/12/12/Vue-router4%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8F%98%E5%8C%96/index.html">
 <meta property="og:site_name" content="蜡笔小新Blogs">
-<meta property="og:description" content="子组件      父组件">
+<meta property="og:description" content="vue-router 4.0createRouter 创建路由Vue Router不再是类，而是一组功能 new Router()现在您无需调用即可调用createRouter， history替换新选项mode 移动了base选项，base现在作为第一个参数传递给createWebHistory routes 该选项是必需的 options    123456import &amp;#123; crea">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/2020-11-27_231137.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/2020-11-27_231249.png">
-<meta property="article:published_time" content="2020-11-27T15:07:36.000Z">
-<meta property="article:modified_time" content="2020-11-27T15:15:17.368Z">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-12_20-36-51.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20201209094302843.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-12_20-38-05.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-12_20-39-42.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20201209110809029.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20201209095648742.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20201209095507374.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20201209111034131.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20201209101139573.png">
+<meta property="article:published_time" content="2020-12-12T11:54:58.000Z">
+<meta property="article:modified_time" content="2020-12-12T12:45:46.780Z">
 <meta property="article:author" content="蜡笔小新">
 <meta property="article:tag" content="Vue">
-<meta property="article:tag" content="Vue3">
-<meta property="article:tag" content="v-model">
+<meta property="article:tag" content="router">
+<meta property="article:tag" content="Vue-router">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://yhx0507.github.io/wxapp_static/app/2020-11-27_231137.png">
+<meta name="twitter:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-12_20-36-51.png">
 
 
 <link rel="icon" href="/img/avatar3.jpg">
@@ -123,7 +130,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(20)</small></div></li>
+    <li><div class="all active">全部文章<small>(21)</small></div></li>
     
 </ul>
 <div class="left-bottom">
@@ -135,7 +142,7 @@
     </div>
     <div></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="20">
+<input type="hidden" id="yelog_site_posts_number" value="21">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -186,7 +193,27 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a class="color1">Redux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">React</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a class="color4">Vue</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">Vue3</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">v-model</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Vue3新特性</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -222,14 +249,6 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">redux</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">react</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color2">不是内部命令或外部命令</a>
     </li>
     
@@ -238,15 +257,23 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a class="color1">redux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">react</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a class="color4">小程序</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color4">面试题</a>
+        <a class="color5">数组方法</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color5">数组方法</a>
+        <a class="color4">面试题</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -274,23 +301,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">Redux</a>
+        <a class="color2">router</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">React</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">Vue3</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">Vue3新特性</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">v-model</a>
+        <a class="color1">Vue-router</a>
     </li>
     
     <div class="clearfix"></div>
@@ -313,6 +328,30 @@
            data-author="" >
             <span class="post-title" title="Proxy和Object.defineProperty">Proxy和Object.defineProperty</span>
             <span class="post-date" title="2020-07-10 22:01:28">2020/07/10</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/11/06/Redux%E9%85%8D%E5%90%88React%E4%BD%BF%E7%94%A8/"
+           data-tag="Redux,React"
+           data-author="" >
+            <span class="post-title" title="Redux配合React使用">Redux配合React使用</span>
+            <span class="post-date" title="2020-11-06 21:52:52">2020/11/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/11/27/Vue3v-model/"
+           data-tag="Vue,Vue3,v-model"
+           data-author="" >
+            <span class="post-title" title="Vue3v-model">Vue3v-model</span>
+            <span class="post-date" title="2020-11-27 23:07:36">2020/11/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/11/27/Vue3%E6%96%B0%E7%89%B9%E6%80%A7/"
+           data-tag="Vue,Vue3,Vue3新特性"
+           data-author="" >
+            <span class="post-title" title="Vue3新特性">Vue3新特性</span>
+            <span class="post-date" title="2020-11-27 21:39:25">2020/11/27</span>
         </a>
         
         <a  class=""
@@ -348,19 +387,19 @@
         </a>
         
         <a  class=""
-           href="/2020/10/30/redux/"
-           data-tag="redux,react"
-           data-author="" >
-            <span class="post-title" title="redux">redux</span>
-            <span class="post-date" title="2020-10-30 20:37:10">2020/10/30</span>
-        </a>
-        
-        <a  class=""
            href="/2020/04/04/npm%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E5%8C%85%E5%90%8E%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"
            data-tag="不是内部命令或外部命令,不是可运行的程序"
            data-author="" >
             <span class="post-title" title="npm全局安装包后无法使用问题解决">npm全局安装包后无法使用问题解决</span>
             <span class="post-date" title="2020-04-04 20:19:36">2020/04/04</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/10/30/redux/"
+           data-tag="redux,react"
+           data-author="" >
+            <span class="post-title" title="redux">redux</span>
+            <span class="post-date" title="2020-10-30 20:37:10">2020/10/30</span>
         </a>
         
         <a  class=""
@@ -372,19 +411,19 @@
         </a>
         
         <a  class=""
-           href="/2020/11/01/%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98/"
-           data-tag="面试题"
-           data-author="" >
-            <span class="post-title" title="经典面试题">经典面试题</span>
-            <span class="post-date" title="2020-11-01 15:20:58">2020/11/01</span>
-        </a>
-        
-        <a  class=""
            href="/2017/12/15/%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%8C%E6%8E%8C%E6%8F%A1%E8%BF%99%E4%BA%9B%E5%B0%B1%E5%A4%9F%E4%BA%86/"
            data-tag="数组方法"
            data-author="" >
             <span class="post-title" title="数组常用方法，掌握这些就够了">数组常用方法，掌握这些就够了</span>
             <span class="post-date" title="2017-12-15 21:31:43">2017/12/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/11/01/%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98/"
+           data-tag="面试题"
+           data-author="" >
+            <span class="post-title" title="经典面试题">经典面试题</span>
+            <span class="post-date" title="2020-11-01 15:20:58">2020/11/01</span>
         </a>
         
         <a  class=""
@@ -428,35 +467,19 @@
         </a>
         
         <a  class=""
-           href="/2020/11/06/Redux%E9%85%8D%E5%90%88React%E4%BD%BF%E7%94%A8/"
-           data-tag="Redux,React"
-           data-author="" >
-            <span class="post-title" title="Redux配合React使用">Redux配合React使用</span>
-            <span class="post-date" title="2020-11-06 21:52:52">2020/11/06</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/11/27/Vue3%E6%96%B0%E7%89%B9%E6%80%A7/"
+           href="/2020/11/27/Vue3%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
            data-tag="Vue,Vue3,Vue3新特性"
            data-author="" >
-            <span class="post-title" title="Vue3新特性">Vue3新特性</span>
-            <span class="post-date" title="2020-11-27 21:39:25">2020/11/27</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/11/27/vue3%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"
-           data-tag="Vue,Vue3,Vue3新特性"
-           data-author="" >
-            <span class="post-title" title="vue3常见问题汇总">vue3常见问题汇总</span>
+            <span class="post-title" title="Vue3常见问题汇总">Vue3常见问题汇总</span>
             <span class="post-date" title="2020-11-27 22:44:28">2020/11/27</span>
         </a>
         
         <a  class=""
-           href="/2020/11/27/Vue3v-model/"
-           data-tag="Vue,Vue3,v-model"
+           href="/2020/12/12/Vue-router4%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8F%98%E5%8C%96/"
+           data-tag="Vue,router,Vue-router"
            data-author="" >
-            <span class="post-title" title="Vue3v-model">Vue3v-model</span>
-            <span class="post-date" title="2020-11-27 23:07:36">2020/11/27</span>
+            <span class="post-title" title="Vue-router4的一些变化">Vue-router4的一些变化</span>
+            <span class="post-date" title="2020-12-12 19:54:58">2020/12/12</span>
         </a>
         
     </nav>
@@ -624,7 +647,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#cookie','#session','#Proxy','#defineProperty','#Vue','#移动项目','#总结','#Vue组件通信','#git','#git stash','#git 版本回退','#Node','#Express','#redux','#react','#不是内部命令或外部命令','#不是可运行的程序','#小程序','#面试题','#数组方法','#图片下载','#文件下载','#csv表格下载','#Webpack','#Webpack入门','#Blob','#Redux','#React','#Vue3','#Vue3新特性','#v-model',],
+            'data': ['#cookie','#session','#Proxy','#defineProperty','#Redux','#React','#Vue','#Vue3','#v-model','#Vue3新特性','#移动项目','#总结','#Vue组件通信','#git','#git stash','#git 版本回退','#Node','#Express','#不是内部命令或外部命令','#不是可运行的程序','#redux','#react','#小程序','#数组方法','#面试题','#图片下载','#文件下载','#csv表格下载','#Webpack','#Webpack入门','#Blob','#router','#Vue-router',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
