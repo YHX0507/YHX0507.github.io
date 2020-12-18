@@ -6,32 +6,104 @@
   <meta name="keywords" content=" Webpack , Webpack入门 ">
   <meta name="description" content="Webpack入门 | 蜡笔小新Blogs">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="vue3 如何注册全局组件123456789import &amp;#123; createApp &amp;#125; from &amp;#x27;vue&amp;#x27;import App from &amp;#x27;.&#x2F;App.vue&amp;#x27;const app &#x3D; createApp(App)&#x2F;&#x2F; 注册全局组件import SaveButton from &amp;#x27;@&#x2F;globalComponents&#x2F;SaveBut">
+<meta name="description" content="title: 完整的移动端类头条项目流程comments: truedate: 2019-12-18 20:39:55tags:  Vue Vue2    一、项目初始化使用 Vue CLI 创建项目 提示：该项目基于 VueCLI 版本 4 创建，如果你的版本低于 4，请升级继续下面的内容。 12345678# 查看 VueCLI 版本号vue --version# npm 安装升级npm in">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue3全局注册问题">
-<meta property="og:url" content="http://yoursite.com/2020/12/12/Vue3%E5%85%A8%E5%B1%80%E6%B3%A8%E5%86%8C%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="蜡笔小新Blogs">
+<meta property="og:url" content="http://yoursite.com/2020/12/18/%E5%AE%8C%E6%95%B4%E7%9A%84%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%B1%BB%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E6%B5%81%E7%A8%8B/index.html">
 <meta property="og:site_name" content="蜡笔小新Blogs">
-<meta property="og:description" content="vue3 如何注册全局组件123456789import &amp;#123; createApp &amp;#125; from &amp;#x27;vue&amp;#x27;import App from &amp;#x27;.&#x2F;App.vue&amp;#x27;const app &#x3D; createApp(App)&#x2F;&#x2F; 注册全局组件import SaveButton from &amp;#x27;@&#x2F;globalComponents&#x2F;SaveBut">
+<meta property="og:description" content="title: 完整的移动端类头条项目流程comments: truedate: 2019-12-18 20:39:55tags:  Vue Vue2    一、项目初始化使用 Vue CLI 创建项目 提示：该项目基于 VueCLI 版本 4 创建，如果你的版本低于 4，请升级继续下面的内容。 12345678# 查看 VueCLI 版本号vue --version# npm 安装升级npm in">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-50-21.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-50-44.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-51-07.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-51-35.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-52-06.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-52-58.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-53-28.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-12_21-01-25.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-12_21-04-50.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-12_21-05-45.png">
-<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-12_21-07-11.png">
-<meta property="article:published_time" content="2020-12-12T15:40:46.000Z">
-<meta property="article:modified_time" content="2020-12-12T15:44:33.466Z">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/2020-11-27_231249.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200105001849854.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/logo.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1566431560209.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570784873574.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570785466138.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570786015561.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/login.gif">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/loging.gif">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200108104554588.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200109093642365.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/v2-dde997503ed9d450e2f39042d53d4307_hd.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/v2-85622297a93f493c891ffb90b67fd5e0_hd.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/v2-1f49734871c5e2da2d264d28ac310a65_hd.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200108192548559.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/v2-0b02fa4a73a8072eb03cdf78270235e1_hd.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/ezgif-5-ae2b96ba00b5.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200108012948915.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200109192157006.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1567481874811.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1566431827166.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200109153050432.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200109133717775.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/out-1578559616164.gif">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200111104547462.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1566539328996.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200111124415227.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200111124530323.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200111124539391.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/list-pull.gif">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1566541118035.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1571040968593.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/chanel-add.gif">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1566431801892.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/wx_20190828082340.jpg">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200112154732044.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200112162223915.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1566972493322.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1566972493322.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20191206152846065.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1566431661910.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1567067894388.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200203094246747.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1566431856572.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/bg2017051501.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/bg2017051502.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/bg2017051503.jpg">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1569575005360.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/006tNbRwly1gbmotawimpj329q0u010o.jpg">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/006tNbRwly1gbmotr8teyj327b0u0n49.jpg">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200206114558224.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200206114832875.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200206115237278.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200206115311948.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-18_22-47-10.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200206115515608.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200206115537061.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200206115641953.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200206120118601.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/image-20200206120155955.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-18_22-53-16.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-18_22-54-15.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-18_22-55-17.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-18_22-56-00.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-18_22-56-58.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570587926151.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570587995718.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570588350152.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570588463176.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570588604586.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570590042920.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570590394808.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570590670255.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570591544471.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570591838627.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570591970145.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570592155354.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570592635004.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/1570592783359.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/ios-trustapp-01.jpg">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/ios-trustapp-02.jpg">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/ios-trustapp-03.jpg">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/ios-trustapp-04.jpg">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/ios-trustapp-05.jpg">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/ios-trustapp-06.jpg">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/ios-trustapp-07.jpg">
+<meta property="article:published_time" content="2020-12-18T12:39:55.800Z">
+<meta property="article:modified_time" content="2020-12-18T15:31:53.407Z">
 <meta property="article:author" content="蜡笔小新">
-<meta property="article:tag" content="Vue">
-<meta property="article:tag" content="Vue3">
-<meta property="article:tag" content="Vue3全局注册">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-50-21.png">
+<meta name="twitter:image" content="https://yhx0507.github.io/wxapp_static/app/2020-11-27_231249.png">
 
 
 <link rel="icon" href="/img/avatar3.jpg">
@@ -132,7 +204,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(21)</small></div></li>
+    <li><div class="all active">全部文章<small>(22)</small></div></li>
     
 </ul>
 <div class="left-bottom">
@@ -144,7 +216,7 @@
     </div>
     <div></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="21">
+<input type="hidden" id="yelog_site_posts_number" value="22">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -486,6 +558,14 @@
            data-author="" >
             <span class="post-title" title="React基础">React基础</span>
             <span class="post-date" title="2019-03-01 15:30:58">2019/03/01</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/12/18/%E5%AE%8C%E6%95%B4%E7%9A%84%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%B1%BB%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E6%B5%81%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2020-12-18 20:39:55">2020/12/18</span>
         </a>
         
     </nav>
