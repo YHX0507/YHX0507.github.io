@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Vue组件通信 | 蜡笔小新Blogs</title>
-  <meta name="keywords" content=" Vue , Vue组件通信 ">
-  <meta name="description" content="Vue组件通信 | 蜡笔小新Blogs">
+  <title>Webpack打包Vue项目 | 蜡笔小新Blogs</title>
+  <meta name="keywords" content=" Vue , Webpack ">
+  <meta name="description" content="Webpack打包Vue项目 | 蜡笔小新Blogs">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="vue3 如何注册全局组件123456789import &amp;#123; createApp &amp;#125; from &amp;#x27;vue&amp;#x27;import App from &amp;#x27;.&#x2F;App.vue&amp;#x27;const app &#x3D; createApp(App)&#x2F;&#x2F; 注册全局组件import SaveButton from &amp;#x27;@&#x2F;globalComponents&#x2F;SaveBut">
 <meta property="og:type" content="article">
@@ -520,9 +520,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Vue组件通信" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Webpack打包Vue项目" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Vue组件通信</h1>
+        <h1 class="article-title">Webpack打包Vue项目</h1>
     
     <div class="article-meta">
         
@@ -533,14 +533,14 @@
             
             <a class="color4">Vue</a>
             
-            <a class="color3">Vue组件通信</a>
+            <a class="color3">Webpack</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-12-18 20:22:04'>2018-04-13 11:08</time>
+        创建时间:<time class="date" title='更新时间: 2020-12-31 21:08:59'>2019-12-12 21:06</time>
         
     </div>
     <div class="article-meta">
@@ -562,7 +562,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4Vue%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B"><span class="toc-text">完整Vue项目构建流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E9%A1%B9%E7%9B%AE"><span class="toc-text">准备项目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEwebpack"><span class="toc-text">配置webpack</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E5%8F%A3entry"><span class="toc-text">入口entry</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BA%E5%8F%A3output"><span class="toc-text">出口output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97modules"><span class="toc-text">模块modules</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6plugins"><span class="toc-text">插件plugins</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E6%A8%A1%E6%9D%BF%E6%8F%92%E4%BB%B6"><span class="toc-text">处理模板插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86vue-loader%E6%8F%92%E4%BB%B6"><span class="toc-text">处理vue-loader插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86vue%E7%BB%84%E4%BB%B6%E4%B8%ADcss%E6%A0%B7%E5%BC%8F%E5%8D%95%E7%8B%AC%E6%8A%BD%E9%87%8C%E6%8F%92%E4%BB%B6"><span class="toc-text">处理vue组件中css样式单独抽里插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E6%89%93%E5%8C%85%E7%BC%93%E5%AD%98%E6%8F%92%E4%BB%B6"><span class="toc-text">处理打包缓存插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEdevServer"><span class="toc-text">配置devServer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE%E5%A4%84%E7%90%86"><span class="toc-text">其他配置处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vue%E9%A1%B9%E7%9B%AE%E4%B8%AD%E8%B7%AF%E5%BE%84-src%E4%B8%8E-%E7%9A%84%E6%9B%BF%E6%8D%A2"><span class="toc-text">vue项目中路径&#x2F;src与@的替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E5%8E%8B%E7%BC%A9%E9%97%AE%E9%A2%98"><span class="toc-text">优化压缩问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#favicon-ico%E6%89%BE%E4%B8%8D%E5%88%B0%E9%97%AE%E9%A2%98"><span class="toc-text">favicon.ico找不到问题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ps"><span class="toc-text">ps</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E9%99%84%E4%B8%8Apackage-json%E9%85%8D%E7%BD%AE"><span class="toc-text">最后附上package.json配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4webpack%E9%85%8D%E7%BD%AE"><span class="toc-text">完整webpack配置</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -578,29 +578,131 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-04-01.png" class="">
+        <h1 id="完整Vue项目构建流程"><a href="#完整Vue项目构建流程" class="headerlink" title="完整Vue项目构建流程"></a>完整Vue项目构建流程</h1><h1 id="准备项目"><a href="#准备项目" class="headerlink" title="准备项目"></a>准备项目</h1><ol>
+<li><p>创建项目目录 demo(注意,包名不能叫<strong>webpack</strong></p>
+</li>
+<li><p>给项目 创建<code>package.json</code>文件</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装<code>webpack</code> <code>webpack-cli</code>包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add webpack webpack-cli webpack-dev-server -D</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在package.json中做如下配置，配置打包命令</p>
+</li>
+</ol>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201230145339383.png" class="">
 
-<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-02-42.png" class="">
+<ol start="5">
+<li>创建<code>webpack.config.js</code>配置文件用于配置webpack</li>
+</ol>
+<h1 id="配置webpack"><a href="#配置webpack" class="headerlink" title="配置webpack"></a>配置webpack</h1><h2 id="入口entry"><a href="#入口entry" class="headerlink" title="入口entry"></a>入口entry</h2><p>​    配置 entry 属性，来指定一个（或多个）不同的入口起点</p>
+<p>​    用法1：<code>entry: string | [string]</code></p>
+<p>​    用法2：<code>entry: &#123; &lt;entryChunkName&gt; string | [string] &#125; | &#123;&#125;</code></p>
+<ul>
+<li>开始应用程序打包过程的一个或多个起点。如果传入数组，则会处理所有条目。</li>
+<li>动态加载的模块<strong>不是</strong>入口起点。</li>
+<li>简单规则：每个 HTML 页面都有一个入口起点。单页应用(SPA)：一个入口起点，多页应用(MPA)：多个入口起点</li>
+</ul>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201230145853462.png" class="">
 
-<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-04-31.png" class="">
+<h2 id="出口output"><a href="#出口output" class="headerlink" title="出口output"></a>出口output</h2><p>​    配置 <code>output</code> 选项，告知 webpack 如何向硬盘写入编译文件。注意，即使可以存在多个<code>entry</code> 起点，但只能指定一个     <code>output</code> 配置。</p>
+<p>​    用法：在 webpack 配置中，<code>output</code> 属性的最低要求是，将它的值设置为一个对象，然后为将输出文件的文件名配置    为一个<code>output.filename</code></p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201230151137123.png" class="">
 
-<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-04-46.png" class="">
+<h2 id="模块modules"><a href="#模块modules" class="headerlink" title="模块modules"></a>模块modules</h2><p>​    webpack _模块_能以各种方式表达它们的依赖关系。</p>
+<p>​    <strong>loader</strong> 向 webpack 描述了如何处理非原生<em>模块</em>，并将相关<strong>依赖</strong>引入到你的 <strong>bundles</strong>中</p>
+<p>​    <code>loader</code>用于对模块的源代码进行转换。</p>
+<ol>
+<li>处理<code>js</code>相应的<code>loader</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add babel-loader @babel&#x2F;core @babel&#x2F;preset-env -D</span><br></pre></td></tr></table></figure>
 
-<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-05-00.png" class="">
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201230152450459.png" class="">
 
-<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-05-18.png" class="">
+<p>​    根目录下创建babel.config.js配置babel</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201230163542883.png" class="">
 
-<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-05-31.png" class="">
+<p>​    2. 处理<code>vue</code>文件相应的<code>loader</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add vue vue-loader vue-style-loader vue-template-compiler -D</span><br></pre></td></tr></table></figure>
 
-<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-05-50.png" class="">
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201230153421240.png" class="">
 
-<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-06-10.png" class="">
+<p>​    3. 处理<code>css</code>文件相应的<code>loader</code></p>
+<p>​    这个需要注意的是在处理普通<code>css</code>文件和<code>vue</code>组件内<code>&lt;style&gt;</code>的<code>css</code>有两种使用方案，在<code>vue</code>单组件中我们单独抽离    出<code>css</code>文件，可以在<a href="#%E5%A4%84%E7%90%86vue%E7%BB%84%E4%BB%B6%E4%B8%ADcss%E6%A0%B7%E5%BC%8F%E5%8D%95%E7%8B%AC%E6%8A%BD%E9%87%8C%E6%8F%92%E4%BB%B6">插件</a>中查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add css-loader style-loader -D</span><br></pre></td></tr></table></figure>
 
-<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-06-25.png" class="">
+<ul>
+<li>vue中处理css</li>
+</ul>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201230154252195.png" class="">
 
-<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-06-43.png" class="">
+<ul>
+<li>普通css处理</li>
+</ul>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201230154015129.png" class="">
 
-<img src="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-08-13_21-07-09.png" class="">
+<p>​    4. 处理<code>less</code>文件相应的<code>loader</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add less less-loader -D</span><br></pre></td></tr></table></figure>
+
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201230154522693.png" class="">
+
+<p>​    5. 处理<code>img</code>文件相应的<code>loader</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add file-loader url-loader -D</span><br></pre></td></tr></table></figure>
+
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201230155247847.png" class="">
+
+<pre><code>   6. 处理字体图标相应的loader</code></pre>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201231101413093.png" class="">
+
+<h2 id="插件plugins"><a href="#插件plugins" class="headerlink" title="插件plugins"></a>插件plugins</h2><p>​    插件目的在于解决loader无法实现的其他事。</p>
+<h3 id="处理模板插件"><a href="#处理模板插件" class="headerlink" title="处理模板插件"></a>处理模板插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add html-webpack-plugin -D</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">&#x27;html-webpack-plugin&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201231095700179.png" class="">
+
+<h3 id="处理vue-loader插件"><a href="#处理vue-loader插件" class="headerlink" title="处理vue-loader插件"></a>处理vue-loader插件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> VueLoaderPlugin = <span class="built_in">require</span>(<span class="string">&#x27;vue-loader/lib/plugin&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201230160546446.png" class="">
+
+<h3 id="处理vue组件中css样式单独抽里插件"><a href="#处理vue组件中css样式单独抽里插件" class="headerlink" title="处理vue组件中css样式单独抽里插件"></a>处理vue组件中css样式单独抽里插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add mini-css-extract-plugin -D</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> MiniCssExtractPlugin = <span class="built_in">require</span>(<span class="string">&#x27;mini-css-extract-plugin&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201230160842512.png" class="">
+
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201230160919132.png" class="">
+
+<h3 id="处理打包缓存插件"><a href="#处理打包缓存插件" class="headerlink" title="处理打包缓存插件"></a>处理打包缓存插件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add clean-webpack-plugin -D</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> CleanWebpackPlugin = <span class="built_in">require</span>(<span class="string">&#x27;clean-webpack-plugin&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201230161138836.png" class="">
+
+<h2 id="配置devServer"><a href="#配置devServer" class="headerlink" title="配置devServer"></a>配置devServer</h2><img src="https://yhx0507.github.io/wxapp_static/app/image-20201230161328420.png" class="">
+
+<p>​    在package.json中配置如下命令</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201230161713912.png" class="">
+
+<h2 id="其他配置处理"><a href="#其他配置处理" class="headerlink" title="其他配置处理"></a>其他配置处理</h2><h3 id="vue项目中路径-src与-的替换"><a href="#vue项目中路径-src与-的替换" class="headerlink" title="vue项目中路径/src与@的替换"></a>vue项目中路径/src与@的替换</h3><img src="https://yhx0507.github.io/wxapp_static/app/image-20201230161526500.png" class="">
+
+<h3 id="优化压缩问题"><a href="#优化压缩问题" class="headerlink" title="优化压缩问题"></a>优化压缩问题</h3><p><strong>！注意</strong>：这两个插件不是配置在plugins中，而是单独配置在另一个属性 <strong>optimization</strong> 中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add optimize-css-assets-webpack-plugin terser-webpack-plugin -D</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> OptimizeCssAssetsPlugin = <span class="built_in">require</span>(<span class="string">&#x27;optimize-css-assets-webpack-plugin&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> TerserPlugin = <span class="built_in">require</span>(<span class="string">&#x27;terser-webpack-plugin&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201231102031037.png" class="">
+
+<h3 id="favicon-ico找不到问题"><a href="#favicon-ico找不到问题" class="headerlink" title="favicon.ico找不到问题"></a>favicon.ico找不到问题</h3><p>​    这种问题除了在<a href="#%E5%A4%84%E7%90%86%E6%A8%A1%E6%9D%BF%E6%8F%92%E4%BB%B6">模板插件</a>处理的时候直接保留ico之外，还可以利用其他插件进行处理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add copy-webpack-plugin -D</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> CopyWebpackPlugin = <span class="built_in">require</span>(<span class="string">&#x27;copy-webpack-plugin&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20201231100727981.png" class="">
+
+<h1 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h1><h2 id="最后附上package-json配置"><a href="#最后附上package-json配置" class="headerlink" title="最后附上package.json配置"></a>最后附上package.json配置</h2><img src="https://yhx0507.github.io/wxapp_static/app/image-20201231102339434.png" class="">
+
+<h2 id="完整webpack配置"><a href="#完整webpack配置" class="headerlink" title="完整webpack配置"></a>完整webpack配置</h2><img src="https://yhx0507.github.io/wxapp_static/app/image202012301621832911.png" class="">
       
        
     </div>
