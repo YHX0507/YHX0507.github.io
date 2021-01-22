@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Canvas | 蜡笔小新Blogs</title>
+  <meta name="keywords" content=" Canvas ">
+  <meta name="description" content="Canvas | 蜡笔小新Blogs">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="vue3 如何注册全局组件123456789import &amp;#123; createApp &amp;#125; from &amp;#x27;vue&amp;#x27;import App from &amp;#x27;.&#x2F;App.vue&amp;#x27;const app &#x3D; createApp(App)&#x2F;&#x2F; 注册全局组件import SaveButton from &amp;#x27;@&#x2F;globalComponents&#x2F;SaveBut">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue3全局注册问题">
+<meta property="og:url" content="http://yoursite.com/2020/12/12/Vue3%E5%85%A8%E5%B1%80%E6%B3%A8%E5%86%8C%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="蜡笔小新Blogs">
+<meta property="og:description" content="vue3 如何注册全局组件123456789import &amp;#123; createApp &amp;#125; from &amp;#x27;vue&amp;#x27;import App from &amp;#x27;.&#x2F;App.vue&amp;#x27;const app &#x3D; createApp(App)&#x2F;&#x2F; 注册全局组件import SaveButton from &amp;#x27;@&#x2F;globalComponents&#x2F;SaveBut">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-50-21.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-50-44.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-51-07.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-51-35.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-52-06.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-52-58.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-53-28.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-12_21-01-25.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-12_21-04-50.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-12_21-05-45.png">
+<meta property="og:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-12-12_21-07-11.png">
+<meta property="article:published_time" content="2020-12-12T15:40:46.000Z">
+<meta property="article:modified_time" content="2020-12-12T15:44:33.466Z">
+<meta property="article:author" content="蜡笔小新">
+<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="Vue3">
+<meta property="article:tag" content="Vue3全局注册">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yhx0507.github.io/wxapp_static/app/Snipaste_2020-11-27_22-50-21.png">
+
+
+<link rel="icon" href="/img/avatar3.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>蜡笔小新</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/YHX0507" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="https://www.weibo.com/3863592977" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/00huan-shi-90/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:1183376071@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=1183376071&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(24)</small></div></li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="24">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Proxy</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">defineProperty</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">cookie</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">session</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Redux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">React</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">Vue</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">Vue-router</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">router</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">Vue3</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">v-model</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Vue3新特性</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">移动项目</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">总结</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Vue组件通信</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">git stash</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">git 版本回退</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">不是内部命令或外部命令</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">不是可运行的程序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">redux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">react</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">Node</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Express</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">小程序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">数组方法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">面试题</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">csv表格下载</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">文件下载</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">图片下载</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Webpack</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">Webpack入门</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">Blob</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">Vue3全局注册</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">Vue2</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Canvas</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2018/07/10/Proxy/"
+           data-tag="Proxy,defineProperty"
+           data-author="" >
+            <span class="post-title" title="Proxy和Object.defineProperty">Proxy和Object.defineProperty</span>
+            <span class="post-date" title="2018-07-10 22:01:28">2018/07/10</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/10/11/Cookie%E5%92%8CSession/"
+           data-tag="cookie,session"
+           data-author="" >
+            <span class="post-title" title="Cookie和Session">Cookie和Session</span>
+            <span class="post-date" title="2018-10-11 17:23:07">2018/10/11</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/01/06/Redux%E9%85%8D%E5%90%88React%E4%BD%BF%E7%94%A8/"
+           data-tag="Redux,React"
+           data-author="" >
+            <span class="post-title" title="Redux配合React使用">Redux配合React使用</span>
+            <span class="post-date" title="2019-01-06 21:52:52">2019/01/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/12/12/Vue-router4%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8F%98%E5%8C%96/"
+           data-tag="Vue,Vue-router,router"
+           data-author="" >
+            <span class="post-title" title="Vue-router4的一些变化">Vue-router4的一些变化</span>
+            <span class="post-date" title="2020-12-12 19:54:58">2020/12/12</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/11/27/Vue3v-model/"
+           data-tag="Vue,Vue3,v-model"
+           data-author="" >
+            <span class="post-title" title="Vue3v-model">Vue3v-model</span>
+            <span class="post-date" title="2020-11-27 23:07:36">2020/11/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/12/12/Vue3%E5%85%A8%E5%B1%80%E6%B3%A8%E5%86%8C%E9%97%AE%E9%A2%98/"
+           data-tag="Vue,Vue3,Vue3全局注册"
+           data-author="" >
+            <span class="post-title" title="Vue3全局注册问题">Vue3全局注册问题</span>
+            <span class="post-date" title="2020-12-12 23:40:46">2020/12/12</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/11/27/Vue3%E6%96%B0%E7%89%B9%E6%80%A7/"
+           data-tag="Vue,Vue3,Vue3新特性"
+           data-author="" >
+            <span class="post-title" title="Vue3新特性">Vue3新特性</span>
+            <span class="post-date" title="2020-11-27 21:39:25">2020/11/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/03/01/Vue%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"
+           data-tag="Vue,移动项目,总结"
+           data-author="" >
+            <span class="post-title" title="Vue移动端项目总结">Vue移动端项目总结</span>
+            <span class="post-date" title="2018-03-01 11:43:25">2018/03/01</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/04/13/Vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/"
+           data-tag="Vue,Vue组件通信"
+           data-author="" >
+            <span class="post-title" title="Vue组件通信">Vue组件通信</span>
+            <span class="post-date" title="2018-04-13 11:08:34">2018/04/13</span>
+        </a>
+        
+        <a  class=""
+           href="/2017/10/30/git%E6%93%8D%E4%BD%9C/"
+           data-tag="git,git stash,git 版本回退"
+           data-author="" >
+            <span class="post-title" title="git操作">git操作</span>
+            <span class="post-date" title="2017-10-30 20:59:36">2017/10/30</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/04/04/npm%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E5%8C%85%E5%90%8E%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"
+           data-tag="不是内部命令或外部命令,不是可运行的程序"
+           data-author="" >
+            <span class="post-title" title="npm全局安装包后无法使用问题解决">npm全局安装包后无法使用问题解决</span>
+            <span class="post-date" title="2019-04-04 20:19:36">2019/04/04</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/03/30/redux/"
+           data-tag="redux,react"
+           data-author="" >
+            <span class="post-title" title="redux">redux</span>
+            <span class="post-date" title="2019-03-30 20:37:10">2019/03/30</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/09/14/node/"
+           data-tag="Node,Express"
+           data-author="" >
+            <span class="post-title" title="node">node</span>
+            <span class="post-date" title="2018-09-14 20:43:25">2018/09/14</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/02/27/%E5%85%B3%E4%BA%8E%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E7%9A%84%E6%80%BB%E7%BB%93/"
+           data-tag="小程序"
+           data-author="" >
+            <span class="post-title" title="关于小程序开发的总结">关于小程序开发的总结</span>
+            <span class="post-date" title="2018-02-27 20:56:38">2018/02/27</span>
+        </a>
+        
+        <a  class=""
+           href="/2017/12/15/%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%8C%E6%8E%8C%E6%8F%A1%E8%BF%99%E4%BA%9B%E5%B0%B1%E5%A4%9F%E4%BA%86/"
+           data-tag="数组方法"
+           data-author="" >
+            <span class="post-title" title="数组常用方法，掌握这些就够了">数组常用方法，掌握这些就够了</span>
+            <span class="post-date" title="2017-12-15 21:31:43">2017/12/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/11/01/%E7%BB%8F%E5%85%B8%E9%9D%A2%E8%AF%95%E9%A2%98/"
+           data-tag="面试题"
+           data-author="" >
+            <span class="post-title" title="经典面试题">经典面试题</span>
+            <span class="post-date" title="2020-11-01 15:20:58">2020/11/01</span>
+        </a>
+        
+        <a  class=""
+           href="/2017/08/15/%E9%80%9A%E8%BF%87json2csv%E5%89%8D%E7%AB%AF%E5%AF%BC%E5%87%BA/"
+           data-tag="csv表格下载,文件下载"
+           data-author="" >
+            <span class="post-title" title="前端前端导出csv文件（通过json2csv前端导出）">前端前端导出csv文件（通过json2csv前端导出）</span>
+            <span class="post-date" title="2017-08-15 20:36:14">2017/08/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/08/06/%E9%80%9A%E8%BF%87Blob%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD/"
+           data-tag="文件下载,图片下载"
+           data-author="" >
+            <span class="post-title" title="通过Blob实现图片下载">通过Blob实现图片下载</span>
+            <span class="post-date" title="2020-08-06 20:50:25">2020/08/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/07/20/Webpack%E5%85%A5%E9%97%A8/"
+           data-tag="Webpack,Webpack入门"
+           data-author="" >
+            <span class="post-title" title="Webpack入门">Webpack入门</span>
+            <span class="post-date" title="2019-07-20 20:04:42">2019/07/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/08/06/%E5%89%8D%E7%AB%AF%E9%80%9A%E8%BF%87Blob%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/"
+           data-tag="文件下载,Blob"
+           data-author="" >
+            <span class="post-title" title="前端通过Blob实现文件下载">前端通过Blob实现文件下载</span>
+            <span class="post-date" title="2019-08-06 19:59:09">2019/08/06</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/03/01/React%E5%9F%BA%E7%A1%80/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="React基础">React基础</span>
+            <span class="post-date" title="2019-03-01 15:30:58">2019/03/01</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/18/Vue%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B9%E7%9B%AE%E6%B5%81%E7%A8%8B/"
+           data-tag="Vue,Vue2"
+           data-author="" >
+            <span class="post-title" title="Vue移动端项目流程">Vue移动端项目流程</span>
+            <span class="post-date" title="2019-12-18 23:50:43">2019/12/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/12/Webpack%E6%89%93%E5%8C%85Vue%E9%A1%B9%E7%9B%AE/"
+           data-tag="Vue,Webpack"
+           data-author="" >
+            <span class="post-title" title="Webpack打包Vue项目">Webpack打包Vue项目</span>
+            <span class="post-date" title="2019-12-12 21:06:46">2019/12/12</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/01/22/Canvas/"
+           data-tag="Canvas"
+           data-author="" >
+            <span class="post-title" title="Canvas">Canvas</span>
+            <span class="post-date" title="2020-01-22 20:35:57">2020/01/22</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-Canvas" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Canvas</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+        <span class="tag">
+            
+            <a class="color2">Canvas</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2021-01-22 20:55:44'>2020-01-22 20:35</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#canvas"><span class="toc-text">canvas</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%AD%E6%B7%BB%E5%8A%A0canvas%E5%85%83%E7%B4%A0"><span class="toc-text">在页面中添加canvas元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Canvas%E5%A6%82%E4%BD%95%E7%BB%98%E5%88%B6%E5%9B%BE%E5%BD%A2"><span class="toc-text">Canvas如何绘制图形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Canvas%E7%94%BB%E5%9B%BE%E6%AD%A5%E9%AA%A4"><span class="toc-text">Canvas画图步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E7%AE%80%E5%8D%95%E5%9B%BE%E5%BD%A2"><span class="toc-text">绘制简单图形</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E7%BA%BF"><span class="toc-text">直线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E7%9F%A9%E5%BD%A2"><span class="toc-text">绘制矩形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E5%9C%86%E5%BD%A2"><span class="toc-text">绘制圆形</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E6%B8%90%E5%8F%98%E8%89%B2%E6%96%B9%E6%B3%95"><span class="toc-text">绘制渐变色方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E5%A1%AB%E5%85%85"><span class="toc-text">文字填充</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%92%8C%E8%A7%86%E9%A2%91"><span class="toc-text">图像和视频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%83%8F%E7%B4%A0%E6%93%8D%E4%BD%9C%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-text">像素操作的一些属性和方法</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h1><h2 id="在页面中添加canvas元素"><a href="#在页面中添加canvas元素" class="headerlink" title="在页面中添加canvas元素"></a>在页面中添加canvas元素</h2><p>​        如果要向页面中添加canvas元素，可以使用下面的代码。默认情况下，Canvas所创建的矩形区域大小为宽300px,高150px，也可以使用width和height属性来自定义其宽度和高度。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>HTML5 canvas<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">&quot;myCanvas&quot;</span> <span class="attr">width</span>=<span class="string">&quot;200&quot;</span> <span class="attr">height</span>=<span class="string">&quot;200&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20210115140615017.png" class="">
+
+<p>​        以上代码只是简单地创建了一个Canvas对象，在浏览器中打开的页面上什么都不会显示。可以通过使用border属性来给canvas设置边框样式。代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>HTML5 canvas<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">&quot;myCanvas&quot;</span> <span class="attr">width</span>=<span class="string">&quot;200&quot;</span> <span class="attr">height</span>=<span class="string">&quot;200&quot;</span> <span class="attr">style</span>=<span class="string">&quot;border: 2px solid blue&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20210115141402924.png" class="">
+
+<p>效果如下：</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20210115141441743.png" class="">
+
+<h2 id="Canvas如何绘制图形"><a href="#Canvas如何绘制图形" class="headerlink" title="Canvas如何绘制图形"></a>Canvas如何绘制图形</h2><ol>
+<li><p>context：context是一个封装了很多绘图功能的对象，获取这个对象的方法是  </p>
+<p>​    var context =canvas.getContext(“2d”);    //2d表示的是html5目前只能支持2d，而不能提供3d显示</p>
+</li>
+<li><p>canvas元素绘制图像的时候有两种方法，分别是</p>
+<p>​    context.fill()    //填充绘制</p>
+<p>​    context.stroke()    //边框绘制</p>
+</li>
+<li><p>style:在进行图形绘制前，要设置好绘图的样式</p>
+<p>​    context.fillStyle    //填充的样式 <a target="_blank" rel="noopener" href="https://www.runoob.com/tags/canvas-fillstyle.html">fillStyle</a> </p>
+<p>​    context.strokeStyle    //线条样式 <a target="_blank" rel="noopener" href="https://www.runoob.com/tags/canvas-strokestyle.html">strokeStyle</a></p>
+</li>
+<li><p>颜色的表示方式:</p>
+<p>​     直接用颜色名称:    “red” “green” “blue”</p>
+<p>​     十六进制颜色值:     “#EEEEFF”</p>
+<p>​     rgb(1-255,1-255,1-255)</p>
+<p>​     rgba(1-255,1-255,1-255,透明度)</p>
+</li>
+</ol>
+<h2 id="Canvas画图步骤"><a href="#Canvas画图步骤" class="headerlink" title="Canvas画图步骤"></a>Canvas画图步骤</h2><p>​        canvas本身并不能实现图形绘制功能，绘制图形的工作需要有JavaScript完成。使用JavaScript可以在canvas元素内部添加线条、图片和文字，也可以在其中绘画，还可以加入高级动画。接下来说一下具体的绘制图形步骤：</p>
+<p>第一步：在HTML5页面中添加canvas元素，必须定义canvas元素的id属性值以便接下来调用。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">&quot;myCanvas&quot;</span> <span class="attr">width</span>=<span class="string">&quot;200&quot;</span> <span class="attr">height</span>=<span class="string">&quot;200&quot;</span> <span class="attr">style</span>=<span class="string">&quot;border: 2px solid blue&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>第二步：使用id寻找canvas元素。在JavaScript中可以通过document.getElementById()方法找到canvas元素。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myCanvas = <span class="built_in">document</span>.getElementById(<span class="string">&quot;myCanvas&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>第三步：通过canvas元素的getContext()方法来获取上下文（Context），即创建Context对象以获取允许进行绘制的2D环境。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cxt=canvas.getContext(<span class="string">&quot;2d&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>第四步：使用JavaScript绘制图形。例如，使用一下代码可以绘制一个位于画布中央的矩形。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>HTML5 canvas<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">&quot;myCanvas&quot;</span> <span class="attr">width</span>=<span class="string">&quot;200&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100&quot;</span> <span class="attr">style</span>=<span class="string">&quot;border: 2px solid #34b1ff&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">&quot;myCanvas&quot;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> cxt=canvas.getContext(<span class="string">&quot;2d&quot;</span>);</span></span><br><span class="line"><span class="javascript">    cxt.fillStyle=<span class="string">&quot;#34b1ff&quot;</span>;</span></span><br><span class="line">    cxt.fillRect(50,25,100,50);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20210115142448895.png" class="">
+
+<p>效果如下：</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20210115142537814.png" class="">
+
+<h2 id="绘制简单图形"><a href="#绘制简单图形" class="headerlink" title="绘制简单图形"></a>绘制简单图形</h2><h3 id="直线"><a href="#直线" class="headerlink" title="直线"></a>直线</h3><p>绘制直线时需要调用3个方法：<code>moveTo()</code>、<code>lineTo()</code>、<code>stroke()</code></p>
+<ul>
+<li><code>moveTo()</code>方法用于建立新的子路径，并规定其起始点为（x，y）</li>
+<li><code>lineTo()</code>方法用于从<code>moveTo()</code>方法规定的起始点开始绘制一条道规定坐标的直线，如果前面没有用<code>moveTo()</code>方法规定子路径的起始点，则<code>lineTo()</code>方法等同于<code>moveTo()</code>方法</li>
+<li><code>stroke()</code>方法用于沿该路径绘制一条直线</li>
+</ul>
+<p>示例代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>HTML5 canvas<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">&quot;myCanvas&quot;</span> <span class="attr">width</span>=<span class="string">&quot;200&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100&quot;</span> <span class="attr">style</span>=<span class="string">&quot;border: 2px solid #ff54c5&quot;</span>&gt;</span></span><br><span class="line">    您的浏览器不支持.</span><br><span class="line"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">&quot;myCanvas&quot;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> cxt=canvas.getContext(<span class="string">&quot;2d&quot;</span>);</span></span><br><span class="line"><span class="javascript">    cxt.strokeStyle=<span class="string">&quot;#ff54c5&quot;</span>;</span></span><br><span class="line">    cxt.moveTo(0,0);</span><br><span class="line">    cxt.lineTo(200,100);</span><br><span class="line">    ctx.lineTo(88, 88);</span><br><span class="line">    cxt.stroke();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20210115144129228.png" class="">
+
+<h3 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h3><p>绘制矩形有两种方法，一种是用颜色填充矩形区域，一种是用线条绘制矩形轮廓。其中用到的方法分别是<code>fillRect()</code>和<code>strokeRect()</code>，而且为图形指定颜色提供了两个属性，即<code>fillStyle</code>和<code>strokeStyle</code>，前者用于要填充的颜色，后者是线条颜色。</p>
+<p>两种方法都有四个参数</p>
+<ul>
+<li>sX：矩形起始点x轴坐标</li>
+<li>sY：矩形起始点y轴坐标</li>
+<li>W：矩形宽度值</li>
+<li>H：矩形高度值</li>
+</ul>
+<p>第一种：<code>fillRect()</code>填充方式</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20210115145023134.png" class="">
+
+<p>效果:</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20210115145058270.png" class="">
+
+<p>第二种：<code>strokeRect()</code>线条方式</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20210115145239593.png" class="">
+
+<p>效果:</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20210115145430507.png" class="">
+
+<h3 id="绘制圆形"><a href="#绘制圆形" class="headerlink" title="绘制圆形"></a>绘制圆形</h3><p>圆形的绘制仍然是采用绘制路径并填充颜色的方法。在绘制圆形的过程中，用到了4个比较关键的方法:<code>beginPath()</code>、<code>arc()</code>、<code>closePath()</code>和<code>fill()</code></p>
+<ul>
+<li><p><code>beginPath()</code>方法用于开始绘制路径，<code>closePath()</code>方法用于结束绘制路径。调用<code>beginPath()</code>方法后，在Canvas中进行一系列圆形的绘制，绘制完成后，应该调用<code>closePath()</code>方法将图形闭合起来。</p>
+</li>
+<li><p><code>arc()</code>方法本意为绘制弧线，但是当采用适当的参数以后，就可以绘制出圆形了。</p>
+<p>具体的方法为：<code>arc(x, y, radius, startAngle, engAngle, anticlockwise)</code>，一共有6个参数</p>
+<ul>
+<li>x，y为起点坐标(圆心)</li>
+<li>radius为圆形的半径</li>
+<li>startAngle为开始的角度</li>
+<li>endAngle为结束的角度</li>
+<li>anticlockwise为是否按照顺时针方向进行绘制（boolean值）</li>
+</ul>
+</li>
+</ul>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20210115151204604.png" class="">
+
+<p>效果:</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20210115151258556.png" class="">
+
+<p>当然，也可以像画矩形一样，采用线条轮廓的方式，采用stroke()方法，颜色相对应地采用strokeStyle()方法</p>
+<p>效果:</p>
+<img src="https://yhx0507.github.io/wxapp_static/app/image-20210115151528878.png" class="">
+
+<h2 id="绘制渐变色方法"><a href="#绘制渐变色方法" class="headerlink" title="绘制渐变色方法"></a>绘制渐变色方法</h2><p>绘制渐变色主要有两个方法：<code>createLinearGradient()</code>、<code>createRadialGradient()</code>，前者是创建线性渐变色，后者则是创建放射状/环形的渐变色，两者都是用在画布内容上的</p>
+<p><code>createLinearGradient(x0, y0, x1, y1)</code></p>
+<ul>
+<li>x0:渐变开始点的 x 坐标</li>
+<li>y0:渐变开始点的 y 坐标</li>
+<li>x1:渐变结束点的 x 坐标</li>
+<li>y1:渐变结束点的 x 坐标</li>
+</ul>
+<p><code>createRadialGradient(x0, y0, r0, x1, y1, r1)</code></p>
+<ul>
+<li>x0:渐变的开始圆的 x 坐标</li>
+<li>y0:渐变的开始圆的 y 坐标</li>
+<li>r0:开始圆的半径</li>
+<li>x1:渐变的结束圆的 x 坐标</li>
+<li>y1:渐变的结束圆的 y 坐标</li>
+<li>r1:结束圆的半径</li>
+</ul>
+<p><strong>提示：</strong>请使用 <a target="_blank" rel="noopener" href="https://www.runoob.com/tags/canvas-addcolorstop.html">addColorStop()</a> 方法规定不同的颜色，以及在 gradient 对象中的何处定位颜色。</p>
+<p><code>addColorStop(stop, color) </code>方法规定渐变对象中的颜色和位置。</p>
+<ul>
+<li>stop:介于 0.0 与 1.0 之间的值，表示渐变中开始与结束之间的位置</li>
+<li>color:在 <em>stop</em> 位置显示的</li>
+</ul>
+<p><strong>注意：</strong>您可以多次调用 addColorStop() 方法来改变渐变。如果您不对渐变对象使用该方法，那么渐变将不可见。为了获得可见的渐变，您需要创建至少一个色标。</p>
+<h2 id="文字填充"><a href="#文字填充" class="headerlink" title="文字填充"></a>文字填充</h2><p><code>fillText() </code>方法在画布上绘制填色的文本。文本的默认颜色是黑色。同样还有<a target="_blank" rel="noopener" href="https://www.runoob.com/tags/canvas-stroketext.html">strokeText</a>方法</p>
+<p><code>fillText(text, x, y, maxWidth)</code></p>
+<ul>
+<li>text:规定在画布上输出的文本</li>
+<li>x:开始绘制文本的 x 坐标位置（相对于画布）</li>
+<li>y:开始绘制文本的 y 坐标位置（相对于画布）</li>
+<li>maxWidth:可选。允许的最大文本宽度，以像素计</li>
+</ul>
+<p><strong>提示：</strong>请使用 <a target="_blank" rel="noopener" href="https://www.runoob.com/tags/canvas-font.html">font</a> 属性来定义字体和字号，并使用 <a target="_blank" rel="noopener" href="https://www.runoob.com/tags/canvas-fillstyle.html">fillStyle</a> 属性以另一种颜色/渐变来渲染文本</p>
+<p>常用的几个文字属性：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/canvas-font.html">font</a>：设置或返回文本内容的当前字体属性</li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/canvas-textalign.html">textAlign</a>：设置或返回文本内容的当前对齐方式</li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/canvas-textbaseline.html">textBaseline</a>：设置或返回在绘制文本时使用的当前文本基线</li>
+</ul>
+<h2 id="图像和视频"><a href="#图像和视频" class="headerlink" title="图像和视频"></a>图像和视频</h2><p><code>drawImage()</code> 方法在画布上绘制图像、画布或视频，<br><code>drawImage()</code>方法也能够绘制图像的某些部分，以及/或者增加或减少图像的尺寸</p>
+<table>
+<thead>
+<tr>
+<th align="left">功能</th>
+<th>JS语法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">在画布上定位图像</td>
+<td><code>drawImage(img, x, y)</code></td>
+</tr>
+<tr>
+<td align="left">在画布上定位图像，并规定图像的宽度和高度</td>
+<td><code>drawImage(img, x, y, width, height)</code></td>
+</tr>
+<tr>
+<td align="left">剪切图像，并在画布上定位被剪切的部分</td>
+<td><code>drawImage(img, sx, sy, swidth, sheight, x, y, width, height)</code></td>
+</tr>
+</tbody></table>
+<ul>
+<li>img：规定要使用的图像、画布或视频</li>
+<li>sx：可选。开始剪切的 x 坐标位置</li>
+<li>sy：可选。开始剪切的 y 坐标位置</li>
+<li>swidth：可选。被剪切图像的宽度</li>
+<li>sheight：可选。被剪切图像的高度</li>
+<li>x：在画布上放置图像的 x 坐标位置</li>
+<li>y：在画布上放置图像的 y 坐标位置</li>
+<li>width：可选。要使用的图像的宽度（伸展或缩小图像）</li>
+<li>height：可选。要使用的图像的高度（伸展或缩小图像）</li>
+</ul>
+<h2 id="像素操作的一些属性和方法"><a href="#像素操作的一些属性和方法" class="headerlink" title="像素操作的一些属性和方法"></a>像素操作的一些属性和方法</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/canvas-imagedata-width.html">width</a>：返回 ImageData 对象的宽度</li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/canvas-imagedata-height.html">height</a>：返回 ImageData 对象的高度</li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/canvas-imagedata-data.html">data</a>：返回一个对象，其包含指定的 ImageData 对象的图像数据</li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/canvas-createimagedata.html">createImageData</a>()：创建新的、空白的 ImageData 对象</li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/canvas-getimagedata.html">getImageData</a>()：返回 ImageData 对象，该对象为画布上指定的矩形复制像素数据</li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/tags/canvas-putimagedata.html">putImageData</a>()：把图像数据（从指定的 ImageData 对象）放回画布上</li>
+</ul>
+
+      
+       
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2017 蜡笔小新</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#Proxy','#defineProperty','#cookie','#session','#Redux','#React','#Vue','#Vue-router','#router','#Vue3','#v-model','#Vue3新特性','#移动项目','#总结','#Vue组件通信','#git','#git stash','#git 版本回退','#不是内部命令或外部命令','#不是可运行的程序','#redux','#react','#Node','#Express','#小程序','#数组方法','#面试题','#csv表格下载','#文件下载','#图片下载','#Webpack','#Webpack入门','#Blob','#Vue3全局注册','#Vue2','#Canvas',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("/img/article-list-background.jpeg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
